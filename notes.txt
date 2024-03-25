@@ -1,0 +1,21 @@
+
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState("");
+  const [type, setType] = useState("");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowNotification(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+
+
+   localStorage.setItem("profile", JSON.stringify(true));
+          setShowNotification(true);
+          setNotificationMessage("Login Successfuly!");
+
+
+              const arr = localStorage.getItem("users");
+    const users = JSON.parse(arr);
