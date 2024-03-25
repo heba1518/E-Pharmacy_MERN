@@ -1,0 +1,59 @@
+/* .hero-search-button {
+  display: inline-flex;
+  align-items: center;
+  width: 32px;
+  height: 12px;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: medium;
+  letter-spacing: wide;
+  line-height: 1.5;
+  color: white;
+  transition: 150ms ease-in-out;
+  background-color: #319795;
+  border: none;
+  cursor: pointer;
+  outline: none;
+/* } */
+
+.hero-search-button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 150, 136, var(--tw-bg-opacity));
+  /* background-color: #38b2ac; */
+} 
+
+.hero-search-button {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  display: inline-flex;
+  height: 3rem;
+  width: 8rem;
+  align-items: center;
+  justify-content: center;
+  border-width: 1px;
+  border-color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 191, 165, var(--tw-bg-opacity));
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-filter, -webkit-backdrop-filter;
+  transition-duration: .15s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: .025em;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+  button{
+    -webkit-appearance: button;
+    overflow: visible;
+    touch-action: manipulation;
+  }
+#test{
+  --tw-text-opacity: 1;
+color: rgba(66, 66, 66, var(--tw-text-opacity));
+font-weight: 600;
+}
