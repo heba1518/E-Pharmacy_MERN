@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <style type="text/css">
+    svg:not(:root).svg-inline--fa {
+      overflow: visible;
+    }
+    
+    .svg-inline--fa {
+      display: inline-block;
+      font-size: inherit;
+      height: 1em;
+      overflow: visible;
+      vertical-align: -0.125em;
+    }
+    .svg-inline--fa.fa-lg {
+      vertical-align: -0.225em;
+    }
+    .svg-inline--fa.fa-w-1 {
+      width: 0.0625em;
+    }
+    .svg-inline--fa.fa-w-2 {
+      width: 0.125em;
+    }
+    .svg-inline--fa.fa-w-3 {
+      width: 0.1875em;
+    }
+    .svg-inline--fa.fa-w-4 {
+      width: 0.25em;
+    }
+    .svg-inline--fa.fa-w-5 {
+      width: 0.3125em;
+    }
+    .svg-inline--fa.fa-w-6 {
+      width: 0.375em;
+    }
+    .svg-inline--fa.fa-w-7 {
+      width: 0.4375em;
+    }
+    .svg-inline--fa.fa-w-8 {
+      width: 0.5em;
+    }
+    .svg-inline--fa.fa-w-9 {
+      width: 0.5625em;
+    }
+    .svg-inline--fa.fa-w-10 {
+      width: 0.625em;
+    }
+    .svg-inline--fa.fa-w-11 {
+      width: 0.6875em;
+    }
+    .svg-inline--fa.fa-w-12 {
+      width: 0.75em;
+    }
+    .svg-inline--fa.fa-w-13 {
+      width: 0.8125em;
+    }
+    .svg-inline--fa.fa-w-14 {
+      width: 0.875em;
+    }
+    .svg-inline--fa.fa-w-15 {
+      width: 0.9375em;
+    }
+    .svg-inline--fa.fa-w-16 {
+      width: 1em;
+    }
+    .svg-inline--fa.fa-w-17 {
+      width: 1.0625em;
+    }
+    .svg-inline--fa.fa-w-18 {
+      width: 1.125em;
+    }
+    .svg-inline--fa.fa-w-19 {
+      width: 1.1875em;
+    }
+    .svg-inline--fa.fa-w-20 {
+      width: 1.25em;
+    }
+    .svg-inline--fa.fa-pull-left {
+      margin-right: 0.3em;
+      width: auto;
+    }
+    .svg-inline--fa.fa-pull-right {
+      margin-left: 0.3em;
+      width: auto;
+    }
+    .svg-inline--fa.fa-border {
+      height: 1.5em;
+    }
+    .svg-inline--fa.fa-li {
+      width: 2em;
+    }
+    .svg-inline--fa.fa-fw {
+      width: 1.25em;
+    }
+    
+    .fa-layers svg.svg-inline--fa {
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    
+    .fa-layers {
+      display: inline-block;
+      height: 1em;
+      position: relative;
+      text-align: center;
+      vertical-align: -0.125em;
+      width: 1em;
+    }
+    .fa-layers svg.svg-inline--fa {
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+    }
+    
+    .fa-layers-counter, .fa-layers-text {
+      display: inline-block;
+      position: absolute;
+      text-align: center;
+    }
+    
+    .fa-layers-text {
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+    }
+    
+    .fa-layers-counter {
+      background-color: #ff253a;
+      border-radius: 1em;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      color: #fff;
+      height: 1.5em;
+      line-height: 1;
+      max-width: 5em;
+      min-width: 1.5em;
+      overflow: hidden;
+      padding: 0.25em;
+      right: 0;
+      text-overflow: ellipsis;
+      top: 0;
+      -webkit-transform: scale(0.25);
+              transform: scale(0.25);
+      -webkit-transform-origin: top right;
+              transform-origin: top right;
+    }
+    
+    .fa-layers-bottom-right {
+      bottom: 0;
+      right: 0;
+      top: auto;
+      -webkit-transform: scale(0.25);
+              transform: scale(0.25);
+      -webkit-transform-origin: bottom right;
+              transform-origin: bottom right;
+    }
+    
+    .fa-layers-bottom-left {
+      bottom: 0;
+      left: 0;
+      right: auto;
+      top: auto;
+      -webkit-transform: scale(0.25);
+              transform: scale(0.25);
+      -webkit-transform-origin: bottom left;
+              transform-origin: bottom left;
+    }
+    
+    .fa-layers-top-right {
+      right: 0;
+      top: 0;
+      -webkit-transform: scale(0.25);
+              transform: scale(0.25);
+      -webkit-transform-origin: top right;
+              transform-origin: top right;
+    }
+    
+    .fa-layers-top-left {
+      left: 0;
+      right: auto;
+      top: 0;
+      -webkit-transform: scale(0.25);
+              transform: scale(0.25);
+      -webkit-transform-origin: top left;
+              transform-origin: top left;
+    }
+    
+    .fa-lg {
+      font-size: 1.3333333333em;
+      line-height: 0.75em;
+      vertical-align: -0.0667em;
+    }
+    
+    .fa-xs {
+      font-size: 0.75em;
+    }
+    
+    .fa-sm {
+      font-size: 0.875em;
+    }
+    
+    .fa-1x {
+      font-size: 1em;
+    }
+    
+    .fa-2x {
+      font-size: 2em;
+    }
+    
+    .fa-3x {
+      font-size: 3em;
+    }
+    
+    .fa-4x {
+      font-size: 4em;
+    }
+    
+    .fa-5x {
+      font-size: 5em;
+    }
+    
+    .fa-6x {
+      font-size: 6em;
+    }
+    
+    .fa-7x {
+      font-size: 7em;
+    }
+    
+    .fa-8x {
+      font-size: 8em;
+    }
+    
+    .fa-9x {
+      font-size: 9em;
+    }
+    
+    .fa-10x {
+      font-size: 10em;
+    }
+    
+    .fa-fw {
+      text-align: center;
+      width: 1.25em;
+    }
+    
+    .fa-ul {
+      list-style-type: none;
+      margin-left: 2.5em;
+      padding-left: 0;
+    }
+    .fa-ul > li {
+      position: relative;
+    }
+    
+    .fa-li {
+      left: -2em;
+      position: absolute;
+      text-align: center;
+      width: 2em;
+      line-height: inherit;
+    }
+    
+    .fa-border {
+      border: solid 0.08em #eee;
+      border-radius: 0.1em;
+      padding: 0.2em 0.25em 0.15em;
+    }
+    
+    .fa-pull-left {
+      float: left;
+    }
+    
+    .fa-pull-right {
+      float: right;
+    }
+    
+    .fa.fa-pull-left,
+    .fas.fa-pull-left,
+    .far.fa-pull-left,
+    .fal.fa-pull-left,
+    .fab.fa-pull-left {
+      margin-right: 0.3em;
+    }
+    .fa.fa-pull-right,
+    .fas.fa-pull-right,
+    .far.fa-pull-right,
+    .fal.fa-pull-right,
+    .fab.fa-pull-right {
+      margin-left: 0.3em;
+    }
+    
+    .fa-spin {
+      -webkit-animation: fa-spin 2s infinite linear;
+              animation: fa-spin 2s infinite linear;
+    }
+    
+    .fa-pulse {
+      -webkit-animation: fa-spin 1s infinite steps(8);
+              animation: fa-spin 1s infinite steps(8);
+    }
+    
+    @-webkit-keyframes fa-spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes fa-spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+    }
+    .fa-rotate-90 {
+      -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+    
+    .fa-rotate-180 {
+      -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+    }
+    
+    .fa-rotate-270 {
+      -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+      -webkit-transform: rotate(270deg);
+              transform: rotate(270deg);
+    }
+    
+    .fa-flip-horizontal {
+      -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+      -webkit-transform: scale(-1, 1);
+              transform: scale(-1, 1);
+    }
+    
+    .fa-flip-vertical {
+      -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+      -webkit-transform: scale(1, -1);
+              transform: scale(1, -1);
+    }
+    
+    .fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+      -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+      -webkit-transform: scale(-1, -1);
+              transform: scale(-1, -1);
+    }
+    
+    :root .fa-rotate-90,
+    :root .fa-rotate-180,
+    :root .fa-rotate-270,
+    :root .fa-flip-horizontal,
+    :root .fa-flip-vertical,
+    :root .fa-flip-both {
+      -webkit-filter: none;
+              filter: none;
+    }
+    
+    .fa-stack {
+      display: inline-block;
+      height: 2em;
+      position: relative;
+      width: 2.5em;
+    }
+    
+    .fa-stack-1x,
+    .fa-stack-2x {
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    
+    .svg-inline--fa.fa-stack-1x {
+      height: 1em;
+      width: 1.25em;
+    }
+    .svg-inline--fa.fa-stack-2x {
+      height: 2em;
+      width: 2.5em;
+    }
+    
+    .fa-inverse {
+      color: #fff;
+    }
+    
+    .sr-only {
+      border: 0;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    .sr-only-focusable:active, .sr-only-focusable:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto;
+    }
+    
+    .svg-inline--fa .fa-primary {
+      fill: var(--fa-primary-color, currentColor);
+      opacity: 1;
+      opacity: var(--fa-primary-opacity, 1);
+    }
+    
+    .svg-inline--fa .fa-secondary {
+      fill: var(--fa-secondary-color, currentColor);
+      opacity: 0.4;
+      opacity: var(--fa-secondary-opacity, 0.4);
+    }
+    
+    .svg-inline--fa.fa-swap-opacity .fa-primary {
+      opacity: 0.4;
+      opacity: var(--fa-secondary-opacity, 0.4);
+    }
+    
+    .svg-inline--fa.fa-swap-opacity .fa-secondary {
+      opacity: 1;
+      opacity: var(--fa-primary-opacity, 1);
+    }
+    
+    .svg-inline--fa mask .fa-primary,
+    .svg-inline--fa mask .fa-secondary {
+      fill: black;
+    }
+    
+    .fad.fa-inverse {
+      color: #fff;
+    }</style>
+    <link rel="apple-touch-icon" href="./logo192.png" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+      .fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+      .fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+      .fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+      .fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style>
+
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+              sans: ["Jost", "sans-serif"],
+            },
+            colors: {
+              red: {
+                50: "#ffebee",
+                100: "#ffcdd2",
+                200: "#ef9a9a",
+                300: "#e57373",
+                400: "#ef5350",
+                500: "#f44336",
+                600: "#e53935",
+                700: "#d32f2f",
+                800: "#c62828",
+                900: "#b71c1c",
+                "accent-100": "#ff8a80",
+                "accent-200": "#ff5252",
+                "accent-400": "#ff1744",
+                "accent-700": "#d50000",
+              },
+              purple: {
+                50: "#f3e5f5",
+                100: "#e1bee7",
+                200: "#ce93d8",
+                300: "#ba68c8",
+                400: "#ab47bc",
+                500: "#9c27b0",
+                600: "#8e24aa",
+                700: "#7b1fa2",
+                800: "#6a1b9a",
+                900: "#4a148c",
+                "accent-100": "#ea80fc",
+                "accent-200": "#e040fb",
+                "accent-400": "#d500f9",
+                "accent-700": "#aa00ff",
+              },
+              "deep-purple": {
+                50: "#ede7f6",
+                100: "#d1c4e9",
+                200: "#b39ddb",
+                300: "#9575cd",
+                400: "#7e57c2",
+                500: "#673ab7",
+                600: "#5e35b1",
+                700: "#512da8",
+                800: "#4527a0",
+                900: "#311b92",
+                "accent-100": "#b388ff",
+                "accent-200": "#7c4dff",
+                "accent-400": "#651fff",
+                "accent-700": "#6200ea",
+              },
+              teal: {
+                50: "#e0f2f1",
+                100: "#b2dfdb",
+                200: "#80cbc4",
+                300: "#4db6ac",
+                400: "#26a69a",
+                500: "#009688",
+                600: "#00897b",
+                700: "#00796b",
+                800: "#00695c",
+                900: "#004d40",
+                "accent-100": "#a7ffeb",
+                "accent-200": "#64ffda",
+                "accent-400": "#1de9b6",
+                "accent-700": "#00bfa5",
+              },
+              indigo: {
+                50: "#e8eaf6",
+                100: "#c5cae9",
+                200: "#9fa8da",
+                300: "#7986cb",
+                400: "#5c6bc0",
+                500: "#3f51b5",
+                600: "#3949ab",
+                700: "#303f9f",
+                800: "#283593",
+                900: "#1a237e",
+                "accent-100": "#8c9eff",
+                "accent-200": "#536dfe",
+                "accent-400": "#3d5afe",
+                "accent-700": "#304ffe",
+              },
+              pink: {
+                50: "#fce4ec",
+                100: "#f8bbd0",
+                200: "#f48fb1",
+                300: "#f06292",
+                400: "#ec407a",
+                500: "#e91e63",
+                600: "#d81b60",
+                700: "#c2185b",
+                800: "#ad1457",
+                900: "#880e4f",
+                "accent-100": "#ff80ab",
+                "accent-200": "#ff4081",
+                "accent-400": "#f50057",
+                "accent-700": "#c51162",
+              },
+              blue: {
+                50: "#e3f2fd",
+                100: "#bbdefb",
+                200: "#90caf9",
+                300: "#64b5f6",
+                400: "#42a5f5",
+                500: "#2196f3",
+                600: "#1e88e5",
+                700: "#1976d2",
+                800: "#1565c0",
+                900: "#0d47a1",
+                "accent-100": "#82b1ff",
+                "accent-200": "#448aff",
+                "accent-400": "#2979ff",
+                "accent-700": "#2962ff",
+              },
+              "light-blue": {
+                50: "#e1f5fe",
+                100: "#b3e5fc",
+                200: "#81d4fa",
+                300: "#4fc3f7",
+                400: "#29b6f6",
+                500: "#03a9f4",
+                600: "#039be5",
+                700: "#0288d1",
+                800: "#0277bd",
+                900: "#01579b",
+                "accent-100": "#80d8ff",
+                "accent-200": "#40c4ff",
+                "accent-400": "#00b0ff",
+                "accent-700": "#0091ea",
+              },
+              cyan: {
+                50: "#e0f7fa",
+                100: "#b2ebf2",
+                200: "#80deea",
+                300: "#4dd0e1",
+                400: "#26c6da",
+                500: "#00bcd4",
+                600: "#00acc1",
+                700: "#0097a7",
+                800: "#00838f",
+                900: "#006064",
+                "accent-100": "#84ffff",
+                "accent-200": "#18ffff",
+                "accent-400": "#00e5ff",
+                "accent-700": "#00b8d4",
+              },
+              gray: {
+                50: "#fafafa",
+                100: "#f5f5f5",
+                200: "#eeeeee",
+                300: "#e0e0e0",
+                400: "#bdbdbd",
+                500: "#9e9e9e",
+                600: "#757575",
+                700: "#616161",
+                800: "#424242",
+                900: "#212121",
+              },
+              "blue-gray": {
+                50: "#eceff1",
+                100: "#cfd8dc",
+                200: "#b0bec5",
+                300: "#90a4ae",
+                400: "#78909c",
+                500: "#607d8b",
+                600: "#546e7a",
+                700: "#455a64",
+                800: "#37474f",
+                900: "#263238",
+              },
+              green: {
+                50: "#e8f5e9",
+                100: "#c8e6c9",
+                200: "#a5d6a7",
+                300: "#81c784",
+                400: "#66bb6a",
+                500: "#4caf50",
+                600: "#43a047",
+                700: "#388e3c",
+                800: "#2e7d32",
+                900: "#1b5e20",
+                "accent-100": "#b9f6ca",
+                "accent-200": "#69f0ae",
+                "accent-400": "#00e676",
+                "accent-700": "#00c853",
+              },
+              "light-green": {
+                50: "#f1f8e9",
+                100: "#dcedc8",
+                200: "#c5e1a5",
+                300: "#aed581",
+                400: "#9ccc65",
+                500: "#8bc34a",
+                600: "#7cb342",
+                700: "#689f38",
+                800: "#558b2f",
+                900: "#33691e",
+                "accent-100": "#ccff90",
+                "accent-200": "#b2ff59",
+                "accent-400": "#76ff03",
+                "accent-700": "#64dd17",
+              },
+              lime: {
+                50: "#f9fbe7",
+                100: "#f0f4c3",
+                200: "#e6ee9c",
+                300: "#dce775",
+                400: "#d4e157",
+                500: "#cddc39",
+                600: "#c0ca33",
+                700: "#afb42b",
+                800: "#9e9d24",
+                900: "#827717",
+                "accent-100": "#f4ff81",
+                "accent-200": "#eeff41",
+                "accent-400": "#c6ff00",
+                "accent-700": "#aeea00",
+              },
+              amber: {
+                50: "#fff8e1",
+                100: "#ffecb3",
+                200: "#ffe082",
+                300: "#ffd54f",
+                400: "#ffca28",
+                500: "#ffc107",
+                600: "#ffb300",
+                700: "#ffa000",
+                800: "#ff8f00",
+                900: "#ff6f00",
+                "accent-100": "#ffe57f",
+                "accent-200": "#ffd740",
+                "accent-400": "#ffc400",
+                "accent-700": "#ffab00",
+              },
+              yellow: {
+                50: "#fffde7",
+                100: "#fff9c4",
+                200: "#fff59d",
+                300: "#fff176",
+                400: "#ffee58",
+                500: "#ffeb3b",
+                600: "#fdd835",
+                700: "#fbc02d",
+                800: "#f9a825",
+                900: "#f57f17",
+                "accent-100": "#ffff8d",
+                "accent-200": "#ffff00",
+                "accent-400": "#ffea00",
+                "accent-700": "#ffd600",
+              },
+              orange: {
+                50: "#fff3e0",
+                100: "#ffe0b2",
+                200: "#ffcc80",
+                300: "#ffb74d",
+                400: "#ffa726",
+                500: "#ff9800",
+                600: "#fb8c00",
+                700: "#f57c00",
+                800: "#ef6c00",
+                900: "#e65100",
+                "accent-100": "#ffd180",
+                "accent-200": "#ffab40",
+                "accent-400": "#ff9100",
+                "accent-700": "#ff6d00",
+              },
+              "deep-orange": {
+                50: "#fbe9e7",
+                100: "#ffccbc",
+                200: "#ffab91",
+                300: "#ff8a65",
+                400: "#ff7043",
+                500: "#ff5722",
+                600: "#f4511e",
+                700: "#e64a19",
+                800: "#d84315",
+                900: "#bf360c",
+                "accent-100": "#ff9e80",
+                "accent-200": "#ff6e40",
+                "accent-400": "#ff3d00",
+                "accent-700": "#dd2c00",
+              },
+              brown: {
+                50: "#efebe9",
+                100: "#d7ccc8",
+                200: "#bcaaa4",
+                300: "#a1887f",
+                400: "#8d6e63",
+                500: "#795548",
+                600: "#6d4c41",
+                700: "#5d4037",
+                800: "#4e342e",
+                900: "#3e2723",
+              },
+            },
+            spacing: {
+              7: "1.75rem",
+              9: "2.25rem",
+              28: "7rem",
+              80: "20rem",
+              96: "24rem",
+            },
+            height: {
+              "1/2": "50%",
+            },
+            scale: {
+              30: ".3",
+            },
+            boxShadow: {
+              "3xl": "0px 8px 25px rgba(0, 0, 0, 0.07)",
+              "4xl": "0px 8px 25px rgba(0, 0, 0, 0.04);",
+              outline: "0 0 0 3px rgba(101, 31, 255, 0.1)",
+              grayOutline: "0 0 2px 0px rgba(0, 0, 0, 0.4)",
+            },
+          },
+        },
+        variants: {
+          scale: ["responsive", "hover", "focus", "group-hover"],
+          textColor: ["responsive", "hover", "focus", "group-hover"],
+          opacity: ["responsive", "hover", "focus", "group-hover"],
+          backgroundColor: ["responsive", "hover", "focus", "group-hover"],
+        },
+        plugins: [
+          require("@tailwindcss/forms"),
+          require("tailwindcss"),
+          require("autoprefixer"),
+        ],
+      };
+    </script>
+    <!-- plugins: [require('@tailwindcss/forms'),
+   require('tailwindcss'),
+   require('autoprefixer')], -->
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,autoprefixer,tailwindcss"></script>
+    <link src="../src/index.css" rel="stylesheet" />
+
+    <title>E-Pharmacy</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
