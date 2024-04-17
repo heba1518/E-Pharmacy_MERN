@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import logo from '../../../../Assets/images/logo.png';
+import Img from '../../../../Assets/images/pharmacies/elghibili_logo.png'
+import './sidebar.css'
 
 const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const trigger = useRef(null);
@@ -81,19 +83,19 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
           <img
             alt="testimonial"
             className="inline-block object-cover object-center w-20 h-20 mb-2 rounded-full"
-            src="https://www.pngitem.com/pimgs/m/255-2558624_pharmacy-medical-logo-hd-png-download.png"
+            src = {Img}
           />
           <h2 className="font-display text-xl font-semibold tracking-wide text-teal-50 title-font text-center">
-            Medicine Store
+            Elgibily Pharmacy
           </h2>
           <p className="font-sans text-sm font-semibold tracking-wide text-teal-100 title-font text-center">
-            vendor@gmail.com
+          midoeldoctor33@gmail.com
           </p>
         </div>
 
         <nav className="flex-grow pb-4 pr-4 md:block md:pb-0 md:overflow-y-auto">
-          <ul className="font-sans font-medium text-2xl tracking-wide">
-            <li>
+          <ul className="font-sans font-medium text-xl tracking-wide  text-teal-100 title-font">
+          <li>
               <Link
                 className={
                   panel === 'dashboard' ? 'sidebar-item-active' : 'sidebar-item'
@@ -137,7 +139,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                >
+                  >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"

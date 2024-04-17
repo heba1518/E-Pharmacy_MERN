@@ -3,7 +3,7 @@ import React from 'react';
 const DashboardCard = () => {
   return (
     <section className="flex items-center justify-center text-gray-800">
-      {/* <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 w-full max-w-6xl">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 w-full max-w-6xl">
         <div className="flex items-center p-4 bg-white shadow-4xl  rounded">
           <div className="flex flex-shrink-0 items-center justify-center bg-green-200 h-16 w-16 rounded">
             <svg
@@ -81,7 +81,7 @@ const DashboardCard = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };

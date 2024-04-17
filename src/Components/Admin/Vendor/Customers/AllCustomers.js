@@ -1,58 +1,63 @@
-import React from 'react';
+import React from "react";
 
 const AllCustomers = () => {
   const orders = [
     {
-      id: '0',
-      photo: 'https://i.imgur.com/1As0akH.png1',
-      name: 'Alex Shatov',
-      email: 'alexshatov@gmail.com',
-      address: 'Mripur-1',
-      phone: '+8801736985253',
-      status: 'Active',
+      id: "0",
+      photo: "https://i.imgur.com/1As0akH.png1",
+      name: "Ahmed Toba",
+      email: "ahmedtoba@gmail.com",
+      address: "El Hwatem, Faiyum",
+      phone: "+201036985253",
+      status: "Active",
+      date: "Apr 17, 2024",
     },
     {
-      id: '1',
-      photo: 'https://i.imgur.com/UYCE7Rr.png',
-      name: 'Philip Harbach',
-      address: 'Dhonmondi',
-      email: 'philip.h@gmail.com',
-      phone: '+8801636985275',
-      status: 'Active',
+      id: "1",
+      photo: "https://i.imgur.com/UYCE7Rr.png",
+      name: "Mohammed Sabry",
+      address: "El Haram, Cairo",
+      email: "mSabry@gmail.com",
+      phone: "+201136985275",
+      status: "Active",
+      date: "Apr 1, 2024",
     },
     {
-      id: '2',
-      photo: 'https://i.imgur.com/FHMKqK5.png',
-      name: 'Mirko Fisuk',
-      address: 'Uttara-6',
-      email: 'mirkofisuk@gmail.com',
-      phone: '+8801336985214',
-      status: 'Active',
+      id: "2",
+      photo: "https://i.imgur.com/FHMKqK5.png",
+      name: "Salma Ahmed",
+      address: "masla square, Faiyum",
+      email: "salmaAhmed@gmail.com",
+      phone: "+201036985214",
+      status: "Active",
+      date: "Mar 23, 2024",
     },
     {
-      id: '3',
-      photo: 'https://i.imgur.com/hz6bZkb.png',
-      name: 'Olga Semklo',
-      email: 'olga.s@cool.design',
-      address: 'Gulshan-1',
-      phone: '+8801736985264',
-      status: 'Active',
+      id: "3",
+      photo: "https://i.imgur.com/hz6bZkb.png",
+      name: "Sayed Yasser",
+      email: "sayedY@gmail.com",
+      address: "Mohandessin, Giza",
+      phone: "+201236985264",
+      status: "Active",
+      date: "Mar 15, 2024",
     },
     {
-      id: '4',
-      photo: 'https://i.imgur.com/udG6SOt.png',
-      name: 'Burak Long',
-      address: 'Mirpur-12',
-      email: 'longburak@gmail.com',
-      phone: '+8801736984514',
-      status: 'Deactive',
+      id: "4",
+      photo: "https://i.imgur.com/udG6SOt.png",
+      name: "Heba Amr",
+      address: "El Rashidy, Alex",
+      email: "hebaamr@gmail.com",
+      phone: "+201136984514",
+      status: "Deactive",
+      date: "Mar 5, 2024",
     },
   ];
 
   const options = {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
+    year: "numeric",
+    month: "short",
+    day: "numeric",
   };
 
   return (
@@ -167,12 +172,12 @@ const AllCustomers = () => {
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {new Date().toLocaleDateString('en-US', options)}
+                          {order.date}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <button className="flex align-center justify-center font-sans font-medium text-teal-600 hover:text-teal-900">
-                          Message{'  '}
+                          Message{"  "}
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6"

@@ -34,7 +34,7 @@ const Home = () => {
       <ShopCard />
       <PictureUpload />
       {/* <Test/> */}
-      {/* <VendorCTA /> */}
+      <VendorCTA />
       <Blog />
       <Footer />
   </>

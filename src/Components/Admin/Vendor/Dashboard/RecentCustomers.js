@@ -2,41 +2,41 @@ import React from 'react';
 
 const RecentCustomers = () => {
   const customers = [
-    {
-      id: '0',
-      image: 'https://i.imgur.com/1As0akH.png1',
-      name: 'Alex Shatov',
-      email: 'alexshatov@gmail.com',
-      spent: '2,890.66£',
-    },
-    {
-      id: '1',
-      image: 'https://i.imgur.com/UYCE7Rr.png',
-      name: 'Philip Harbach',
-      email: 'philip.h@gmail.com',
-      spent: '2,767.04£',
-    },
-    {
-      id: '2',
-      image: 'https://i.imgur.com/FHMKqK5.png',
-      name: 'Mirko Fisuk',
-      email: 'mirkofisuk@gmail.com',
-      spent: '2,996.00£',
-    },
-    {
-      id: '3',
-      image: 'https://i.imgur.com/hz6bZkb.png',
-      name: 'Olga Semklo',
-      email: 'olga.s@cool.design',
-      spent: '1,220.66£',
-    },
-    {
-      id: '4',
-      image: 'https://i.imgur.com/udG6SOt.png',
-      name: 'Burak Long',
-      email: 'longburak@gmail.com',
-      spent: '1,890.66£',
-    },
+    // {
+    //   id: '0',
+    //   image: 'https://i.imgur.com/1As0akH.png1',
+    //   name: 'Alex Shatov',
+    //   email: 'alexshatov@gmail.com',
+    //   spent: '2,890.66£',
+    // },
+    // {
+    //   id: '1',
+    //   image: 'https://i.imgur.com/UYCE7Rr.png',
+    //   name: 'Philip Harbach',
+    //   email: 'philip.h@gmail.com',
+    //   spent: '2,767.04£',
+    // },
+    // {
+    //   id: '2',
+    //   image: 'https://i.imgur.com/FHMKqK5.png',
+    //   name: 'Mirko Fisuk',
+    //   email: 'mirkofisuk@gmail.com',
+    //   spent: '2,996.00£',
+    // },
+    // {
+    //   id: '3',
+    //   image: 'https://i.imgur.com/hz6bZkb.png',
+    //   name: 'Olga Semklo',
+    //   email: 'olga.s@cool.design',
+    //   spent: '1,220.66£',
+    // },
+    // {
+    //   id: '4',
+    //   image: 'https://i.imgur.com/udG6SOt.png',
+    //   name: 'Burak Long',
+    //   email: 'longburak@gmail.com',
+    //   spent: '1,890.66£',
+    // },
   ];
 
   return (
