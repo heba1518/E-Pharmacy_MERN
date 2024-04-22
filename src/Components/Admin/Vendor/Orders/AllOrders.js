@@ -5,52 +5,68 @@ const AllOrders = () => {
   const [editModal, setEditModal] = useState(false);
   const [viewOrder, setViewOrder] = useState();
 
-  const orders = [
-    // {
-    //   id: '0',
-    //   photo: 'https://i.imgur.com/1As0akH.png1',
-    //   name: 'Alex Shatov',
-    //   address: 'Mripur-1',
-    //   products: '12',
-    //   price: '890.66',
-    //   status: 'Completed',
-    // },
-    // {
-    //   id: '1',
-    //   photo: 'https://i.imgur.com/UYCE7Rr.png',
-    //   name: 'Philip Harbach',
-    //   address: 'Dhonmondi',
-    //   products: '19',
-    //   price: '340.16',
-    //   status: 'Confirmed',
-    // },
-    // {
-    //   id: '2',
-    //   photo: 'https://i.imgur.com/FHMKqK5.png',
-    //   name: 'Mirko Fisuk',
-    //   address: 'Uttara-6',
-    //   products: '09',
-    //   price: '530.76',
-    //   status: 'Pending',
-    // },
-    // {
-    //   id: '3',
-    //   photo: 'https://i.imgur.com/hz6bZkb.png',
-    //   name: 'Olga Semklo',
-    //   address: 'Gulshan-1',
-    //   products: '14',
-    //   price: '280.57',
-    //   status: 'Cancelled',
-    // },
-    // {
-    //   id: '4',
-    //   photo: 'https://i.imgur.com/udG6SOt.png',
-    //   name: 'Burak Long',
-    //   address: 'Mirpur-12',
-    //   products: '10',
-    //   price: '567.34',
-    //   status: 'Processing',
-    // },
+  const orders = [ {
+    id: "0",
+    photo: "https://i.imgur.com/1As0akH.png1",
+    name: "Ahmed Toba",
+    email: "ahmedtoba@gmail.com",
+    price: '660.00',
+    status: 'Processing',
+    products: '6',
+    address: "El Hwatem, Faiyum",
+      date: "Apr 22, 2024",
+  },
+  {
+    id: "1",
+    photo: "https://i.imgur.com/UYCE7Rr.png",
+    name: "Mohammed Sabry",
+    address: "El Haram, Cairo",
+    email: "mSabry@gmail.com",
+    products: '19',
+    price: '340.16',
+    status: 'Pending',
+ 
+      date: "Apr 17, 2024",
+   
+  },
+  {
+    id: "2",
+    photo: "https://i.imgur.com/FHMKqK5.png",
+    name: "Salma Ahmed",
+    address: "masla square, Faiyum",
+    email: "salmaAhmed@gmail.com",
+    products: '9',
+    price: '530.76',
+    status: 'Cancelled',
+
+      date: "Mar 23, 2024",
+
+  },
+  {
+    id: "3",
+    photo: "https://i.imgur.com/hz6bZkb.png",
+    name: "Sayed Yasser",
+    email: "sayedY@gmail.com",
+    products: '14',
+    price: '280.57',
+    status: 'Completed',
+    address: "Mohandessin, Giza",
+      date: "Mar 15, 2024",
+
+  },
+  {
+    id: "4",
+    photo: "https://i.imgur.com/udG6SOt.png",
+    name: "Heba Amr",
+    address: "El Rashidy, Alex",
+    email: "hebaamr@gmail.com",
+    products: '10',
+      price: '567.34',
+      status: 'Confirmed',
+      date: "Mar 5, 2024",
+
+  },
+   
   ];
 
   const options = {
@@ -172,7 +188,7 @@ const AllOrders = () => {
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {new Date().toLocaleDateString('en-US', options)}
+                          {order.date}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">

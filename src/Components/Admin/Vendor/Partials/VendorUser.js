@@ -1,5 +1,5 @@
 import React from 'react';
-
+import img from '../../../../Assets/images/pharmacies/elezaby_logo.png';
 const VendorUser = () => {
   return (
     <div className="relative inline-flex">
@@ -9,7 +9,7 @@ const VendorUser = () => {
       >
         <img
           className="w-10 h-10 rounded-full"
-          src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-businessman-user-avatar-free-vector-png-image_4827807.jpg"
+          src={img}
           width="50"
           height="50"
           alt="User"

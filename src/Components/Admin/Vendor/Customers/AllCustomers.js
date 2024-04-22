@@ -20,6 +20,7 @@ const AllCustomers = () => {
       email: "mSabry@gmail.com",
       phone: "+201136985275",
       status: "Active",
+     
       date: "Apr 1, 2024",
     },
     {
@@ -31,6 +32,7 @@ const AllCustomers = () => {
       phone: "+201036985214",
       status: "Active",
       date: "Mar 23, 2024",
+     
     },
     {
       id: "3",
@@ -41,6 +43,7 @@ const AllCustomers = () => {
       phone: "+201236985264",
       status: "Active",
       date: "Mar 15, 2024",
+      
     },
     {
       id: "4",
@@ -51,6 +54,7 @@ const AllCustomers = () => {
       phone: "+201136984514",
       status: "Deactive",
       date: "Mar 5, 2024",
+
     },
   ];
 

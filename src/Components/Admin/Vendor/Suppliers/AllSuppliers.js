@@ -1,7 +1,70 @@
-import React from 'react';
+import React,  { useState } from 'react';
+import AddNewSuplier from './AddNewSuplier';
 
 const AllSuppliers = () => {
   const orders = [
+    {
+      id: "0",
+      photo: "https://i.imgur.com/FHMKqK5.png",
+   
+      name: "Dr. Sherine Helmy",
+      email: "ahmedtoba@gmail.com",
+      address: "10th of Ramadan City, Sharqia ",
+      phone: "+201036985253",
+      status: "Active",
+           price: '6952.53',
+      date: "Apr 17, 2024",
+      company:"Pharco Pharmaceuticals"
+    },
+    {
+      photo: "https://i.imgur.com/hz6bZkb.png",
+      id: "1",
+      name: "Mohamed Saeed",
+      address: "59A Misr Helwan, Cairo",
+      email: "mSabry@gmail.com",
+      phone: "+201136985275",
+      status: "Active",
+        price: '8527.58',
+      date: "Apr 1, 2024",
+      company:"Amoun Pharmaceutical"
+    },
+    {
+      photo: "https://i.imgur.com/1As0akH.png1",
+
+      id: "2",
+      name: "Dr.Ahmed Kassem",
+      address: "El Obour City, Cairo",
+      email: "salmaAhmed@gmail.com",
+      phone: "+201036985214",
+      status: "Active",
+      date: "Mar 23, 2024",
+       price: '2698.50',
+       company:"EIPICO"
+      },
+      {
+        id: "3",
+        photo: "https://i.imgur.com/UYCE7Rr.png",
+      name: "Dr.Osama Rostom",
+      email: "sayedY@gmail.com",
+      address: "3rd Industrial Zone, Giza",
+      phone: "+201236985264",
+      status: "Active",
+      date: "Mar 15, 2024",
+      price: '9852.64',
+      company:"MPCI"
+    },
+    {
+      id: "4",
+      photo: "https://i.imgur.com/udG6SOt.png",
+      name: "Dr.Ibrahim Farrag",
+      address: "6th of October City",
+      email: "hebaamr@gmail.com",
+      phone: "+201136984514",
+      status: "Deactive",
+      date: "Mar 5, 2024",
+   price: '1736.90',
+   company:"Delta Pharma"
+    },
     // {
     //   id: '0',
     //   photo: 'https://i.imgur.com/1As0akH.png1',
@@ -17,7 +80,7 @@ const AllSuppliers = () => {
     //   name: 'Philip Harbach',
     //   address: 'Dhonmondi',
     //   company: 'Acme',
-    //   price: '8527.58',
+   
     //   status: 'Active',
     // },
     // {
@@ -54,15 +117,16 @@ const AllSuppliers = () => {
     month: 'long',
     day: 'numeric',
   };
-
+  const [editModal, setEditModal] = useState(false);
+  const [viewProduct, setViewProduct] = useState();
   return (
     <section>
       <div className="container mx-auto px-4 sm:px-8 max-w-full sm:max-w-5xl">
         <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
           <button
             className="flex-shrink-0 px-4 py-2 text-base font-medium tracking-wide text-white bg-teal-500 rounded-lg shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-teal-200"
-            type="submit"
-          >
+            onClick={() => setEditModal(true)}
+          > 
             Add a new Suppliers
           </button>
           <div className="text-end">
@@ -171,7 +235,7 @@ const AllSuppliers = () => {
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {new Date().toLocaleDateString('en-US', options)}
+                          {order.date}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -283,6 +347,10 @@ const AllSuppliers = () => {
           </div>
         </div>
       </div>
+       {/* Edit Modal Component */}
+       {editModal ? (
+        <AddNewSuplier setEditModal={setEditModal} viewProduct={viewProduct} />
+      ) : null}
     </section>
   );
 };

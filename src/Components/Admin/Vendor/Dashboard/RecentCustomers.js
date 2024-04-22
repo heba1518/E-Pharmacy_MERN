@@ -2,41 +2,44 @@ import React from 'react';
 
 const RecentCustomers = () => {
   const customers = [
-    // {
-    //   id: '0',
-    //   image: 'https://i.imgur.com/1As0akH.png1',
-    //   name: 'Alex Shatov',
-    //   email: 'alexshatov@gmail.com',
-    //   spent: '2,890.66£',
-    // },
-    // {
-    //   id: '1',
-    //   image: 'https://i.imgur.com/UYCE7Rr.png',
-    //   name: 'Philip Harbach',
-    //   email: 'philip.h@gmail.com',
-    //   spent: '2,767.04£',
-    // },
-    // {
-    //   id: '2',
-    //   image: 'https://i.imgur.com/FHMKqK5.png',
-    //   name: 'Mirko Fisuk',
-    //   email: 'mirkofisuk@gmail.com',
-    //   spent: '2,996.00£',
-    // },
-    // {
-    //   id: '3',
-    //   image: 'https://i.imgur.com/hz6bZkb.png',
-    //   name: 'Olga Semklo',
-    //   email: 'olga.s@cool.design',
-    //   spent: '1,220.66£',
-    // },
-    // {
-    //   id: '4',
-    //   image: 'https://i.imgur.com/udG6SOt.png',
-    //   name: 'Burak Long',
-    //   email: 'longburak@gmail.com',
-    //   spent: '1,890.66£',
-    // },
+    {
+      id: "0",
+      photo: "https://i.imgur.com/1As0akH.png1",
+      name: "Ahmed Toba",
+      email: "ahmedtoba@gmail.com",
+      spent: '2,890 £',
+    },
+    {
+      id: "1",
+      photo: "https://i.imgur.com/UYCE7Rr.png",
+      name: "Mohammed Sabry",
+      address: "El Haram, Cairo",
+      email: "mSabry@gmail.com",
+      spent: '2,767 £',
+    },
+    {
+      id: "2",
+      photo: "https://i.imgur.com/FHMKqK5.png",
+      name: "Salma Ahmed",
+      address: "masla square, Faiyum",
+      email: "salmaAhmed@gmail.com",
+      spent: '2,996 £',
+    },
+    {
+      id: "3",
+      photo: "https://i.imgur.com/hz6bZkb.png",
+      name: "Sayed Yasser",
+      email: "sayedY@gmail.com",
+      spent: '1,220 £',
+    },
+    {
+      id: "4",
+      photo: "https://i.imgur.com/udG6SOt.png",
+      name: "Heba Amr",
+      address: "El Rashidy, Alex",
+      email: "hebaamr@gmail.com",
+      spent: '1,890 £',
+    },
   ];
 
   return (
@@ -60,9 +63,9 @@ const RecentCustomers = () => {
                 <th className="p-2 whitespace-nowrap">
                   <div className="font-semibold text-left">Spent</div>
                 </th>
-                <th className="p-2 whitespace-nowrap">
-                  <div className="font-semibold text-left">Country</div>
-                </th>
+                {/* <th className="p-2 whitespace-nowrap">
+                  <div className="font-semibold text-left">ِAddress</div>
+                </th> */}
               </tr>
             </thead>
             {/* Table body */}
@@ -75,7 +78,7 @@ const RecentCustomers = () => {
                         <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
                           <img
                             className="rounded-full"
-                            src={customer.image}
+                            src={customer.photo}
                             width="40"
                             height="40"
                             alt={customer.name}
@@ -94,7 +97,7 @@ const RecentCustomers = () => {
                         {customer.spent}
                       </div>
                     </td>
-                    <td className="p-2 whitespace-nowrap">
+                    {/* <td className="p-2 whitespace-nowrap">
                       <div className="flex-shrink-0 self-end ml-2">
                         <a
                           className="font-medium text-teal-500 hover:text-teal-700 font-sans"
@@ -103,7 +106,7 @@ const RecentCustomers = () => {
                           View<span className="hidden sm:inline"> -&gt;</span>
                         </a>
                       </div>
-                    </td>
+                    </td> */}
                   </tr>
                 );
               })}

@@ -18,9 +18,7 @@ const VendorCTA = () => {
                   </span>
                 </h2>
                 <p className="text-base text-gray-700 md:text-lg">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae. explicabo.
+                you can easily add your local pharmacy to online platforms for convenient access to medications and healthcare products. Explore how to expand your pharmacy's reach digitally.
                 </p>
               </div>
               <p className="mb-4 text-sm font-semibold tracking-widest uppercase text-teal-700 font-sans">

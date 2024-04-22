@@ -1,55 +1,60 @@
 import React from 'react';
+import img7 from "../../../../Assets/images/products/COMTREX.jpg";
+import img9 from "../../../../Assets/images/products/limitless.jpg";
+import img10 from "../../../../Assets/images/products/Strepsils.jpg";
 
 const EditOrders = ({ setEditModal }) => {
   const orders = [
-    // {
-    //   id: '0',
-    //   photo: 'https://i.imgur.com/1As0akH.png1',
-    //   name: 'Alex Shatov',
-    //   address: 'Mripur-1',
-    //   price: '890.66',
-    //   status: 'Pending',
-    //   email: 'alex@gmail.com',
-    //   number: 'WU88191111',
-    //   date: 'January 22, 2021',
-    //   datetime: '2021-01-22',
-    //   phone: '01798654523',
-    //   invoiceHref: '#',
-    //   total: '238.00',
-    //   products: [
-    //     {
-    //       id: 1,
-    //       name: 'Machined Pen and Pencil Set',
-    //       quantity: '1',
-    //       price: '$24.00',
-    //       category: 'Fire Sprinkler System',
-    //       status: 'Delivered Jan 25, 2021',
-    //       imageSrc: 'https://i.ibb.co/bLKP624/5-15-1000x1000-min.jpg',
-    //       imageAlt: 'Detail of mechanical pencil ',
-    //     },
-    //     {
-    //       id: 2,
-    //       name: 'Pen and Pencil Machined',
-    //       quantity: '3',
-    //       price: '$70.00',
-    //       category: 'Framing (Wood)',
-    //       status: 'Delivered Jan 25, 2021',
-    //       imageSrc: 'https://i.ibb.co/Hg0zZkQ/shop-4-7-1000x1000-min.jpg',
-    //       imageAlt: 'Detail of mechanical pencil ',
-    //     },
-    //     {
-    //       id: 3,
-    //       name: 'Pencil Set and Machined Pen',
-    //       quantity: '2',
-    //       price: '$56.00',
-    //       category: 'Soft Flooring and Base',
-    //       status: 'Delivered Jan 25, 2021',
-    //       imageSrc: 'https://i.ibb.co/02WmJdc/5-19-1000x1000-min.jpg',
-    //       imageAlt: 'Detail of mechanical pencil ',
-    //     },
-    //   ],
-    // },
-    // More orders...
+    {
+      id: '0',
+      photo: 'https://i.imgur.com/1As0akH.png1',
+      name: 'Ahmed Toba',
+      address: 'El Hwatem, Faiyum',
+      price: '890.66',
+      status: 'In Progress',
+      email: 'ahmedtoba@gmail.com',
+      number: 'WU88191111',
+      date: 'April 22, 2024',
+      datetime: '2024-01-22',
+      phone: '+201036985253',
+      invoiceHref: '#',
+      total: '660.00',
+      products: [
+        {
+          id: 1,
+          name: 'Strepsils',
+          quantity: '1',
+          price: '165 £',
+          brand: "Reckitt Benckiser",
+          category: 'sore & itchy throat',
+          status: 'Delivered April 22, 2024',
+          imageSrc: img10,
+          imageAlt: 'Detail of mechanical pencil ',
+        },
+        {
+          id: 2,
+          name: 'LIMITLESS OMEGA 3',
+          quantity: '3',
+          price: '145 £',
+          brand: "EVA PHARMA",
+          category: 'Vitamins & Supplements',
+          status: 'Delivered April 22, 2024',
+          imageSrc: img9,
+          imageAlt: 'Detail of mechanical pencil ',
+        },
+        {
+          id: 3,
+          name: 'COMTREX',
+          quantity: '2',
+          brand: "GSK",
+          price: '30 £',
+          category: 'Soft Flooring and Base',
+          status: 'Delivered April 22, 2024',
+          imageSrc: img7,
+          imageAlt: 'Detail of mechanical pencil ',
+        },
+      ],
+    },
   ];
 
   return (
@@ -220,27 +225,27 @@ const EditOrders = ({ setEditModal }) => {
                                 </th>
                                 <th
                                   scope="col"
-                                  className="hidden w-1/5 pr-8 py-3 font-medium sm:table-cell"
+                                  className="hidden w-1/6 pr-8 py-3 font-medium sm:table-cell"
                                 >
                                   Price
                                 </th>
                                 <th
                                   scope="col"
-                                  className="hidden pr-8 py-3 font-medium sm:table-cell"
+                                  className="hidden w-1/6 pr-8 py-3 font-medium sm:table-cell"
                                 >
                                   Quantity
                                 </th>
                                 <th
                                   scope="col"
-                                  className="hidden pr-8 py-3 font-medium sm:table-cell"
+                                  className="hidden w-1/5 pr-8 py-3 font-medium sm:table-cell"
                                 >
                                   Category
                                 </th>
                                 <th
                                   scope="col"
-                                  className="w-0 py-3 font-medium text-right"
+                                  className="hidden pr-8 py-3 font-medium sm:table-cell"
                                 >
-                                  Action
+                                  Brand
                                 </th>
                               </tr>
                             </thead>
@@ -273,16 +278,8 @@ const EditOrders = ({ setEditModal }) => {
                                   <td className="hidden py-6 pr-8 sm:table-cell">
                                     {product.category}
                                   </td>
-                                  <td className="py-6 font-medium text-right whitespace-nowrap cursor-pointer">
-                                    <a
-                                      href={product.href}
-                                      className="text-teal-600"
-                                    >
-                                      Remove
-                                      <span className="sr-only">
-                                        , {product.name}
-                                      </span>
-                                    </a>
+                                  <td className="hidden py-6 pr-8 sm:table-cell">
+                                    {product.brand}
                                   </td>
                                 </tr>
                               ))}

@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const AddNewProducts = ({ setEditModal }) => {
+const AddNewSuplier = ({ setEditModal }) => {
   return (
     <section>
       <div className="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none backdrop-filter saturate-150 backdrop-blur-sm">
@@ -252,4 +252,4 @@ const AddNewProducts = ({ setEditModal }) => {
   );
 };
 
-export default AddNewProducts;
+export default AddNewSuplier;

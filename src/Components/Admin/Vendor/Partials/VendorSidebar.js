@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import logo from '../../../../Assets/images/logo.png';
-import Img from '../../../../Assets/images/pharmacies/elghibili_logo.png'
+import Img from '../../../../Assets/images/pharmacies/elezaby_logo.png'
 import './sidebar.css'
 
 const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
@@ -86,10 +86,10 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
             src = {Img}
           />
           <h2 className="font-display text-xl font-semibold tracking-wide text-teal-50 title-font text-center">
-            Elgibily Pharmacy
+          El Ezaby Pharmacy
           </h2>
           <p className="font-sans text-sm font-semibold tracking-wide text-teal-100 title-font text-center">
-          midoeldoctor33@gmail.com
+          contactus@elezabypharmacy.com
           </p>
         </div>
 
