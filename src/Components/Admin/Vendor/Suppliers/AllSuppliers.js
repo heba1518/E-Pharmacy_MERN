@@ -1,69 +1,69 @@
-import React,  { useState } from 'react';
-import AddNewSuplier from './AddNewSuplier';
+import React, { useState } from "react";
+import AddNewSuplier from "./AddNewSuplier";
 
 const AllSuppliers = () => {
   const orders = [
     {
       id: "0",
       photo: "https://i.imgur.com/FHMKqK5.png",
-   
       name: "Dr. Sherine Helmy",
-      email: "ahmedtoba@gmail.com",
+      email: "pharco@pharco.com.eg",
       address: "10th of Ramadan City, Sharqia ",
-      phone: "+201036985253",
+      phone: "+20 (3)4701003",
       status: "Active",
-           price: '6952.53',
+      price: "6952.53",
       date: "Apr 17, 2024",
-      company:"Pharco Pharmaceuticals"
+      company: "Pharco Pharmaceuticals",
     },
     {
       photo: "https://i.imgur.com/hz6bZkb.png",
       id: "1",
       name: "Mohamed Saeed",
-      address: "59A Misr Helwan, Cairo",
+      address: " El Obour city, Qalyubia",
       email: "mSabry@gmail.com",
-      phone: "+201136985275",
+      phone: "+2 (02) 4614 0100",
       status: "Active",
-        price: '8527.58',
+      price: "8527.58",
       date: "Apr 1, 2024",
-      company:"Amoun Pharmaceutical"
+      company: "Amoun Pharmaceutical",
     },
     {
       photo: "https://i.imgur.com/1As0akH.png1",
 
       id: "2",
       name: "Dr.Ahmed Kassem",
-      address: "El Obour City, Cairo",
+      address: "Tenth of Ramadan City",
       email: "salmaAhmed@gmail.com",
-      phone: "+201036985214",
+      phone: "+20554499199",
       status: "Active",
       date: "Mar 23, 2024",
-       price: '2698.50',
-       company:"EIPICO"
-      },
-      {
-        id: "3",
-        photo: "https://i.imgur.com/UYCE7Rr.png",
-      name: "Dr.Osama Rostom",
-      email: "sayedY@gmail.com",
-      address: "3rd Industrial Zone, Giza",
-      phone: "+201236985264",
+      price: "2698.50",
+      company: "EIPICO",
+    },
+    {
+      id: "3",
+      photo: "https://i.imgur.com/UYCE7Rr.png",
+      name: "Dr.Ayman Saber",
+      email: "memphis@memphis.com.eg",
+      address: "8 El Sawah St., El Ameeriyah, Cairo",
+      phone: "+20 2 22823528",
       status: "Active",
       date: "Mar 15, 2024",
-      price: '9852.64',
-      company:"MPCI"
+      price: "9852.64",
+      company: "MPCI",
     },
     {
       id: "4",
-      photo: "https://i.imgur.com/udG6SOt.png",
+      photo:
+        "https://png.pngtree.com/png-clipart/20190924/original/pngtree-businessman-user-avatar-free-vector-png-image_4827807.jpg",
       name: "Dr.Ibrahim Farrag",
-      address: "6th of October City",
-      email: "hebaamr@gmail.com",
-      phone: "+201136984514",
+      address: "28 Farid St. Behined Meridien Heliopolis",
+      email: "dp@dp.com.eg",
+      phone: "+20 1111000656",
       status: "Deactive",
       date: "Mar 5, 2024",
-   price: '1736.90',
-   company:"Delta Pharma"
+      price: "1736.90",
+      company: "Delta Pharma",
     },
     // {
     //   id: '0',
@@ -80,7 +80,7 @@ const AllSuppliers = () => {
     //   name: 'Philip Harbach',
     //   address: 'Dhonmondi',
     //   company: 'Acme',
-   
+
     //   status: 'Active',
     // },
     // {
@@ -113,9 +113,9 @@ const AllSuppliers = () => {
   ];
 
   const options = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   };
   const [editModal, setEditModal] = useState(false);
   const [viewProduct, setViewProduct] = useState();
@@ -126,7 +126,7 @@ const AllSuppliers = () => {
           <button
             className="flex-shrink-0 px-4 py-2 text-base font-medium tracking-wide text-white bg-teal-500 rounded-lg shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-teal-200"
             onClick={() => setEditModal(true)}
-          > 
+          >
             Add a new Suppliers
           </button>
           <div className="text-end">
@@ -136,7 +136,7 @@ const AllSuppliers = () => {
                   type="text"
                   id='"form-subscribe-filter'
                   className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
-                  placeholder="User Name"
+                  placeholder="Suplier Name"
                 />
               </div>
               <button
@@ -165,26 +165,28 @@ const AllSuppliers = () => {
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
                   >
-                    Address
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
-                  >
                     Company
                   </th>
                   <th
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
                   >
-                    Delivery Date
+                    Phone
                   </th>
                   <th
                     scope="col"
+                    className="px-10 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
+                  >
+                    Address
+                  </th>
+
+                  {/* <th
+                    scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
                   >
-                    Ammount
-                  </th>
+                    Eamil
+                  </th> */}
+                  
                   <th
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left pl-12 text-sm uppercase font-semibold"
@@ -225,49 +227,52 @@ const AllSuppliers = () => {
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.address}
+                          {order.company}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-center text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.company}
+                          {order.phone}
                         </p>
                       </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.date}
+                          {order.email}
                         </p>
-                      </td>
+                      </td> */}
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                           {order.price}£
+                          {order.address}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
                         <span
                           className={`relative inline-block px-3 py-1 w-28 text-center font-semibold leading-tight ${
-                            order.status === 'Active'
-                              ? 'text-green-800'
-                              : order.status === 'Deactive'
-                              ? 'text-red-500'
-                              : 'text-blue-800'
+                            order.status === "Active"
+                              ? "text-green-800"
+                              : order.status === "Deactive"
+                              ? "text-red-500"
+                              : "text-blue-800"
                           }`}
                         >
                           <span
                             aria-hidden="true"
                             className={`absolute inset-0 opacity-50 rounded-full ${
-                              order.status === 'Active'
-                                ? 'bg-green-200'
-                                : order.status === 'Deactive'
-                                ? 'bg-red-200'
-                                : 'bg-blue-300'
+                              order.status === "Active"
+                                ? "bg-green-200"
+                                : order.status === "Deactive"
+                                ? "bg-red-200"
+                                : "bg-blue-300"
                             }`}
                           ></span>
                           <span className="relative">{order.status}</span>
                         </span>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <button className="flex align-center justify-center font-body font-semibold text-teal-600 hover:text-teal-900">
+                        <button
+                          className="flex align-center justify-center font-body font-semibold text-teal-600 hover:text-teal-900"
+                          onClick={() => setEditModal(true)}
+                        >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6"
@@ -281,7 +286,7 @@ const AllSuppliers = () => {
                               strokeWidth={2}
                               d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
                             />
-                          </svg>{' '}
+                          </svg>{" "}
                           Edit
                         </button>
                       </td>
@@ -347,8 +352,8 @@ const AllSuppliers = () => {
           </div>
         </div>
       </div>
-       {/* Edit Modal Component */}
-       {editModal ? (
+      {/* Edit Modal Component */}
+      {editModal ? (
         <AddNewSuplier setEditModal={setEditModal} viewProduct={viewProduct} />
       ) : null}
     </section>

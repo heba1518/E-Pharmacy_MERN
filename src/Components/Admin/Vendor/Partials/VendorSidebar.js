@@ -71,7 +71,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
             >
               <img src={logo} alt="logo" className="object-contain w-10" />
               <span className="ml-2 text-base sm:text-lg font-display font-semibold tracking-wide leading-snug text-teal-50 uppercase">
-                E-Pharmacy
+              Enaya
               </span>
             </div>
           </Link>

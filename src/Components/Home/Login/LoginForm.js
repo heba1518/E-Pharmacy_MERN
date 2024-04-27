@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { loginAccount } from "../../../Redux/user/actions";
 import FormValidation from "../../../Validation/FormValidation";
 import Registration from "../Registration/Registration";
+import axios from "axios";
 import "./Login.css";
 import Notification from "../../../Helpers/Notification";
 const LoginForm = () => {
@@ -49,6 +50,43 @@ const LoginForm = () => {
     } else {
       console.log("No users found in local storage");
     }
+  };
+  const handleSubmitClick = (e) => {
+    e.preventDefault();
+    const payload = {
+      email: formData.email,
+      password: formData.password,
+    };
+    axios
+      .post("http://localhost:4000/api/users/login", payload)
+      .then(function (response) {
+        if (response.status === 200) {
+          setFormData((prevState) => ({
+            ...prevState,
+            successMessage: "Login successful. Redirecting to home page..",
+          }));
+
+          if (response.data.success) {
+            localStorage.setItem("test", response.data.data.token);
+            localStorage.setItem("profile", true);
+            setShowNotification(true);
+            setNotificationMessage("Login Successfuly!");
+            setType("success");
+            window.location.href = "/";
+          } else {
+            setShowNotification(true);
+            setNotificationMessage(response.data.msg);
+            setType("error");
+          }
+        } else if (response.code === 204) {
+          console.log("Username and password do not match");
+        } else {
+          console.log("Username does not exists");
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
   return (
     <>
@@ -218,7 +256,7 @@ const LoginForm = () => {
                     </div>
                     <div>
                       <button
-                        onClick={(e) => login(e)}
+                        onClick={(e) => handleSubmitClick(e)}
                         type="submit"
                         className="w-full flex justify-center bg-gradient-to-r from-teal-500 to-teal-600  hover:bg-gradient-to-l hover:from-teal-600 hover:to-teal-500 text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"
                       >

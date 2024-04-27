@@ -1,18 +1,22 @@
-import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:4000' })
+// const [data, setData] = useState([]);
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch('http://localhost:4000/api/medicines');
+  //       const result = await response.json();
+  //       setData(result);
+  //       console.log(result)
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   };
 
-API.interceptors.request.use(req => {
-  // const token = JSON.parse(localStorage.getItem('profile'))?.token;
-  // if (token) {
-  //   req.headers.Authorization = `bearer ${token}`
-  // }
-  // return req
-})
+  //   fetchData();
+  // }, []);
 
-//auth
-export const createUserApi = formData => API.post(`/api/users/register`, formData)
-export const loginUserApi = formData => API.post(`/api/users/login`, formData)
+// export const createUserApi = formData => API.post(`/api/users/register`, formData)
+// export const loginUserApi = formData => API.post(`/api/users/login`, formData)
 
 

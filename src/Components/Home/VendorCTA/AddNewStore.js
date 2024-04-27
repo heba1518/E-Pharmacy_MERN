@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const AddNewSuplier = ({ setEditModal }) => {
+const AddNewStore = ({ setEditModal }) => {
   return (
     <section>
       <div className="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none backdrop-filter saturate-150 backdrop-blur-sm">
@@ -16,7 +16,7 @@ const AddNewSuplier = ({ setEditModal }) => {
               <div className="flex items-center justify-between pt-8 px-5 mb-4">
                 <div>
                   <h3 className="text-lg leading-6 font-medium text-gray-900">
-                    New Supplier
+                    Add Your Pharmacy
                   </h3>
                 </div>
 
@@ -55,7 +55,7 @@ const AddNewSuplier = ({ setEditModal }) => {
                       htmlFor="username"
                       className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                     >
-                      Name
+                      Pharmacy Name
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                       <div className="max-w-lg flex rounded-md shadow-sm">
@@ -70,14 +70,33 @@ const AddNewSuplier = ({ setEditModal }) => {
                     </div>
                   </div>
 
-                 
+                  <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                    <label
+                      htmlFor="about"
+                      className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+                    >
+                      Pharmacy Details
+                    </label>
+                    <div className="mt-1 sm:mt-0 sm:col-span-2">
+                      <textarea
+                        id="about"
+                        name="about"
+                        rows={3}
+                        className="max-w-lg shadow-sm block w-full focus:ring-teal-500 focus:border-teal-500 sm:text-sm border border-gray-300 rounded-md"
+                        defaultValue={""}
+                      />
+                      <p className="mt-2 text-sm text-gray-500">
+                        Write a few sentences about your pharmacy.
+                      </p>
+                    </div>
+                  </div>
 
                   <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                     <label
                       htmlFor="cover-photo"
                       className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                     >
-                      Image
+                      Pharmacy Logo
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                       <div className="max-w-lg flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -133,11 +152,12 @@ const AddNewSuplier = ({ setEditModal }) => {
                         autoComplete="country"
                         className="max-w-lg block focus:ring-teal-500 focus:border-teal-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                       >
-                        <option>Active</option>
-                        <option>Deacive</option>
+                        <option>Open</option>
+                        <option>Closed</option>
                       </select>
                     </div>
                   </div>
+
                   <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                   <label
                       htmlFor="username"
@@ -177,7 +197,7 @@ const AddNewSuplier = ({ setEditModal }) => {
                     </div>
                   </div>
 
-                  <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                  {/* <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                   <label
                       htmlFor="username"
                       className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
@@ -214,17 +234,13 @@ const AddNewSuplier = ({ setEditModal }) => {
                         />
                       </div>
                     </div>
-                  </div>
-                 
-                    
-                  
+                  </div> */}
                 </div>
               </div>
 
               <div className="pt-5">
                 <div className="flex justify-end">
-                
-                  <button
+                <button
                     type="button"
                     aria-label="Close"
                   aria-hidden="true"
@@ -252,4 +268,4 @@ const AddNewSuplier = ({ setEditModal }) => {
   );
 };
 
-export default AddNewSuplier;
+export default AddNewStore;

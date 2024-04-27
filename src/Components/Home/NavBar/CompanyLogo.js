@@ -14,7 +14,7 @@ const CompanyLogo = () => {
       >
         <img src={logo} alt="logo" className="w-10" />
         <span className="ml-2 text-xl font-semibold font-display tracking-wide text-teal-400 uppercase">
-          E-Pharmacy
+        Enaya
         </span>
       </Link>
     </div>

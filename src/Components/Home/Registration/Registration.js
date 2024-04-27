@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { createAccount } from "../../../Redux/user/actions";
 import FormValidation from "../../../Validation/FormValidation";
 import "./register.css";
+import axios from "axios";
+
 import users from "../../../Data/user";
 import Notification from "../../../Helpers/Notification";
 // import { ToastContainer, toast } from "react-toastify";
@@ -11,12 +13,20 @@ import { toast } from "react-hot-toast";
 // import {NotificationManager} from 'react-notifications'
 
 const Registration = ({ setIsAccount }) => {
-
+  const [state, setState] = useState({});
   const [formData, setFormData] = useState({});
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
   const [type, setType] = useState("");
-
+  // const [state, setState] = useState({
+  //   email: "",
+  //   password: "",
+  //   confirmPassword: "",
+  //   userName: "",
+  //   firstName: "",
+  //   lastName: "",
+  //   successMessage: null,
+  // });
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowNotification(false);
@@ -25,8 +35,8 @@ const Registration = ({ setIsAccount }) => {
   }, []);
 
   const handelBlur = (e) => {
-    setFormData((formData) => ({
-      ...formData,
+    setState((state) => ({
+      ...state,
       [e.target.name]: e.target.value,
     }));
   };
@@ -44,12 +54,9 @@ const Registration = ({ setIsAccount }) => {
     return uniqueID;
   }
 
-  const signUp = (e) => {
-    e.preventDefault();
+  const check = () => {
+    // e.preventDefault();
     const { firstName, lastName, userName, phone, email, password } = formData;
-
-    const arr = localStorage.getItem("users");
-    const users = JSON.parse(arr);
     if (
       firstName === undefined ||
       lastName === undefined ||
@@ -62,23 +69,85 @@ const Registration = ({ setIsAccount }) => {
       setNotificationMessage("Please Fill All Fields");
       setType("error");
       return;
-    } else if (Array.isArray(users) && users.length > 0) {
-      for (const user of users) {
-        if (user.email === email) {
-          setShowNotification(true);
-          setNotificationMessage("You Already Have Account");
-          setType("error");
-          return;
-        }
-      }
+    // } else if (Array.isArray(users) && users.length > 0) {
+    //   for (const user of users) {
+    //     if (user.email === email) {
+    //       setShowNotification(true);
+    //       setNotificationMessage("You Already Have Account");
+    //       setType("error");
+    //       return;
+    //     }
+    //   }
     }
-    const _id = generateMongoID();
-    users.push({ _id, firstName, lastName, userName, phone, email, password });
-    localStorage.setItem("users", JSON.stringify(users));
-    setShowNotification(true);
-    setNotificationMessage(`${firstName}, You Sign Up Successfuly!`);
-    setType("success");
-    window.location.href = "/login";
+    // const _id = generateMongoID();
+    // users.push({ _id, firstName, lastName, userName, phone, email, password });
+    // localStorage.setItem("users", JSON.stringify(users));
+    // setShowNotification(true);
+    // setNotificationMessage(`${firstName}, You Sign Up Successfuly!`);
+    // setType("success");
+    // window.location.href = "/login";
+  };
+
+
+  const sendDetailsToServer = (e) => {
+    // e.preventDefault();
+    check();
+    if (state.email.length && state.password.length) {
+      // props.showError(null);
+      const payload = {
+        email: state.email,
+        password: state.password,
+        userName: state.userName,
+      };
+      axios
+        .post("http://localhost:4000/api/users/register", payload)
+        .then(function (response) {
+          if (response.status === 200) {
+            setState((prevState) => ({
+              ...prevState,
+              successMessage:
+                "Registration successful. Redirecting to home page..",
+            }));
+            
+            if(response.data.success){
+              setShowNotification(true);
+              setNotificationMessage(`${formData.firstName}, You Sign Up Successfuly!`);
+              setType("success");
+              window.location.href = "/login";
+            }else{
+              setShowNotification(true);
+              setNotificationMessage(response.data.msg);
+              console.log(response.data)
+              setType("error");
+              
+            }
+            console.log("done", response);
+            // redirectToHome();
+            // props.showError(null)
+          } else {
+            console.log("error");
+            // props.showError("Some error ocurred");
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else {
+      console.log("Please enter valid username and password");
+      // props.showError('Please enter valid username and password')
+    }
+  };
+  const handleSubmitClick = (e) => {
+    e.preventDefault();
+    if (state.password === state.cmPassword) {
+
+      sendDetailsToServer();
+      console.log("go");
+    } else {
+      console.log(state.password, "   ", state.cmPassword)
+      console.log("no");
+      // props.showError('Passwords do not match');
+    }
   };
 
   return (
@@ -140,6 +209,8 @@ const Registration = ({ setIsAccount }) => {
                     id="grid-first-name"
                     type="text"
                     placeholder="Heba"
+                    // value={state.firstName}
+                    // onChange={handleChange}
                     required
                   />
                 </div>
@@ -157,6 +228,8 @@ const Registration = ({ setIsAccount }) => {
                     id="grid-last-name"
                     type="text"
                     placeholder="Sabry"
+                    // value={state.lastName}
+                    // onChange={handleChange}
                     required
                   />
                 </div>
@@ -175,6 +248,8 @@ const Registration = ({ setIsAccount }) => {
                     className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 border-b-2 border-gray-500 rounded appearance-none hover:border-orange-500 hover:shadow-xl focus:outline-none focus:bg-white focus:border-gray-500"
                     type="text"
                     placeholder="HebaSabry987"
+                    // value={state.userName}
+                    // onChange={handleChange}
                     required
                   />
                 </div>
@@ -193,6 +268,8 @@ const Registration = ({ setIsAccount }) => {
                     className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 border-b-2 border-gray-500 rounded appearance-none hover:border-indigo-500 hover:shadow-xl focus:outline-none focus:bg-white focus:border-gray-500"
                     type="text"
                     placeholder="heba95@example.com"
+                    // value={state.email}
+                    // onChange={handleChange}
                     required
                   />
                 </div>
@@ -208,6 +285,8 @@ const Registration = ({ setIsAccount }) => {
                     name="phone"
                     className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 border-b-2 border-gray-500 rounded appearance-none hover:border-yellow-500 hover:shadow-xl focus:outline-none focus:bg-white focus:border-gray-500"
                     type="text"
+                    // value={state.phone}
+                    // onChange={handleChange}
                     placeholder="+20 XXXXX XXXXX"
                     required
                   />
@@ -226,6 +305,8 @@ const Registration = ({ setIsAccount }) => {
                     name="password"
                     className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 border-b-2 border-gray-500 rounded appearance-none hover:border-green-500 hover:shadow-xl focus:outline-none focus:bg-white focus:border-gray-500"
                     type="password"
+                    // value={state.password}
+                    // onChange={handleChange}
                     placeholder="Password"
                     required
                   />
@@ -242,6 +323,8 @@ const Registration = ({ setIsAccount }) => {
                     name="cmPassword"
                     className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 border-b-2 border-gray-500 rounded appearance-none hover:border-blue-500 hover:shadow-xl focus:outline-none focus:bg-white focus:border-gray-500"
                     type="password"
+                    // value={state.passwordCon}
+                    // onChange={handleChange}
                     placeholder="Confirm Password"
                     required
                   />
@@ -250,7 +333,7 @@ const Registration = ({ setIsAccount }) => {
 
               <div className="flex justify-center mt-6">
                 <button
-                  onClick={(e) => signUp(e)}
+                  onClick={(e) => handleSubmitClick(e)}
                   className="px-8 py-2 font-semibold text-white rounded-full shadow-lg bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500"
                 >
                   Register
