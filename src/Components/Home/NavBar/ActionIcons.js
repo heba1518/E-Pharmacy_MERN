@@ -8,9 +8,13 @@ const ActionIcons = () => {
   const [openFav, setOpenFav] = useState(false);
   const [openCart, setOpenCart] = useState(false);
   const [login, setLogin] = useState(false);
+  const [user, setUser] = useState(true);
+  const [path, setPath] = useState('');
+  const [id, setID] = useState('');
   const [data, setData] = useState(localStorage.getItem('products'));
   useEffect(() => {
     handleLogin();
+    handleProfile();
     const handleStorageChange = () => {
       // Update the component state when localStorage changes
       setData(localStorage.getItem('products'));
@@ -31,6 +35,15 @@ const ActionIcons = () => {
     setLogin(profile);
   }
   
+  const handleProfile = () =>{
+    const u = localStorage.getItem('user');
+    const us = JSON.parse(u);
+    setUser(us);
+    const i = localStorage.getItem('id');
+    const d = JSON.parse(i);
+    setID(d);
+    user? setPath(`/profile/${id}`) : setPath('/vendor/dashboard')
+  }
   // const array = localStorage.getItem('products');
   // const products = JSON.parse(array);
 
@@ -73,6 +86,7 @@ const ActionIcons = () => {
           </svg>
         </li>
       </Link>
+      <Link to = {path}>
           {login && (   
             <li>
           <svg
@@ -87,10 +101,11 @@ const ActionIcons = () => {
               strokeLinejoin="round"
               strokeWidth={2}
               d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-            />
+              />
           </svg>
         </li>
         )}
+        </Link>
       <li>
         <button
           onClick={() => setOpenFav(true)}

@@ -1,63 +1,59 @@
-import Img1 from '../Assets/images/pharmacies/elezaby_logo.png'
-import Img2 from '../Assets/images/pharmacies/misr_pharmacy_logo.png'
-import Img3 from '../Assets/images/pharmacies/delta_pharma_logo.png'
-import Img4 from '../Assets/images/pharmacies/elhakim_pharmacy_logo.png'
-import Img5 from '../Assets/images/pharmacies/19011_logo.png'
-import Img6 from '../Assets/images/pharmacies/roshdy_pharmacy_logo.png'
-import Img7 from '../Assets/images/pharmacies/roshetta_pharmacy_logo.png'
-import Img8 from '../Assets/images/pharmacies/elghibili_logo.png'
-import Img9 from '../Assets/images/pharmacies/gemy_pharmacies_logo.png'
-import Img10 from '../Assets/images/pharmacies/pharmacies24_logo.png'
+import Img1 from "../Assets/images/pharmacies/elezaby_logo.png";
+import Img2 from "../Assets/images/pharmacies/misr_pharmacy_logo.png";
+import Img3 from "../Assets/images/pharmacies/delta_pharma_logo.png";
+import Img4 from "../Assets/images/pharmacies/elhakim_pharmacy_logo.png";
+import Img5 from "../Assets/images/pharmacies/19011_logo.png";
+import Img6 from "../Assets/images/pharmacies/roshdy_pharmacy_logo.png";
+import Img7 from "../Assets/images/pharmacies/roshetta_pharmacy_logo.png";
+import Img8 from "../Assets/images/pharmacies/elghibili_logo.png";
+import Img9 from "../Assets/images/pharmacies/gemy_pharmacies_logo.png";
+import Img10 from "../Assets/images/pharmacies/pharmacies24_logo.png";
 
-
-import b1 from '../Assets/images/vendorCardBanner/Image-1.jpg';
-import b2 from '../Assets/images/vendorCardBanner/Image-2.jpg';
-import b3 from '../Assets/images/vendorCardBanner/Image-3.jpg';
-import b4 from '../Assets/images/vendorCardBanner/Image-4.jpg';
-import b5 from '../Assets/images/vendorCardBanner/Image-5.jpg';
-import b6 from '../Assets/images/vendorCardBanner/Image-6.jpg';
-
-
-
+import b1 from "../Assets/images/vendorCardBanner/Image-1.jpg";
+import b2 from "../Assets/images/vendorCardBanner/Image-2.jpg";
+import b3 from "../Assets/images/vendorCardBanner/Image-3.jpg";
+import b4 from "../Assets/images/vendorCardBanner/Image-4.jpg";
+import b5 from "../Assets/images/vendorCardBanner/Image-5.jpg";
+import b6 from "../Assets/images/vendorCardBanner/Image-6.jpg";
 
 const vendorData = [
   {
-    _id: 'e628d8fc-130e-46da-9d2d-089406837a7c',
-    shopName: 'El Ezaby',
+    _id: "e628d8fc-130e-46da-9d2d-089406837a7c",
+    shopName: "El Ezaby",
     logo: Img1,
-    banner: 'http://dummyimage.com/100x100.png/dddddd/000000',
+    banner: "http://dummyimage.com/100x100.png/dddddd/000000",
     cardBanner: b1,
     rating: 2,
     totalReview: 22,
-    city: 'Cairo',
-    location: '6C, Takseem Asmaa Fahmy Division, Ard El Golf Heliopolis',
+    city: "Cairo",
+    location: "6C, Takseem Asmaa Fahmy Division, Ard El Golf Heliopolis",
     longitude: 126.9779692,
-    'postal code': 'G83',
-    name: 'Datha Harmon',
-    phone: '+2024141445',
-    email: 'contactus@elezabypharmacy.com',
+    postal: "G83",
+    name: "Datha Harmon",
+    phone: "+2024141445",
+    email: "contactus@elezabypharmacy.com",
     hasOwnDelivery: true,
     isDeliveryFree: true,
-    status: 'Open',
+    status: "Open",
   },
   {
-    _id: '8fb99109-ca7c-4a45-b6b1-5c0ea3279da6',
-    shopName: 'Misr ',
+    _id: "8fb99109-ca7c-4a45-b6b1-5c0ea3279da6",
+    shopName: "Misr ",
     logo: Img2,
-    banner: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
+    banner: "http://dummyimage.com/100x100.png/ff4444/ffffff",
     cardBanner: b2,
     rating: 3,
     totalReview: 22,
-    city: 'Giza',
-    location: '29 Al Quds al sharif st., Mohandessin, Giza',
+    city: "Giza",
+    location: "29 Al Quds al sharif st., Mohandessin, Giza, Egypt",
     longitude: -8.6346959,
-    'postal code': 'F45',
-    name: 'Hope Battisson',
-    phone: '+201004819110',
-    email: 'misr-online.support@misrpharmacies.com',
+    postal: "F45",
+    name: "Hope Battisson",
+    phone: "+201004819110",
+    email: "misr-online.support@misrpharmacies.com",
     hasOwnDelivery: false,
     isDeliveryFree: true,
-    status: 'Open',
+    status: "Open",
   },
   // {
   //   _id: '4587978a-1734-4ad9-a2ab-484ea832822e',
@@ -79,97 +75,98 @@ const vendorData = [
   //   status: 'Closed',
   // },
   {
-    _id: 'f40ef809-55c0-4632-b7ea-abb7e195782b',
+    _id: "f40ef809-55c0-4632-b7ea-abb7e195782b",
     shopName: "Elhakim",
     logo: Img4,
-    banner: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
+    banner: "http://dummyimage.com/100x100.png/ff4444/ffffff",
     cardBanner: b4,
     rating: 3,
     totalReview: 22,
-    city: 'Faiyum',
-    location: 'El-Khalifa El-Maamoun, Qesm Al Fayoum, First Al Faiyum',
+    city: "Faiyum",
+    location: "El-Khalifa El-Maamoun, Qesm Al Fayoum, First Al Faiyum",
     longitude: 112.662673,
-    'postal code': 'F11',
-    name: 'Nataniel Durtnal',
-    phone: '+2040706084',
-    email: 'elhakimph@gmail.com',
+    postal: "F11",
+    name: "Nataniel Durtnal",
+    phone: "+2040706084",
+    email: "elhakimph@gmail.com",
     hasOwnDelivery: true,
     isDeliveryFree: true,
-    status: 'Open',
+    status: "Open",
   },
   {
-    _id: '57c7515d-e17d-4f6f-97cf-d1f35a336bed',
-    shopName: '19011',
+    _id: "57c7515d-e17d-4f6f-97cf-d1f35a336bed",
+    shopName: "19011",
     logo: Img5,
-    banner: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
+    banner: "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
     cardBanner: b5,
     rating: 5,
     totalReview: 22,
-    city: 'Faiyum',
-    location: 'el horreya st. baghouth el sahaba tower, beside el baraka pastry, Faiyum Governorate',
+    city: "Faiyum",
+    location:
+      "el horreya st. baghouth el sahaba tower, beside el baraka pastry, Faiyum Governorate",
     longitude: -8.5340895,
-    'postal code': '4785-103',
-    name: 'Archy Brew',
-    phone: '+02 26737212',
-    email: 'pharmacies19011@gmail.com',
+    postal: "4785-103",
+    name: "Archy Brew",
+    phone: "+02 26737212",
+    email: "pharmacies19011@gmail.com",
     hasOwnDelivery: true,
     isDeliveryFree: false,
-    status: 'Closed',
+    status: "Closed",
   },
   {
-    _id: '5299f915-d6df-4970-a7b7-6b743f68cdf7',
-    shopName: 'Roshdy ',
+    _id: "5299f915-d6df-4970-a7b7-6b743f68cdf7",
+    shopName: "Roshdy ",
     logo: Img6,
-    banner: 'http://dummyimage.com/100x100.png/dddddd/000000',
+    banner: "http://dummyimage.com/100x100.png/dddddd/000000",
     cardBanner: b6,
     rating: 4,
     totalReview: 22,
-    city: 'Alexsandria',
-    location: 'Alhadra st. el rashidy, Alexsandria Governorate',
+    city: "Alexsandria",
+    location: "Alhadra st. el rashidy, Alexsandria Governorate",
     longitude: -61.7285757,
-    'postal code': '6233',
-    name: 'Dorisa McCulley',
-    phone: '01208070022',
-    email: 'rushdypharmacies@gmail.com',
+    postal: "6233",
+    name: "Dorisa McCulley",
+    phone: "01208070022",
+    email: "rushdypharmacies@gmail.com",
     hasOwnDelivery: false,
     isDeliveryFree: false,
-    status: 'Open',
+    status: "Open",
   },
   {
     _id: "e628d8fc-130e-46da-9d2d-086543837a7c",
     shopName: "Elghbili",
-    logo: Img8 ,
+    logo: Img8,
     banner: "http://dummyimage.com/100x100.png/dddddd/000000",
     cardBanner: b1,
     rating: 2,
     city: "Faiyum",
     location: "Gamal Abd El-Nasir, Faiyum Governorate",
     longitude: 126.9779692,
-    "postal code": "G83",
+    postal: "G83",
     name: "Datha Harmon",
     phone: "+20842178313",
     email: "midoeldoctor33@gmail.com",
     hasOwnDelivery: true,
     isDeliveryFree: true,
-    status: "Open"
+    status: "Open",
   },
   {
     _id: "8fb99109-ca7c-4a45-b6b1-5c0ea8765da6",
     shopName: "Roshetta ",
-    logo: Img7 ,
+    logo: Img7,
     banner: "http://dummyimage.com/100x100.png/ff4444/ffffff",
     cardBanner: b2,
     rating: 1,
     city: "Faiyum",
     location: "Gamal abdelnasser st, Faiyum Governorate",
     longitude: -8.6346959,
-    "postal code": "F45",
+    postal: "F45",
     name: "Hope Battisson",
     phone: "19733",
     email: "kareemlatif5000@yahoo.com",
     hasOwnDelivery: false,
     isDeliveryFree: true,
-    status: "Open"
+    status: "Open",
   },
   {
     _id: "4587978a-1734-4ad9-a2ab-484ea833254e",
@@ -181,31 +178,31 @@ const vendorData = [
     city: "Cairo",
     location: "El Haram, St.114, Jomira tower ,floor.4, El Haram, Egypt",
     longitude: -91.912218,
-    "postal code": "11007",
+    postal: "11007",
     name: "Brandais Faull",
     phone: "+20842039485",
     email: "24pharmacies@gmail.com",
     hasOwnDelivery: true,
     isDeliveryFree: true,
-    status: "Closed"
+    status: "Closed",
   },
   {
     _id: "4587978a-1734-4ad9-a2ab-484ea833254e",
     shopName: "Gemy ",
     logo: Img9,
     banner: "http://dummyimage.com/100x100.png/dddddd/000000",
-    cardBanner: b4 ,
+    cardBanner: b4,
     rating: 1,
     city: "Faiyum",
     location: "masla square, Faiyum Governorate",
     longitude: -91.912218,
-    "postal code": "11007",
+    postal: "11007",
     name: "Brandais Faull",
     phone: "01004009713",
     email: "gemypharmacy@gmail.com",
     hasOwnDelivery: true,
     isDeliveryFree: true,
-    status: "Closed"
+    status: "Closed",
   },
 ];
 

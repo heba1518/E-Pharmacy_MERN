@@ -45,7 +45,7 @@ const WishList = ({ open, setOpen }) => {
     favProducts = favProducts.filter(product=>{
       if(product._id === id){
         product.cart = true;
-        product.fav = !product.fav;
+        product.fav = false;
         updateProducts(id, product);
       }
     })

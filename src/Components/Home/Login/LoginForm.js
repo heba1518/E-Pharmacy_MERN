@@ -39,7 +39,7 @@ const LoginForm = () => {
       for (const user of users) {
         if (user.email === email && user.password === password) {
           console.log("User logged in:", user);
-          localStorage.setItem("profile", JSON.stringify(true));
+          localStorage.setItem("", JSON.stringify(true));
           setShowNotification(true);
           setNotificationMessage("Login Successfuly!");
           setType("success");
@@ -68,6 +68,7 @@ const LoginForm = () => {
 
           if (response.data.success) {
             localStorage.setItem("test", response.data.data.token);
+            // localStorage.setItem("id", response.data.user.id);
             localStorage.setItem("profile", true);
             setShowNotification(true);
             setNotificationMessage("Login Successfuly!");

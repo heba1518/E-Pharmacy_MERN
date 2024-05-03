@@ -125,7 +125,7 @@ let productsData = [
   {
     _id: "c07c8a5a-24ec-49d8-9189-8db3e8b9c2fd",
     shopId: "d437908e-94ed-4674-8059-a02080cc8009",
-    name: "LIMITLESS OMEGA 3",
+    name: "limitless omega3",
     image: img9,
     description:
       "LIMITLESS OMEGA 3 2000 MG ( VIT. D3 10 MCG + FISH OIL 2000 MG + TOTAL OMEGA3 ACIDS 1400 MG ) 30 CAPSULES",
@@ -163,7 +163,7 @@ let productsData = [
   {
     _id: "d9dab99d-4b4c-4f99-b35a-0f99b1bc0c2a",
     shopId: "3bae1ffa-4a57-4b04-8eb5-a35b14ee6d2f",
-    name: "1 2 3 ONE TWO THREE ",
+    name: "123 one two three ",
     image: img1,
     description:
       "1 2 3 ONE TWO THREE ( CHLORPHENIRAMINE 2 MG + PARACETAMOL 500 MG + PSEUDOEPHEDRINE 20 MG ) 20 FILM-COATED TABLETS",
