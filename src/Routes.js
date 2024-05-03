@@ -9,8 +9,9 @@ import OrderHistory from "./Pages/OrderHistory/OrderHistory";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import AllShop from "./Pages/Shop/AllShop";
 import ShopDetailsPage from "./Pages/Shop/ShopDetailsPage";
-import Picture from "./Components/Home/PictureUpload/picture";
 import Medicines from "./Components/Home/Medicine/Medicine";
+import PictureUpload from "./Pages/PictureUpload/PictureUpload";
+
 
 const Navigation = () => {
   return (
@@ -26,7 +27,7 @@ const Navigation = () => {
 
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/medicine" element={<Medicines />} />
-          <Route path="/uploadPrescription" element={<Picture />} />
+          <Route path="/Prescription" element={<PictureUpload />} />
 
           <Route
             exact

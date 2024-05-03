@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import logo from '../../../../Assets/images/logo.png';
+import logo from '../../../../Assets/images/logo5.png';
 import Img from '../../../../Assets/images/pharmacies/elezaby_logo.png'
 import './sidebar.css'
 
@@ -31,7 +31,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
       {/* Sidebar backdrop (mobile only) */}
       <div
         className={`fixed inset-0 bg-opacity-30 z-40 lg:hidden lg:z-auto shadow-xl transition-opacity duration-200 ${
-          sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         aria-hidden="true"
       ></div>
@@ -41,7 +41,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
         id="sidebar"
         ref={sidebar}
         className={`absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 flex-shrink-0 bg-teal-500 transition-transform duration-200 ease-in-out ${
-          sidebarOpen ? 'translate-x-0' : '-translate-x-64'
+          sidebarOpen ? "translate-x-0" : "-translate-x-64"
         }`}
       >
         {/* Sidebar header */}
@@ -70,8 +70,8 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
               className="inline-flex items-center mt-6 mx-auto sm:mx-6"
             >
               <img src={logo} alt="logo" className="object-contain w-10" />
-              <span className="ml-2 text-base sm:text-lg font-display font-semibold tracking-wide leading-snug text-teal-50 uppercase">
-              Enaya
+              <span className="ml-2 text-base sm:text-lg font-display chonburi-regular tracking-wide leading-snug text-teal-50 uppercase">
+                Enaya
               </span>
             </div>
           </Link>
@@ -83,22 +83,22 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
           <img
             alt="testimonial"
             className="inline-block object-cover object-center w-20 h-20 mb-2 rounded-full"
-            src = {Img}
+            src={Img}
           />
           <h2 className="font-display text-xl font-semibold tracking-wide text-teal-50 title-font text-center">
-          El Ezaby Pharmacy
+            El Ezaby Pharmacy
           </h2>
           <p className="font-sans text-sm font-semibold tracking-wide text-teal-100 title-font text-center">
-          contactus@elezabypharmacy.com
+            contactus@elezabypharmacy.com
           </p>
         </div>
 
         <nav className="flex-grow pb-4 pr-4 md:block md:pb-0 md:overflow-y-auto">
           <ul className="font-sans font-medium text-xl tracking-wide  text-teal-100 title-font">
-          <li>
+            <li>
               <Link
                 className={
-                  panel === 'dashboard' ? 'sidebar-item-active' : 'sidebar-item'
+                  panel === "dashboard" ? "sidebar-item-active" : "sidebar-item"
                 }
                 to="/vendor/dashboard"
                 onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -128,7 +128,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
             <li>
               <Link
                 className={
-                  panel === 'allOrders' ? 'sidebar-item-active' : 'sidebar-item'
+                  panel === "allOrders" ? "sidebar-item-active" : "sidebar-item"
                 }
                 to="/vendor/allOrders"
                 onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -139,7 +139,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  >
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -153,9 +153,9 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
             <li>
               <Link
                 className={
-                  panel === 'allProducts'
-                    ? 'sidebar-item-active'
-                    : 'sidebar-item'
+                  panel === "allProducts"
+                    ? "sidebar-item-active"
+                    : "sidebar-item"
                 }
                 to="/vendor/allProducts"
                 onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -180,7 +180,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
             <li>
               <Link
                 className={
-                  panel === 'suppliers' ? 'sidebar-item-active' : 'sidebar-item'
+                  panel === "suppliers" ? "sidebar-item-active" : "sidebar-item"
                 }
                 to="/vendor/suppliers"
                 onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -205,7 +205,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
             <li>
               <Link
                 className={
-                  panel === 'customers' ? 'sidebar-item-active' : 'sidebar-item'
+                  panel === "customers" ? "sidebar-item-active" : "sidebar-item"
                 }
                 to="/vendor/customers"
                 onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -230,7 +230,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
             <li>
               <Link
                 className={
-                  panel === 'messages' ? 'sidebar-item-active' : 'sidebar-item'
+                  panel === "messages" ? "sidebar-item-active" : "sidebar-item"
                 }
                 to="/vendor/messages"
                 onClick={() => setSidebarOpen(!sidebarOpen)}
