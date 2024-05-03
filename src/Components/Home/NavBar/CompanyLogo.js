@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../../Assets/images/logo.png';
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../../../Assets/images/logo5.png";
 
 const CompanyLogo = () => {
   return (
@@ -10,11 +10,11 @@ const CompanyLogo = () => {
         href="/"
         aria-label="E-Pharmacy"
         title="E-Pharmacy"
-        className="inline-flex items-center mr-8"
+        className="inline-flex items-center mr-5"
       >
-        <img src={logo} alt="logo" className="w-10" />
-        <span className="ml-2 text-xl font-semibold font-display tracking-wide text-teal-400 uppercase">
-        Enaya
+        <img src={logo} alt="logo" className="w-20 h-15" />
+        <span className="text-xl chonburi-regular font-display tracking-wide text-teal-400 uppercase">
+          Enaya
         </span>
       </Link>
     </div>

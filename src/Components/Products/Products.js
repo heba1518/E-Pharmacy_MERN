@@ -100,7 +100,7 @@ const Products = () => {
           {filteredProducts.map((product) => (
             <div key={product._id} className="group shadow-4xl">
               <Link to={`/productDetails/${product._id}`}>
-                <div className="w-full min-h-80 bg-blue-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                <div className="w-104px h-104px flex justify-center">
                   <img
                     src={product.image}
                     alt={product.imageAlt}
@@ -132,28 +132,28 @@ const Products = () => {
               {/*  wishlist, quick view, add to cart buttons */}
               <div className="flex justify-between my-4 px-2 items-center">
                 <div>
-                <button
-                      className="hover:bg-teal-400 text-gray-900 hover:text-teal-50 p-2 rounded-full transition duration-150 ease-in-out"
-                      title="Add to Wishlist"
-                      onClick={() => handleToggleWishlist(product._id, product)}
+                  <button
+                    className="hover:bg-teal-400 text-gray-900 hover:text-teal-50 p-2 rounded-full transition duration-150 ease-in-out"
+                    title="Add to Wishlist"
+                    onClick={() => handleToggleWishlist(product._id, product)}
+                  >
+                    <svg
+                      className="w-5 h-5  transition duration-150 ease-in-out"
+                      // fill="none"
+                      fill={product.fav ? "teal" : "none"}
+                      stroke={product.fav ? "none" : "teal"}
+                      // stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        className="w-5 h-5  transition duration-150 ease-in-out"
-                        // fill="none"
-                        fill={product.fav ? "teal" : "none"}
-                       stroke={product.fav ? "none" : "teal"}
-                        // stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                        ></path>
-                      </svg>
-                    </button>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                      ></path>
+                    </svg>
+                  </button>
                   <Link to={`/productDetails/${product._id}`}>
                     <button
                       className="hover:bg-teal-400 text-gray-900 hover:text-teal-50 p-2 rounded-full transition duration-150 ease-in-out"
@@ -183,12 +183,13 @@ const Products = () => {
                   </Link>
                 </div>
 
-                  <button 
+                <button
                   className="flex py-2 px-3 text-sm rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700"
                   title="Add to Wishlist"
-                  onClick={() => handleAddToCart(product._id, product)}>
-                    Add to Cart
-                  </button>
+                  onClick={() => handleAddToCart(product._id, product)}
+                >
+                  Add to Cart
+                </button>
               </div>
               {/* </Link> */}
             </div>

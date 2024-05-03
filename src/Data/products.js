@@ -8,6 +8,14 @@ import img7 from "../Assets/images/products/COMTREX.jpg";
 import img8 from "../Assets/images/products/flagyl.png";
 import img9 from "../Assets/images/products/limitless.jpg";
 import img10 from "../Assets/images/products/Strepsils.jpg";
+import img11 from "../Assets/images/products/actos.jpeg";
+import img12 from "../Assets/images/products/aspirin.jpeg";
+import img13 from "../Assets/images/products/fucicort.jpeg";
+import img14 from "../Assets/images/products/zithromax.jpeg";
+import img15 from "../Assets/images/products/panadol-day.webp";
+import img16 from "../Assets/images/products/dorzolamide.webp";
+import img17 from "../Assets/images/products/perderm.jpeg";
+import img18 from "../Assets/images/products/fernilar.jpeg";
 
 let productsData = [
   {
@@ -27,7 +35,7 @@ let productsData = [
     isDeliveryFree: false,
     fav: false,
     cart: false,
-    quantity:1,
+    quantity: 1,
   },
   {
     _id: "a5c7863c-6754-432b-8e2f-9d2210b1dbfd",
@@ -45,7 +53,7 @@ let productsData = [
     isDeliveryFree: true,
     fav: false,
     cart: false,
-    quantity:1,
+    quantity: 1,
   },
   {
     _id: "c990a9e3-0b7a-4d43-822d-4d81048f5852",
@@ -63,7 +71,7 @@ let productsData = [
     isDeliveryFree: true,
     fav: false,
     cart: false,
-    quantity:1,
+    quantity: 1,
   },
   {
     _id: "f0d2c336-5b07-45a5-8676-993fa5b45b11",
@@ -76,13 +84,13 @@ let productsData = [
     rating: 5,
     totalReview: 12,
     brand: "GSK",
-    category: "Analgesics and antipyretics",
+    category: "Cold & Flu Relief",
     stock: 32,
     document: 20,
     isDeliveryFree: false,
     fav: false,
     cart: false,
-    quantity:1,
+    quantity: 1,
   },
   {
     _id: "1ff9b0c2-d0b5-4bf4-a44d-8a441bd44fc1",
@@ -101,7 +109,7 @@ let productsData = [
     isDeliveryFree: true,
     fav: false,
     cart: false,
-    quantity:1,
+    quantity: 1,
   },
   {
     _id: "22a8d485-9a9e-4b76-9479-7240b7889812",
@@ -120,12 +128,12 @@ let productsData = [
     isDeliveryFree: true,
     fav: false,
     cart: false,
-    quantity:1,
+    quantity: 1,
   },
   {
     _id: "c07c8a5a-24ec-49d8-9189-8db3e8b9c2fd",
     shopId: "d437908e-94ed-4674-8059-a02080cc8009",
-    name: "limitless omega3",
+    name: "LIMITLESS OMEGA 3",
     image: img9,
     description:
       "LIMITLESS OMEGA 3 2000 MG ( VIT. D3 10 MCG + FISH OIL 2000 MG + TOTAL OMEGA3 ACIDS 1400 MG ) 30 CAPSULES",
@@ -139,7 +147,7 @@ let productsData = [
     isDeliveryFree: false,
     fav: false,
     cart: false,
-    quantity:1,
+    quantity: 1,
   },
   {
     _id: "c89ecf6b-2260-4d11-b49a-7a9f4e73e186",
@@ -158,12 +166,12 @@ let productsData = [
     isDeliveryFree: false,
     fav: false,
     cart: false,
-    quantity:1,
+    quantity: 1,
   },
   {
     _id: "d9dab99d-4b4c-4f99-b35a-0f99b1bc0c2a",
     shopId: "3bae1ffa-4a57-4b04-8eb5-a35b14ee6d2f",
-    name: "123 one two three ",
+    name: "1 2 3 ONE TWO THREE ",
     image: img1,
     description:
       "1 2 3 ONE TWO THREE ( CHLORPHENIRAMINE 2 MG + PARACETAMOL 500 MG + PSEUDOEPHEDRINE 20 MG ) 20 FILM-COATED TABLETS",
@@ -177,7 +185,7 @@ let productsData = [
     isDeliveryFree: true,
     fav: false,
     cart: false,
-    quantity:1,
+    quantity: 1,
   },
   {
     _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
@@ -195,29 +203,178 @@ let productsData = [
     isDeliveryFree: true,
     fav: false,
     cart: false,
-    quantity:1,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Actos 30mg",
+    image: img11,
+    description:
+      "Antidiabetic agent belongs to thiazolidinedione group used in the treatment of type 2 diabetes mellitus.",
+    price: 210,
+    rating: 0,
+    totalReview: 12,
+    brand: " Jar",
+    category: "Diabetes",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Aspirin Protect",
+    image: img12,
+    description:
+      "Nonsteroidal Anti-inflammatory Drug used in the treatment of acute coronary syndrome, primary and secondary prevention of atherosclerotic cardiovascular diseases, prevention of preeclampsia and used in the prophylaxis against venous thromboembolism.",
+    price: 21,
+    rating: 0,
+    totalReview: 12,
+    brand: " Box",
+    category: "Anti-inflammatory",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Fucicort cream",
+    image: img13,
+    description:
+      "Topical antibiotic and corticosteroid combination therapy used in the treatment of corticosteroid-responsive dermatoses with secondary bacterial infection that are sensitive to fusidic acid.",
+    price: 32,
+    rating: 0,
+    totalReview: 12,
+    brand: " Box",
+    category: "Antibiotics",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Zithromax 250mg",
+    image: img14,
+    description:
+      "Antibiotic, belongs to the macrolides group used in the treatment of pneumonia, Streptococcus infections, sexually transmitted infections, mycobacterial infection, Lyme disease, infectious diarrhea, bronchiolitis and inflammatory acne vulgaris.",
+    price: 79,
+    rating: 0,
+    totalReview: 12,
+    brand: " Box",
+    category: "Antibiotics",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Panadol Day",
+    image: img15,
+    description:
+      "Panadol Cold & Flu Day caplets provide relief from Major Cold and flu symptoms. It is a non-drowsy formulation for day time relief.",
+    price: 300,
+    rating: 0,
+    totalReview: 12,
+    brand: " Box",
+    category: "Cold & Flu Relief",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Dorzolamide 2% Eye Drop",
+    image: img16,
+    description:
+      "Ocular hypertension or open-angle glaucoma Dosage: As a single treatment: 1 drop, 3 times a day. As a treatment in addition to beta-blockers: 1 drop, twice a day.",
+    price: 30,
+    rating: 0,
+    totalReview: 12,
+    brand: " Dropper",
+    category: "Eye Drops",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Perderm 0.05% Ointment 10gm",
+    image: img17,
+    description:
+      "Atopic dermatitis, discoid lupus erythematosus, eczema, granuloma annulare, pruritus, psoriasis, seborrheic dermatitis, xerosis: TOPICAL: Adults, Elderly, Children 1 yr and older. Apply a thin film to the affected area 2-3 times a day.",
+    price: 12,
+    rating: 0,
+    totalReview: 12,
+    brand: " Tube",
+    category: "Skin Diseases",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Perderm 0.05% Ointment 10gm",
+    image: img18,
+    description:
+      "Histamine H1 Antagonist belongs to the second-generation antihistamines used in the treatment of allergic rhinitis and urticaria.",
+    price: 9,
+    rating: 0,
+    totalReview: 12,
+    brand: " Strip",
+    category: "Respiratory System Diseases",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
   },
 ];
-
 
 export function updateQuantity(id, newData) {
   let arr = localStorage.getItem("products");
   let products = JSON.parse(arr);
   // console.log(newData)
-  const index = productsData.findIndex(item => item._id === id)
-  console.log(index)
+  const index = productsData.findIndex((item) => item._id === id);
+  console.log(index);
   if (index !== -1) {
     productsData[index] = { ...productsData[index], ...newData };
-    console.log(productsData)
+    console.log(productsData);
     // products[index] = { ...productsData[index], ...newData };
     // localStorage.setItem("products",products );
     // console.log(products)
     return true;
   }
-  console.log("newData")
+  console.log("newData");
   return false;
 }
-
-
 
 export default productsData;
