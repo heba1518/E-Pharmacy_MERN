@@ -127,7 +127,7 @@ const ActionIcons = () => {
             />
           </svg>
           <span className="absolute inset-0 object-right-top -mr-6">
-            <div className="inline-flex items-center px-1.5 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-teal-400 text-white">
+            <div className="inline-flex items-center px-1.5 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-teal-500 text-white">
               {fav}
             </div>
           </span>
@@ -154,7 +154,7 @@ const ActionIcons = () => {
             />
           </svg>
           <span className="absolute inset-0 object-right-top -mr-6">
-            <div className="inline-flex items-center px-1.5 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-teal-400 text-white">
+            <div className="inline-flex items-center px-1.5 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-teal-500 text-white">
               {cart}
             </div>
           </span>
@@ -162,7 +162,7 @@ const ActionIcons = () => {
       </li>
       {!login && (
 
-        <a href="/login"><p class="px-3 py-1 text-lg font-medium tracking-wide text-white transition-colors duration-200 bg-teal-400 rounded-md hover:bg-teal-700">Login</p></a>
+        <a href="/login"><p class="px-3 py-1 text-lg font-medium tracking-wide text-white transition-colors duration-200 bg-teal-500 rounded-md hover:bg-teal-700">Login</p></a>
        )}
 
       {/* Open cart modal */}

@@ -7,7 +7,6 @@ import img4 from "../../../Assets/images/products/alphintern.jpg";
 import img5 from "../../../Assets/images/products/antinal.webp";
 import img6 from "../../../Assets/images/products/apidone.jpg";
 import img8 from "../../../Assets/images/products/flagyl.png";
-import img10 from "../../../Assets/images/products/Strepsils.jpg";
 
 const ListOfMedicinesInPrescription = () => {
   const [editModal, setEditModal] = useState(false);
@@ -250,30 +249,43 @@ const ListOfMedicinesInPrescription = () => {
                       </p>
                     </td>
                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
-                      <div className="flex align-center justify-center">
-                        <button
-                          className="hover:bg-teal-400 text-gray-900 hover:text-teal-50 p-2 rounded-full transition duration-150 ease-in-out"
-                          title="Add to Wishlist"
-                          onClick={() => handleToggleWishlist(order._id, order)}
-                        >
-                          <svg
-                            className="w-5 h-5  transition duration-150 ease-in-out"
-                            // fill="none"
-                            fill={order.fav ? "teal" : "none"}
-                            stroke={order.fav ? "none" : "teal"}
-                            // stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
+                      <td>
+                        <div className="flex align-center justify-center">
+                          <button
+                            className="hover:bg-teal-400 text-gray-900 hover:text-teal-50 p-2 rounded-full transition duration-150 ease-in-out"
+                            title="Add to Wishlist"
+                            onClick={() =>
+                              handleToggleWishlist(order._id, order)
+                            }
                           >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                            ></path>
-                          </svg>
+                            <svg
+                              className="w-5 h-5  transition duration-150 ease-in-out"
+                              // fill="none"
+                              fill={order.fav ? "teal" : "none"}
+                              stroke={order.fav ? "none" : "teal"}
+                              // stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                              ></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </td>
+                      <td>
+                        <button
+                          className="flex py-2 px-3 text-sm rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700"
+                          title="Add to Wishlist"
+                          onClick={() => handleAddToCart(order._id, order)}
+                        >
+                          Add to Cart
                         </button>
-                      </div>
+                      </td>
                     </td>
                   </tr>
                 </tbody>
