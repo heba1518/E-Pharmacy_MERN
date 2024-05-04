@@ -133,7 +133,7 @@ let productsData = [
   {
     _id: "c07c8a5a-24ec-49d8-9189-8db3e8b9c2fd",
     shopId: "d437908e-94ed-4674-8059-a02080cc8009",
-    name: "LIMITLESS OMEGA 3",
+    name: "limitless omega 3",
     image: img9,
     description:
       "LIMITLESS OMEGA 3 2000 MG ( VIT. D3 10 MCG + FISH OIL 2000 MG + TOTAL OMEGA3 ACIDS 1400 MG ) 30 CAPSULES",
@@ -171,7 +171,7 @@ let productsData = [
   {
     _id: "d9dab99d-4b4c-4f99-b35a-0f99b1bc0c2a",
     shopId: "3bae1ffa-4a57-4b04-8eb5-a35b14ee6d2f",
-    name: "1 2 3 ONE TWO THREE ",
+    name: "123 one two three ",
     image: img1,
     description:
       "1 2 3 ONE TWO THREE ( CHLORPHENIRAMINE 2 MG + PARACETAMOL 500 MG + PSEUDOEPHEDRINE 20 MG ) 20 FILM-COATED TABLETS",
@@ -303,7 +303,7 @@ let productsData = [
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
-    name: "Dorzolamide 2% Eye Drop",
+    name: "Dorzolamide",
     image: img16,
     description:
       "Ocular hypertension or open-angle glaucoma Dosage: As a single treatment: 1 drop, 3 times a day. As a treatment in addition to beta-blockers: 1 drop, twice a day.",
@@ -322,7 +322,7 @@ let productsData = [
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
-    name: "Perderm 0.05% Ointment 10gm",
+    name: "Perderm ",
     image: img17,
     description:
       "Atopic dermatitis, discoid lupus erythematosus, eczema, granuloma annulare, pruritus, psoriasis, seborrheic dermatitis, xerosis: TOPICAL: Adults, Elderly, Children 1 yr and older. Apply a thin film to the affected area 2-3 times a day.",
@@ -341,7 +341,7 @@ let productsData = [
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
-    name: "Perderm 0.05% Ointment 10gm",
+    name: "Perderm ",
     image: img18,
     description:
       "Histamine H1 Antagonist belongs to the second-generation antihistamines used in the treatment of allergic rhinitis and urticaria.",
