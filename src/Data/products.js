@@ -341,7 +341,7 @@ let productsData = [
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
-    name: "Perderm ",
+    name: "Fernilar ",
     image: img18,
     description:
       "Histamine H1 Antagonist belongs to the second-generation antihistamines used in the treatment of allergic rhinitis and urticaria.",

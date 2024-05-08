@@ -69,6 +69,8 @@ const Products = () => {
 
     setFilteredProducts(filteredItems);
   };
+
+  
   return (
     <div className="bg-white">
       <div className="max-w-2xl mx-auto pb-10 px-4 sm:px-6 lg:max-w-7xl lg:px-8 pt-10 sm:pt-10">
