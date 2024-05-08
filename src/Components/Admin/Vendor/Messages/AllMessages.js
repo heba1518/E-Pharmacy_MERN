@@ -1,5 +1,5 @@
 import React from "react";
-import './msg.css'
+
 const AllMessages = () => {
   const orders = [
     {
