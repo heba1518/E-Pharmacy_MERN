@@ -62,156 +62,205 @@ const AllMessages = () => {
   };
   return (
     <section>
-  <div class="container">
-    <div class="row">
-      <nav class="menu">
-        <ul class="items">
-          <li class="item">
-            <i class="fa fa-home" aria-hidden="true"></i>
-          </li>
-          <li class="item">
-            <i class="fa fa-user" aria-hidden="true"></i>
-          </li>
-          <li class="item">
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-          </li>
-          <li class="item item-active">
-            <i class="fa fa-commenting" aria-hidden="true"></i>
-          </li>
-          <li class="item">
-            <i class="fa fa-file" aria-hidden="true"></i>
-          </li>
-          <li class="item">
-            <i class="fa fa-cog" aria-hidden="true"></i>
-          </li>
-        </ul>
-      </nav>
-
-      <section class="discussions">
-        <div class="discussion search">
-          <div class="searchbar">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <input type="text" placeholder="Search..."></input>
+  <div className="container mx-auto px-4 sm:px-8 max-w-full sm:max-w-5xl">
+        <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
+          <h2 className="font-display text-teal-700 text-2xl leading-tight">
+            Messages
+          </h2>
+          <div className="text-end">
+            <form className="flex flex-col md:flex-row w-3/4 md:w-full max-w-sm md:space-x-3 space-y-3 md:space-y-0 justify-center">
+              <div className=" relative ">
+                <input
+                  type="text"
+                  id='"form-subscribe-filter'
+                  className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+                  placeholder="Customer Name"
+                />
+              </div>
+              <button
+                className="flex-shrink-0 px-4 py-2 text-base font-medium tracking-wide text-white bg-teal-500 rounded-lg shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-teal-200"
+                type="submit"
+              >
+                Filter
+              </button>
+            </form>
           </div>
-        </div>
-        <div class="discussion message-active">
-          <div class="photo" style="background-image: url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
-            <div class="online"></div>
-          </div>
-          <div class="desc-contact">
-            <p class="name">Megan Leib</p>
-            <p class="message">9 pm at the bar if possible 😳</p>
-          </div>
-          <div class="timer">12 sec</div>
         </div>
 
-        <div class="discussion">
-          <div class="photo" style="background-image: url(https://i.pinimg.com/originals/a9/26/52/a926525d966c9479c18d3b4f8e64b434.jpg);">
-            <div class="online"></div>
-          </div>
-          <div class="desc-contact">
-            <p class="name">Dave Corlew</p>
-            <p class="message">Let's meet for a coffee or something today ?</p>
-          </div>
-          <div class="timer">3 min</div>
-        </div>
+        {/* view all orders */}
+        <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+          <div className="inline-block min-w-full shadow-3xl rounded-lg overflow-hidden">
+            <table className="min-w-full leading-normal font-sans tracking-wide">
+              <thead>
+                <tr>
+                  <th
+                    scope="col"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                  >
+                    User Info
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-12 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
+                  >
+                    Email
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-12 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
+                  >
+                    Address
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                  >
+                    Phone
+                  </th>
+                  {/* <th
+                    scope="col"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                  >
+                    Register Date
+                  </th> */}
+                  <th
+                    scope="col"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
+                  >
+                    Action
+                  </th>
+                </tr>
+              </thead>
 
-        <div class="discussion">
-          <div class="photo" style="background-image: url(https://images.unsplash.com/photo-1497551060073-4c5ab6435f12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80);">
-          </div>
-          <div class="desc-contact">
-            <p class="name">Jerome Seiber</p>
-            <p class="message">I've sent you the annual report</p>
-          </div>
-          <div class="timer">42 min</div>
-        </div>
+              {/* all Orders data row */}
+              {orders.map((order) => {
+                return (
+                  <tbody key={order._id}>
+                    <tr>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white font-body font-medium text-sm">
+                        <div className="flex items-center w-24 sm:w-full">
+                          <div className="flex-shrink-0">
+                            <a href="/" className="block relative">
+                              <img
+                                alt="User Avatar"
+                                src={order.photo}
+                                className="mx-auto object-cover rounded-full h-10 w-10"
+                              />
+                            </a>
+                          </div>
+                          <div className="ml-3">
+                            <p className="text-gray-900 whitespace-no-wrap">
+                              {order.name.substr(0, 19)}
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <p className="text-gray-900 whitespace-no-wrap">
+                          {order.email}
+                        </p>
+                      </td>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-center text-sm">
+                        <p className="text-gray-900 whitespace-no-wrap">
+                          {order.address}
+                        </p>
+                      </td>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <p className="text-gray-900 whitespace-no-wrap">
+                          {order.phone}
+                        </p>
+                      </td>
+                      {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <p className="text-gray-900 whitespace-no-wrap">
+                          {order.date}
+                        </p>
+                      </td> */}
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <button className="flex align-center justify-center font-sans font-medium text-teal-600 hover:text-teal-900">
+                          Message{"  "}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                            />
+                          </svg>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                );
+              })}
+            </table>
 
-        <div class="discussion">
-          <div class="photo" style="background-image: url(https://card.thomasdaubenton.com/img/photo.jpg);">
-            <div class="online"></div>
-          </div>
-          <div class="desc-contact">
-            <p class="name">Thomas Dbtn</p>
-            <p class="message">See you tomorrow ! 🙂</p>
-          </div>
-          <div class="timer">2 hour</div>
-        </div>
-
-        <div class="discussion">
-          <div class="photo" style="background-image: url(https://images.unsplash.com/photo-1553514029-1318c9127859?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80);">
-          </div>
-          <div class="desc-contact">
-            <p class="name">Elsie Amador</p>
-            <p class="message">What the f**k is going on ?</p>
-          </div>
-          <div class="timer">1 day</div>
-        </div>
-
-        <div class="discussion">
-          <div class="photo" style="background-image: url(https://images.unsplash.com/photo-1541747157478-3222166cf342?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80);">
-          </div>
-          <div class="desc-contact">
-            <p class="name">Billy Southard</p>
-            <p class="message">Ahahah 😂</p>
-          </div>
-          <div class="timer">4 days</div>
-        </div>
-
-        <div class="discussion">
-          <div class="photo" style="background-image: url(https://images.unsplash.com/photo-1435348773030-a1d74f568bc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80);">
-            <div class="online"></div>
-          </div>
-          <div class="desc-contact">
-            <p class="name">Paul Walker</p>
-            <p class="message">You can't see me</p>
-          </div>
-          <div class="timer">1 week</div>
-        </div>
-      </section>
-      <section class="chat">
-        <div class="header-chat">
-          <i class="icon fa fa-user-o" aria-hidden="true"></i>
-          <p class="name">Megan Leib</p>
-          <i class="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i>
-        </div>
-        <div class="messages-chat">
-          <div class="message">
-            <div class="photo" style="background-image: url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
-              <div class="online"></div>
+            {/* Pagination */}
+            <div className="px-5 bg-white py-5 flex flex-col xs:flex-row items-center xs:justify-between">
+              <div className="flex items-center">
+                <button
+                  type="button"
+                  className="w-full p-4 border text-base rounded-l-xl text-gray-600 bg-white hover:bg-gray-100"
+                >
+                  <svg
+                    width="9"
+                    fill="currentColor"
+                    height="8"
+                    className=""
+                    viewBox="0 0 1792 1792"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z"></path>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  className="w-full px-4 py-2 border-t border-b text-base text-teal-500 bg-white hover:bg-teal-100 "
+                >
+                  1
+                </button>
+                <button
+                  type="button"
+                  className="w-full px-4 py-2 border text-base text-gray-600 bg-white hover:bg-teal-50"
+                >
+                  2
+                </button>
+                <button
+                  type="button"
+                  className="w-full px-4 py-2 border-t border-b text-base text-gray-600 bg-white hover:bg-teal-50"
+                >
+                  3
+                </button>
+                <button
+                  type="button"
+                  className="w-full p-4 border-t border-b border-r text-base  rounded-r-xl text-gray-600 bg-white hover:bg-teal-50"
+                >
+                  <svg
+                    width="9"
+                    fill="currentColor"
+                    height="8"
+                    className=""
+                    viewBox="0 0 1792 1792"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"></path>
+                  </svg>
+                </button>
+              </div>
             </div>
-            <p class="text"> Hi, how are you ? </p>
           </div>
-          <div class="message text-only">
-            <p class="text"> What are you doing tonight ? Want to go take a drink ?</p>
-          </div>
-          <p class="time"> 14h58</p>
-          <div class="message text-only">
-            <div class="response">
-              <p class="text"> Hey Megan ! It's been a while 😃</p>
-            </div>
-          </div>
-          <div class="message text-only">
-            <div class="response">
-              <p class="text"> When can we meet ?</p>
-            </div>
-          </div>
-          <p class="response-time time"> 15h04</p>
-          <div class="message">
-            <div class="photo" style="background-image: url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
-              <div class="online"></div>
-            </div>
-            <p class="text"> 9 pm at the bar if possible 😳</p>
-          </div>
-          <p class="time"> 15h09</p>
         </div>
-        <div class="footer-chat">
-          <i class="icon fa fa-smile-o clickable" style="font-size:25pt;" aria-hidden="true"></i>
-          <input type="text" class="write-message" placeholder="Type your message here"></input>
-          <i class="icon send fa fa-paper-plane-o clickable" aria-hidden="true"></i>
-        </div>
-      </section>
-    </div>
-  </div>
+      </div>
+
+
+
+
+
     </section>
   );
 };
