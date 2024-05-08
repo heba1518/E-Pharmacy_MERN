@@ -11,6 +11,7 @@ import AllShop from "./Pages/Shop/AllShop";
 import ShopDetailsPage from "./Pages/Shop/ShopDetailsPage";
 import Medicines from "./Components/Home/Medicine/Medicine";
 import PictureUpload from "./Pages/PictureUpload/PictureUpload";
+import Blog from "./Pages/Blog/Blog";
 
 
 const Navigation = () => {
@@ -24,6 +25,8 @@ const Navigation = () => {
           <Route exact path="/registration" element={<RegistrationPage />} />
 
           <Route path="/shopDetails/:vendorId" element={<ShopDetailsPage />} />
+
+          <Route path="/Blog" element={<Blog />} />
 
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/medicine" element={<Medicines />} />

@@ -17,7 +17,7 @@ const Hero = () => {
             <div class="mx-auto mt-6 sm:mt-8 text-sm text-center text-gray-500 tracking-wide sm:text-sm md:max-w-xl md:text-sm xl:text-lg">
               Say goodbye to all your healthcare worries with us
             </div>
-            <div class="relative flex items-center max-w-md mx-auto mt-12 overflow-hidden text-center rounded-full border-2 border-teal-400 shadow-xl">
+            <div class="relative flex items-center max-w-md mx-auto mt-12 overflow-hidden text-center rounded-full border-2 border-teal-500 shadow-xl">
               <input
                 type="text"
                 name="search"
@@ -30,7 +30,7 @@ const Hero = () => {
                 </button>
               </span>
             </div>
-            <div class="mt-12 text-base tracking-wider text-teal-400">
+            <div class="mt-12 text-base tracking-wider text-teal-500">
               Take care of your healthcare now!
             </div>
           </div>

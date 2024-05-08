@@ -10,18 +10,18 @@ import img9 from "../Assets/images/products/limitless.jpg";
 import img10 from "../Assets/images/products/Strepsils.jpg";
 import img11 from "../Assets/images/products/actos.jpeg";
 import img12 from "../Assets/images/products/aspirin.jpeg";
-import img13 from "../Assets/images/products/fucicort.jpeg";
-import img14 from "../Assets/images/products/zithromax.jpeg";
+import img13 from "../Assets/images/products/fucicort.jpg";
+import img14 from "../Assets/images/products/zithromax.jpg";
 import img15 from "../Assets/images/products/panadol-day.webp";
 import img16 from "../Assets/images/products/dorzolamide.webp";
 import img17 from "../Assets/images/products/perderm.jpeg";
-import img18 from "../Assets/images/products/fernilar.jpeg";
+import img18 from "../Assets/images/products/fernilar.jpg";
 
 let productsData = [
   {
     _id: "e02d3e9a-4b37-4b95-bcd2-3bd28effd937",
     shopId: "0743def8-4a34-4d23-bd7d-1dd3b36d1c84",
-    name: "ANTINAL",
+    name: "Antinal",
     image: img5,
     description:
       "Suspected acute diarrhea caused by bacteria in the absence of suspicion of invasive phenomena ( poor general condition, fever, poisoning signs of infection ...). The treatment does not eliminate dietary and rehydration if The importance of rehydration with oral rehydration solution or intravenous should be adjusted according to the intensity of diarrhea, age and patient characteristics (associated diseases ...).",
@@ -40,7 +40,7 @@ let productsData = [
   {
     _id: "a5c7863c-6754-432b-8e2f-9d2210b1dbfd",
     shopId: "debe1e61-5d49-47a1-b544-d59c0e52003e",
-    name: "FLAGYL",
+    name: "Flagyl",
     image: img8,
     description: "FLAGYL 125 MG / 5 ML ( METRONIDAZOLE ) SUSPENSION 100 ML",
     price: 16,
@@ -58,7 +58,7 @@ let productsData = [
   {
     _id: "c990a9e3-0b7a-4d43-822d-4d81048f5852",
     shopId: "ce2231a8-c886-43fd-92c8-0fe70a622fa2",
-    name: "Alphintern tablets",
+    name: "Alphintern",
     image: img4,
     description:
       "Alphintern tablets ( chemotrypsin 300 mg + trypsin 300 mg ) 30 film-coated tablets ",
@@ -133,7 +133,7 @@ let productsData = [
   {
     _id: "c07c8a5a-24ec-49d8-9189-8db3e8b9c2fd",
     shopId: "d437908e-94ed-4674-8059-a02080cc8009",
-    name: "limitless omega 3",
+    name: "Limitless omega3",
     image: img9,
     description:
       "LIMITLESS OMEGA 3 2000 MG ( VIT. D3 10 MCG + FISH OIL 2000 MG + TOTAL OMEGA3 ACIDS 1400 MG ) 30 CAPSULES",
@@ -152,7 +152,7 @@ let productsData = [
   {
     _id: "c89ecf6b-2260-4d11-b49a-7a9f4e73e186",
     shopId: "156de5ef-208b-40d9-94a9-9dd65e75b902",
-    name: "COMTREX",
+    name: "Comtrex",
     image: img7,
     description:
       "COMTREX ACUTE HEAD COLD ( BROMPHENIRAMINE 2 MG + PARACETAMOL 500 MG + PSEUDOEPHEDRINE 30 MG ) 20 FILM-COATED TABLETS",
@@ -190,7 +190,7 @@ let productsData = [
   {
     _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
-    name: "ADOL",
+    name: "Adol",
     image: img3,
     description: "ADOL 500 MG ( PARACETAMOL ACETAMINOPHEN ) 24 CAPLETS",
     price: 16,

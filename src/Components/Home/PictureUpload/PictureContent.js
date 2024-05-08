@@ -9,9 +9,6 @@ import img6 from "../../../Assets/images/products/apidone.jpg";
 import img8 from "../../../Assets/images/products/flagyl.png";
 
 const ListOfMedicinesInPrescription = () => {
-  const [editModal, setEditModal] = useState(false);
-  const [viewProduct, setViewProduct] = useState();
-
   const [searchItem, setSearchItem] = useState("");
   const [products, setProducts] = useState(productsLocal);
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -26,10 +23,6 @@ const ListOfMedicinesInPrescription = () => {
     return product.fav;
   };
   localStorage.setItem("products", JSON.stringify(products));
-  // localStorage.setItem("products", JSON.stringify(products));
-  // const local = localStorage.getItem("products")
-  // let proucts = JSON.parse(local);
-  // setProducts(proucts)
 
   const updateProducts = (id, newData) => {
     const index = products.findIndex((item) => item._id === id);
@@ -211,41 +204,43 @@ const ListOfMedicinesInPrescription = () => {
             </thead>
 
             {/* all Orders data row */}
-            {orders.map((order) => {
+            {filteredProducts.map((product) => {
               return (
-                <tbody key={order._id}>
+                <tbody key={product._id}>
                   <tr>
                     <td className="px-5 py-5 border-b border-gray-200 bg-white font-body font-medium text-sm">
-                      <div className="flex items-center w-24 sm:w-full">
-                        <div className="flex-shrink-0">
-                          <a href="/" className="block relative">
-                            <img
-                              alt="User Avatar"
-                              src={order.image}
-                              className="mx-auto object-cover rounded-full h-10 w-10"
-                            />
-                          </a>
+                      <Link to={`/productDetails/${product._id}`}>
+                        <div className="flex items-center w-24 sm:w-full">
+                          <div className="flex-shrink-0">
+                            <a href="/" className="block relative">
+                              <img
+                                alt="User Avatar"
+                                src={product.image}
+                                className="mx-auto object-cover rounded-full h-10 w-10"
+                              />
+                            </a>
+                          </div>
+                          <div className="ml-3">
+                            <p className="text-gray-900 whitespace-no-wrap">
+                              {product.name.substr(0, 12)}
+                            </p>
+                          </div>
                         </div>
-                        <div className="ml-3">
-                          <p className="text-gray-900 whitespace-no-wrap">
-                            {order.name.substr(0, 12)}
-                          </p>
-                        </div>
-                      </div>
+                      </Link>
                     </td>
                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                       <p className="text-gray-900 whitespace-no-wrap">
-                        {order.category}
+                        {product.category}
                       </p>
                     </td>
                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                       <p className="text-gray-900 whitespace-no-wrap">
-                        {order.brand}
+                        {product.brand}
                       </p>
                     </td>
                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                       <p className="text-gray-900 whitespace-no-wrap">
-                        {order.price}£
+                        {product.price}£
                       </p>
                     </td>
                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
@@ -255,14 +250,14 @@ const ListOfMedicinesInPrescription = () => {
                             className="hover:bg-teal-400 text-gray-900 hover:text-teal-50 p-2 rounded-full transition duration-150 ease-in-out"
                             title="Add to Wishlist"
                             onClick={() =>
-                              handleToggleWishlist(order._id, order)
+                              handleToggleWishlist(product._id, product)
                             }
                           >
                             <svg
                               className="w-5 h-5  transition duration-150 ease-in-out"
                               // fill="none"
-                              fill={order.fav ? "teal" : "none"}
-                              stroke={order.fav ? "none" : "teal"}
+                              fill={product.fav ? "teal" : "none"}
+                              stroke={product.fav ? "none" : "teal"}
                               // stroke="currentColor"
                               viewBox="0 0 24 24"
                               xmlns="http://www.w3.org/2000/svg"
@@ -281,7 +276,7 @@ const ListOfMedicinesInPrescription = () => {
                         <button
                           className="flex py-2 px-3 text-sm rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700"
                           title="Add to Wishlist"
-                          onClick={() => handleAddToCart(order._id, order)}
+                          onClick={() => handleAddToCart(product._id, product)}
                         >
                           Add to Cart
                         </button>

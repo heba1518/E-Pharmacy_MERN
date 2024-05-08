@@ -77,7 +77,7 @@ const DisplayShops = () => {
             {/* Visit store button */}
             <div className="flex justify-center items-center my-2 mb-4 ">
               <Link to={`/shopDetails/${shopCard._id}`}>
-                <button className="flex py-2 px-6 rounded shadow-lg bg-teal-400 focus:outline-none active:bg-teal-400 text-white transition duration-150 ease-in-out hover:bg-teal-600 ">
+                <button className="flex py-2 px-6 rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-400 text-white transition duration-150 ease-in-out hover:bg-teal-600 ">
                   <svg
                     className="w-5 h-5 mr-1"
                     fill="none"
