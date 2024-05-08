@@ -79,7 +79,7 @@ const PictureUpload = () => {
         <div className="max-w-xl sm:mx-auto sm:text-center lg:max-w-2xl">
           <div className="flex flex-col mb-16 sm:text-center sm:mb-0">
             <a href="/" className="mb-6 mt-16 sm:mx-auto">
-              <div className="flex items-center justify-center text-2xl w-16 h-16 text-white rounded-full bg-teal-400">
+              <div className="flex items-center justify-center text-2xl w-16 h-16 text-white rounded-full bg-teal-500">
                 <FontAwesomeIcon icon={faCamera} />
               </div>
             </a>
@@ -96,7 +96,7 @@ const PictureUpload = () => {
             <div>
               <button
                 onClick={() => setShowModal(true)}
-                className="inline-flex items-center justify-center h-12 px-6 font-sans font-medium tracking-wider transition duration-200 rounded shadow-md bg-teal-400 text-white uppercase hover:bg-teal-700 focus:shadow-outline focus:outline-none"
+                className="inline-flex items-center justify-center h-12 px-6 font-sans font-medium tracking-wider transition duration-200 rounded shadow-md bg-teal-500 text-white uppercase hover:bg-teal-700 focus:shadow-outline focus:outline-none"
               >
                 Upload Your prescription
               </button>
