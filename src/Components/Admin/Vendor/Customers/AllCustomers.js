@@ -20,7 +20,7 @@ const AllCustomers = () => {
       email: "mSabry@gmail.com",
       phone: "+201136985275",
       status: "Active",
-     
+
       date: "Apr 1, 2024",
     },
     {
@@ -32,18 +32,16 @@ const AllCustomers = () => {
       phone: "+201036985214",
       status: "Active",
       date: "Mar 23, 2024",
-     
     },
     {
       id: "3",
       photo: "https://i.imgur.com/hz6bZkb.png",
       name: "Sayed Yasser",
       email: "sayedY@gmail.com",
-      address: "Mohandessin, Giza",
+      address: "Lutf Allah, Faiyum",
       phone: "+201236985264",
       status: "Active",
       date: "Mar 15, 2024",
-      
     },
     {
       id: "4",
@@ -54,7 +52,6 @@ const AllCustomers = () => {
       phone: "+201136984514",
       status: "Deactive",
       date: "Mar 5, 2024",
-
     },
   ];
 
@@ -105,13 +102,13 @@ const AllCustomers = () => {
                   </th>
                   <th
                     scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
+                    className="px-12 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
                   >
                     Email
                   </th>
                   <th
                     scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
+                    className="px-12 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
                   >
                     Address
                   </th>
@@ -127,12 +124,12 @@ const AllCustomers = () => {
                   >
                     Register Date
                   </th>
-                  <th
+                  {/* <th
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
                   >
                     Action
-                  </th>
+                  </th> */}
                 </tr>
               </thead>
 
@@ -179,7 +176,7 @@ const AllCustomers = () => {
                           {order.date}
                         </p>
                       </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <button className="flex align-center justify-center font-sans font-medium text-teal-600 hover:text-teal-900">
                           Message{"  "}
                           <svg
@@ -197,7 +194,7 @@ const AllCustomers = () => {
                             />
                           </svg>
                         </button>
-                      </td>
+                      </td> */}
                     </tr>
                   </tbody>
                 );
