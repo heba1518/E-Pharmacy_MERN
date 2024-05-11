@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 import React from "react";
+=======
+import React, {useState} from "react";
+>>>>>>> Stashed changes
 
 const AllMessages = () => {
+  const [editModal, setEditModal] = useState(false);
+  const [viewOrder, setViewOrder] = useState();
   const orders = [
     {
       id: "2",
@@ -62,11 +68,16 @@ const AllMessages = () => {
   };
   return (
     <section>
+<<<<<<< Updated upstream
   <div className="container mx-auto px-4 sm:px-8 max-w-full sm:max-w-5xl">
+=======
+      <div className="container mx-auto px-4 sm:px-8 max-w-full sm:max-w-5xl">
+>>>>>>> Stashed changes
         <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
           <h2 className="font-display text-teal-700 text-2xl leading-tight">
             Messages
           </h2>
+<<<<<<< Updated upstream
           <div className="text-end">
             <form className="flex flex-col md:flex-row w-3/4 md:w-full max-w-sm md:space-x-3 space-y-3 md:space-y-0 justify-center">
               <div className=" relative ">
@@ -254,6 +265,8 @@ const AllMessages = () => {
               </div>
             </div>
           </div>
+=======
+>>>>>>> Stashed changes
         </div>
       </div>
 

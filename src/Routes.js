@@ -11,7 +11,22 @@ import AllShop from "./Pages/Shop/AllShop";
 import ShopDetailsPage from "./Pages/Shop/ShopDetailsPage";
 import Medicines from "./Components/Home/Medicine/Medicine";
 import PictureUpload from "./Pages/PictureUpload/PictureUpload";
+<<<<<<< Updated upstream
 import Blog from "./Pages/Blog/Blog";
+=======
+import CreateShop from './Pages/Shop/CreateShop';
+import Company from './Pages/About/Company';
+import Career from './Pages/About/Career';
+import ContactSupport from './Pages/Support/ContactSupport';
+import HelpResources from './Pages/Support/HelpResources';
+import ReleaseUpdate from './Pages/Support/ReleaseUpdate';
+import FAQ from './Pages/Platform/FAQ';
+import Pricing from './Pages/Platform/Pricing';
+import TermsPrivacy from './Pages/Platform/TermsPrivacy';
+import UserDashboard from './Components/Admin/User/UserDashboard';
+import EditUserInfo from './Components/Admin/User/EditUserInfo/EditUserInfo';
+
+>>>>>>> Stashed changes
 
 
 const Navigation = () => {
@@ -48,6 +63,41 @@ const Navigation = () => {
 
           <Route path="/orderHistory" element={<OrderHistory />} />
           <Route path="/profile/:id" element={<VenderDashboardPage />} />
+          
+
+          <Route path="/createShop" element ={<CreateShop />}/>
+            
+         
+          <Route exact path="/company" element ={<Company />}/>
+            
+        
+          <Route exact path="/career" element ={ <Career />}/>
+           
+        
+          <Route exact path="/contact" element ={<ContactSupport />}/>
+            
+        
+          <Route exact path="/resources" element ={<HelpResources />}/>
+            
+        
+          <Route exact path="/release-update" element ={<ReleaseUpdate />}/>
+            
+        
+          <Route exact path="/FAQ" element ={<FAQ />}/>
+            
+        
+          <Route exact path="/pricing" element ={<Pricing />}/>
+            
+        
+          <Route exact path="/terms&privacy" element ={<TermsPrivacy />}/>
+            
+        
+          <Route exact path="/userDashboard" element ={<UserDashboard/>}/>
+            
+        
+          <Route exact path="/editUserInfo" element ={<EditUserInfo/>}/>
+            
+        
         </Routes>
       </Router>
     </div>
