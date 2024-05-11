@@ -11,9 +11,8 @@ import AllShop from "./Pages/Shop/AllShop";
 import ShopDetailsPage from "./Pages/Shop/ShopDetailsPage";
 import Medicines from "./Components/Home/Medicine/Medicine";
 import PictureUpload from "./Pages/PictureUpload/PictureUpload";
-<<<<<<< Updated upstream
 import Blog from "./Pages/Blog/Blog";
-=======
+
 import CreateShop from './Pages/Shop/CreateShop';
 import Company from './Pages/About/Company';
 import Career from './Pages/About/Career';
@@ -25,8 +24,6 @@ import Pricing from './Pages/Platform/Pricing';
 import TermsPrivacy from './Pages/Platform/TermsPrivacy';
 import UserDashboard from './Components/Admin/User/UserDashboard';
 import EditUserInfo from './Components/Admin/User/EditUserInfo/EditUserInfo';
-
->>>>>>> Stashed changes
 
 
 const Navigation = () => {
