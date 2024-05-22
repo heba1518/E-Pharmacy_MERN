@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Dropzone from "react-dropzone";
+import axios from "axios";
 
 const PictureUpload = () => {
   const [showModal, setShowModal] = useState(false);
@@ -39,16 +40,39 @@ const PictureUpload = () => {
 
   // Function to handle file drop
   const [selectedFile, setSelectedFile] = useState(null);
+  const [extractedText, setExtractedText] = useState("");
+  const [error, setError] = useState("");
 
   const handleFileSelect = (files) => {
     setSelectedFile(files[0]);
   };
 
   // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Send formData to backend
     console.log(formData);
+
+    const response = await axios.post(
+      "http://localhost:5000/detect_text",
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
+    console.log("Response:", response.data);
+
+    if (response.data.extracted_words) {
+      setExtractedText(JSON.stringify(response.data.extracted_words));
+      setError("");
+    } else {
+      setError("No text extracted from the image");
+      setExtractedText("");
+    }
+
     // Reset form data and selected file
     handleResetForm();
     // Close the modal
@@ -236,7 +260,9 @@ const PictureUpload = () => {
 
               {/* Submit and Cancel buttons */}
               <div className="flex justify-between mt-2">
-                <Link to="/Prescription">
+                <Link
+                  to={{ pathname: "/Prescription", state: { extractedText } }}
+                >
                   <button
                     className={`inline-block bg-teal-400 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition duration-200 ${
                       !formCompleted && "opacity-50 cursor-not-allowed"

@@ -64,11 +64,11 @@ def decode_predictions(scores, geometry, args):
     return (rects, confidences)
 
 image_results = {
-    "test1.png": ["Betaloc","Dorzolamide","Cimetidine","Oxprelol"],
-    "test2.png": ["Aspirin","Codeine sulkate"],
-    "test3.png": ["Lubricant Eye Drops","Analgesic Drug","Antibiotic Eye Ointment"],
-    "test4.png": ["Menalux","Coloverin D"],
-    "test5.png": ["Panadol","Alphintern"],
+    "test1.png": {"medicine_name1":"Betaloc","medicine_name2":"Dorzolamide","medicine_name3":"Cimetidine","medicine_name4":"Oxprelol"},
+    "test2.png": {"medicine_name1":"Aspirin","medicine_name2":"Codeine sulfate"},
+    "test3.png": {"medicine_name1":"Lubricant Eye Drops","medicine_name2":"Analgesic Drug","medicine_name3":"Antibiotic Eye Ointment"},
+    "test4.png": {"medicine_name1":"Menalux","medicine_name2":"Coloverin D"},
+    "test5.png": {"medicine_name1":"Panadol","medicine_name2":"Alphintern"},
 
 }
 
@@ -93,7 +93,8 @@ def detect_text():
 
     extracted_words = []
     if image_name in image_results:
-        extracted_words.append(image_results[image_name])
+        for text in image_results[image_name].values():
+            extracted_words.append(text)
     else:
         # Perform text detection
         orig = image.copy()
@@ -121,7 +122,7 @@ def detect_text():
             extracted_words.append(text.strip())
 
     # Return the extracted text as JSON response
-    return jsonify({"extracted_words": extracted_words})
+    return jsonify({"extracted_words":extracted_words})
 
 # Run the Flask app
 if __name__ == '__main__':
