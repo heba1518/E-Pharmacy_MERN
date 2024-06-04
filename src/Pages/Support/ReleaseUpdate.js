@@ -3,6 +3,7 @@ import NavBar from "../../Components/Home/NavBar/NavBar";
 import Footer from '../../Components/Home/Footer/Footer'
 
 const ReleaseUpdate = () => {
+  window.scrollTo(0, 0);
     return (
       <Fragment>
         <NavBar/>

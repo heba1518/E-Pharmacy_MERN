@@ -6,33 +6,33 @@ import { ChevronDownIcon } from '@heroicons/react/outline'
 
 const faqs = [
   {
-    question: "What's the best thing about E-Pharmacy?",
+    question: "What's the best thing about Enaya?",
     answer:
-      "E-Pharmacy is a business model that deals with the preparation and sale of prescription and non-prescription medicine as in traditional pharmacies. However, online pharmacies take orders online and send the medicine to their destination. A system that stores data and enables functionality that organizes and maintains the customer, transactions, and medication use the process within pharmacies.",
+      "Enaya is a business model that deals with the preparation and sale of prescription and non-prescription medicine as in traditional pharmacies. However, online pharmacies take orders online and send the medicine to their destination. A system that stores data and enables functionality that organizes and maintains the customer, transactions, and medication use the process within pharmacies.",
   },
   {
-    question: "How E-Pharmacy is different from other online pharmacies?",
+    question: "How Enaya is different from other online pharmacies?",
     answer:
-      "At E-Pharmacy, we deliver the medicines in the utmost quality and package integrity in the market. Summing up with the offers and discounts on all products makes E-Pharmacy a sensible option. Also, we handle only the products which are licensed by the government.",
+      "At Enaya, we deliver the medicines in the utmost quality and package integrity in the market. Summing up with the offers and discounts on all products makes Enaya a sensible option. Also, we handle only the products which are licensed by the government.",
   },
   {
-    question: "What locations in Bangladesh does E-Pharmacy deliver?",
+    question: "What locations in Bangladesh does Enaya deliver?",
     answer:
       "We deliver all across India, Ranging to almost 26,000+ pin codes.",
   },
 
   {
-    question: "How can I contact E-Pharmacy",
+    question: "How can I contact Enaya",
     answer:
-      "Refer to the contact us section of the website for contact detail or you can contact us at “contact@ E-Pharmacy”.",
+      "Refer to the contact us section of the website for contact detail or you can contact us at “contact@ Enaya”.",
   },
   {
-    question: "How can I contact the pharmacists of E-Pharmacy?",
+    question: "How can I contact the pharmacists of Enaya?",
     answer:
-      "Refer to the contact us section of the website for contact detail or you can contact us at “contact@E-Pharmacy”. You can also call to our contact number (+91 75300 11585) and request a callback from the pharmacist.",
+      "Refer to the contact us section of the website for contact detail or you can contact us at “contact@Enaya”. You can also call to our contact number (+91 75300 11585) and request a callback from the pharmacist.",
   },
   {
-    question: "DoesE-Pharmacy accept any insurance plans?",
+    question: "Does Enaya accept any insurance plans?",
     answer:
       "No, we do not accept any insurance plans. However, we provide you the receipt and invoice for all orders which you can use to claim for any insurance.",
   },
@@ -42,7 +42,7 @@ const faqs = [
       "You don’t have to worry about the quality of the product. We sell only the products licensed by the government. We primarily deal with only the multinational brands with a good reputation.",
   },
   {
-    question: "Are there any discounts and offers in E-Pharmacy?",
+    question: "Are there any discounts and offers in Enaya?",
     answer:
       "All of our products have a discounted price. Moreover, there will be always different offers and discounts over a period of time. Kindly read the offer description for the eligibility to utilize it.",
   },
@@ -75,6 +75,7 @@ function classNames(...classes) {
 }
 
 const FAQ = () => {
+  window.scrollTo(0, 0);
     return (
       <Fragment>
         <NavBar/>
