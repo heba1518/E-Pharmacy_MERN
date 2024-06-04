@@ -13,10 +13,10 @@ const PictureUpload = () => {
     age: "",
     weight: "",
     phoneNumber: "",
-    picture: null,
+    // picture: null,
   });
 
-  const [formCompleted, setFormCompleted] = useState(false);
+  // const [formCompleted, setFormCompleted] = useState(false);
 
   // Function to handle form input change
   const handleInputChange = (e) => {
@@ -26,16 +26,16 @@ const PictureUpload = () => {
       [name]: value,
     });
     // Check if all form fields are filled
-    const isFormFilled =
-      formData.fullName !== "" &&
-      formData.gender !== "" &&
-      formData.age !== "" &&
-      formData.weight !== "" &&
-      formData.phoneNumber !== "" &&
-      selectedFile !== null;
+    // const isFormFilled =
+    //   formData.fullName !== "" &&
+    //   formData.gender !== "" &&
+    //   formData.age !== "" &&
+    //   formData.weight !== "" &&
+    //   formData.phoneNumber !== "" &&
+    //   selectedFile !== null;
 
-    // Update formCompleted state based on whether the form is filled or not
-    setFormCompleted(isFormFilled);
+    // // Update formCompleted state based on whether the form is filled or not
+    // setFormCompleted(isFormFilled);
   };
 
   // Function to handle file drop
@@ -50,33 +50,39 @@ const PictureUpload = () => {
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Send formData to backend
-    console.log(formData);
+    try {
+      const formData = new FormData();
+      formData.append("image", selectedFile);
+      formData.append("fullName", formData.fullName);
+      formData.append("gender", formData.gender);
+      formData.append("age", formData.age);
+      formData.append("weight", formData.weight);
+      formData.append("phoneNumber", formData.phoneNumber);
 
-    const response = await axios.post(
-      "http://localhost:5000/detect_text",
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+      const response = await axios.post(
+        "http://localhost:5000/detect_text",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      console.log("Response:", response.data);
+
+      if (response.data.extracted_words) {
+        setExtractedText(JSON.stringify(response.data.extracted_words));
+        setError("");
+      } else {
+        setError("No text extracted from the image");
+        setExtractedText("");
       }
-    );
-
-    console.log("Response:", response.data);
-
-    if (response.data.extracted_words) {
-      setExtractedText(JSON.stringify(response.data.extracted_words));
-      setError("");
-    } else {
-      setError("No text extracted from the image");
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      setError("An error occurred while processing the image");
       setExtractedText("");
     }
-
-    // Reset form data and selected file
-    handleResetForm();
-    // Close the modal
-    setShowModal(false);
   };
 
   // Function to reset the form
@@ -225,7 +231,7 @@ const PictureUpload = () => {
                         <img
                           src={URL.createObjectURL(selectedFile)}
                           alt="Selected"
-                          className="selected-image"
+                          className="w-40 h-60"
                         />
                       ) : (
                         <div class="flex justify-center max-w-lg px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -264,10 +270,7 @@ const PictureUpload = () => {
                   to={{ pathname: "/Prescription", state: { extractedText } }}
                 >
                   <button
-                    className={`inline-block bg-teal-400 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition duration-200 ${
-                      !formCompleted && "opacity-50 cursor-not-allowed"
-                    }`}
-                    disabled={!formCompleted} // Disable button if form is not completed
+                    className={`inline-block bg-teal-400 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition duration-200`}
                   >
                     Send
                   </button>

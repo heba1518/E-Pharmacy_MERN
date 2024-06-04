@@ -2,13 +2,12 @@
   "name": "medicine-store",
   "version": "1.0.0",
   "description": "",
-  "engines": {
-    "node": "20.10.0"
-  },
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
   },
+  "build-clinet": "cd .. && npm install && npm run build",
+  "build": "npm install &&npm run build-clinet",
   "keywords": [],
   "author": "",
   "license": "ISC",

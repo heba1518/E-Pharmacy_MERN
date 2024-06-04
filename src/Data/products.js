@@ -16,6 +16,9 @@ import img15 from "../Assets/images/products/panadol-day.webp";
 import img16 from "../Assets/images/products/dorzolamide.webp";
 import img17 from "../Assets/images/products/perderm.jpeg";
 import img18 from "../Assets/images/products/fernilar.jpg";
+import img19 from "../Assets/images/products/betaloc.jpg";
+import img20 from "../Assets/images/products/cimetidine.jpg";
+import img21 from "../Assets/images/products/Codeine-Sulphate.jpg";
 
 let productsData = [
   {
@@ -227,7 +230,7 @@ let productsData = [
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
-    name: "Aspirin Protect",
+    name: "Aspirin",
     image: img12,
     description:
       "Nonsteroidal Anti-inflammatory Drug used in the treatment of acute coronary syndrome, primary and secondary prevention of atherosclerotic cardiovascular diseases, prevention of preeclampsia and used in the prophylaxis against venous thromboembolism.",
@@ -350,6 +353,63 @@ let productsData = [
     totalReview: 12,
     brand: " Strip",
     category: "Respiratory System Diseases",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Betaloc",
+    image: img19,
+    description:
+      "Betaloc 100mg Tablet belongs to a group of medicines called beta-blockers. It is used to treat high blood pressure (hypertension), angina (heart-related chest pain), irregular heart rhythms (arrhythmia). It also helps to prevent future heart attacks and stroke and to prevent migraines.",
+    price: 124,
+    rating: 0,
+    totalReview: 12,
+    brand: "AstraZeneca",
+    category: "Hypertension",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Cimetidine",
+    image: img20,
+    description:
+      "Cimetidine is a histamine H2 receptor antagonist used to manage GERD, peptic ulcer disease, and indigestion.",
+    price: 500,
+    rating: 0,
+    totalReview: 12,
+    brand: "Tagamet",
+    category: "Death Diseases",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Codeine sulfate",
+    image: img21,
+    description:
+      "Codeine is used to relieve mild to moderate pain. It belongs to the group of medicines called narcotic analgesics (pain medicines). This medicine acts on the central nervous system (CNS) to relieve pain.",
+    price: 100,
+    rating: 0,
+    totalReview: 12,
+    brand: "Codeine Contin",
+    category: "Antitussives",
     stock: 943,
     document: 74,
     isDeliveryFree: true,
