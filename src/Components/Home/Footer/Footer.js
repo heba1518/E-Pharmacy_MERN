@@ -116,12 +116,14 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="mt-3">
-                  <Link
-                    to="/#blogs"
-                    className="text-gray-500 cursor-pointer hover:text-teal-500"
-                  >
+                  <a
+                  href="#blog"
+                  aria-label="Blog"
+                  title="Blog"
+                  className="text-gray-500 cursor-pointer hover:text-teal-500"
+                  >    
                     Blog
-                  </Link>
+                  </a>               
                 </li>
               </nav>
             </div>
@@ -225,7 +227,7 @@ const Footer = () => {
             <p className="text-sm text-gray-700 capitalize xl:text-center">
               © {new Date().getFullYear()} All rights reserved{" "}
               <a href="/" className="text-teal-700">
-                E-Pharmacy
+                ENAYA
               </a>
             </p>
           </div>

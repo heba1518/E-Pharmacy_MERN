@@ -3,6 +3,7 @@ import Footer from '../../Components/Home/Footer/Footer';
 import NavBar from "../../Components/Home/NavBar/NavBar";
 
 const TermsPrivacy = () => {
+  window.scrollTo(0, 0);
     return (
       <Fragment>
         <NavBar />
@@ -11,7 +12,7 @@ const TermsPrivacy = () => {
           <div className="container p-5 border-2">
             <p>
               SMV Healthcare Private Limited. is the licensed owner of the
-              E-Pharmacy and the website E-Pharmacy.com (”The Site”) is
+              Enaya and the website Enaya.com (”The Site”) is
               from SMV Healthcare Private Limited. SMVHPL respects your privacy.
               As a visitor to the Site/ Customer, you are advised to kindly read
               the Privacy Policy carefully. By accessing the services provided
