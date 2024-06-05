@@ -1,12 +1,14 @@
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Dropzone from "react-dropzone";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import PictureContent from "../../Home/PictureUpload/PictureContent";
 
 const PictureUpload = () => {
-  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     gender: "",
@@ -15,6 +17,11 @@ const PictureUpload = () => {
     phoneNumber: "",
     // picture: null,
   });
+
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [extractedText, setExtractedText] = useState("");
+  const [error, setError] = useState("");
 
   // const [formCompleted, setFormCompleted] = useState(false);
 
@@ -37,11 +44,6 @@ const PictureUpload = () => {
     // // Update formCompleted state based on whether the form is filled or not
     // setFormCompleted(isFormFilled);
   };
-
-  // Function to handle file drop
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [extractedText, setExtractedText] = useState("");
-  const [error, setError] = useState("");
 
   const handleFileSelect = (files) => {
     setSelectedFile(files[0]);
@@ -85,6 +87,21 @@ const PictureUpload = () => {
     }
   };
 
+  const handleText = () => {
+    if (extractedText) {
+      setError(""); // Clear any existing errors
+      navigate("/Prescription", { state: { extractedWords: extractedText } });
+    } else {
+      setError("No extracted text available");
+    }
+  };
+
+  useEffect(() => {
+    if (extractedText) {
+      navigate("/Prescription", { state: { extractedWords: extractedText } });
+    }
+  }, [extractedText, navigate]);
+
   // Function to reset the form
   const handleResetForm = () => {
     setFormData({
@@ -95,7 +112,7 @@ const PictureUpload = () => {
       phoneNumber: "",
       picture: null,
     });
-    setSelectedFile(null); // Reset selected file state
+    setSelectedFile(null); 
   };
 
   return (
@@ -266,15 +283,12 @@ const PictureUpload = () => {
 
               {/* Submit and Cancel buttons */}
               <div className="flex justify-between mt-2">
-                <Link
-                  to={{ pathname: "/Prescription", state: { extractedText } }}
+                <button
+                  className={`inline-block bg-teal-400 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition duration-200`}
+                  onClick={handleText}
                 >
-                  <button
-                    className={`inline-block bg-teal-400 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition duration-200`}
-                  >
-                    Send
-                  </button>
-                </Link>
+                  Send
+                </button>
                 <button
                   type="reset"
                   onClick={() => {
@@ -290,6 +304,8 @@ const PictureUpload = () => {
           </div>
         </div>
       )}
+      {/* {extractedText && <PictureContent extractedWords={extractedText} />}
+      {error && <p style={{ color: "red" }}>{error}</p>} */}
     </div>
   );
 };
