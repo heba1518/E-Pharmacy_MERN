@@ -78,7 +78,7 @@ const ShopCard = () => {
             {/* Visit store button */}
             <div className="flex justify-center items-center my-2 mt-4 ">
               <Link to={`/shopDetails/${shopCard._id}`}>
-                <button className="flex py-2 px-6 rounded shadow-lg bg-teal-400 focus:outline-none active:bg-teal-400 text-white transition duration-150 ease-in-out hover:bg-teal-600">
+                <button className="flex py-2 px-6 rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-400 text-white transition duration-150 ease-in-out hover:bg-teal-600">
                   <svg
                     className="w-5 h-5 mr-1"
                     fill="none"
@@ -105,7 +105,7 @@ const ShopCard = () => {
       <div className="text-center mt-8">
         <Link
           to="/allShop"
-          className="inline-flex items-center justify-center h-12 px-6 font-sans font-medium tracking-wider transition duration-200 rounded shadow-md bg-teal-400 text-white hover:bg-teal-700 focus:shadow-outline focus:outline-none"
+          className="inline-flex items-center justify-center h-12 px-6 font-sans font-medium tracking-wider transition duration-200 rounded shadow-md bg-teal-500 text-white hover:bg-teal-700 focus:shadow-outline focus:outline-none"
         >
           See More{' '}
           <svg

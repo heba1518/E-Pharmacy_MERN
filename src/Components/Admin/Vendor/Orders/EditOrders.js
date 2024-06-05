@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import img7 from "../../../../Assets/images/products/COMTREX.jpg";
 import img9 from "../../../../Assets/images/products/limitless.jpg";
 import img10 from "../../../../Assets/images/products/Strepsils.jpg";
@@ -6,52 +6,52 @@ import img10 from "../../../../Assets/images/products/Strepsils.jpg";
 const EditOrders = ({ setEditModal }) => {
   const orders = [
     {
-      id: '0',
-      photo: 'https://i.imgur.com/1As0akH.png1',
-      name: 'Ahmed Toba',
-      address: 'El Hwatem, Faiyum',
-      price: '890.66',
-      status: 'In Progress',
-      email: 'ahmedtoba@gmail.com',
-      number: 'WU88191111',
-      date: 'April 22, 2024',
-      datetime: '2024-01-22',
-      phone: '+201036985253',
-      invoiceHref: '#',
-      total: '660.00',
+      id: "0",
+      photo: "https://i.imgur.com/1As0akH.png1",
+      name: "Ahmed Toba",
+      address: "El Hwatem, Faiyum",
+      price: "890.66",
+      status: "In Progress",
+      email: "ahmedtoba@gmail.com",
+      number: "WU88191111",
+      date: "April 22, 2024",
+      datetime: "2024-01-22",
+      phone: "+201036985253",
+      invoiceHref: "#",
+      total: "660.00",
       products: [
         {
           id: 1,
-          name: 'Strepsils',
-          quantity: '1',
-          price: '165 £',
+          name: "Strepsils",
+          quantity: "1",
+          price: "165 £",
           brand: "Reckitt Benckiser",
-          category: 'sore & itchy throat',
-          status: 'Delivered April 22, 2024',
+          category: "sore & itchy throat",
+          status: "Delivered April 22, 2024",
           imageSrc: img10,
-          imageAlt: 'Detail of mechanical pencil ',
+          imageAlt: "Detail of mechanical pencil ",
         },
         {
           id: 2,
-          name: 'LIMITLESS OMEGA 3',
-          quantity: '3',
-          price: '145 £',
+          name: "LIMITLESS OMEGA 3",
+          quantity: "3",
+          price: "145 £",
           brand: "EVA PHARMA",
-          category: 'Vitamins & Supplements',
-          status: 'Delivered April 22, 2024',
+          category: "Vitamins & Supplements",
+          status: "Delivered April 22, 2024",
           imageSrc: img9,
-          imageAlt: 'Detail of mechanical pencil ',
+          imageAlt: "Detail of mechanical pencil ",
         },
         {
           id: 3,
-          name: 'COMTREX',
-          quantity: '2',
+          name: "COMTREX",
+          quantity: "2",
           brand: "GSK",
-          price: '30 £',
-          category: 'Soft Flooring and Base',
-          status: 'Delivered April 22, 2024',
+          price: "30 £",
+          category: "Soft Flooring and Base",
+          status: "Delivered April 22, 2024",
           imageSrc: img7,
-          imageAlt: 'Detail of mechanical pencil ',
+          imageAlt: "Detail of mechanical pencil ",
         },
       ],
     },
@@ -115,7 +115,7 @@ const EditOrders = ({ setEditModal }) => {
                       {orders.map((order) => (
                         <div key={order.number}>
                           <h3 className="sr-only">
-                            Order placed on{' '}
+                            Order placed on{" "}
                             <time dateTime={order.datetime}>{order.date}</time>
                           </h3>
 
@@ -192,15 +192,15 @@ const EditOrders = ({ setEditModal }) => {
 
                             <select
                               className={`block w-52 font-semibold py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${
-                                order.status === 'Pending'
-                                  ? 'text-yellow-900'
-                                  : order.status === 'Confirmed'
-                                  ? 'text-indigo-600'
-                                  : order.status === 'Completed'
-                                  ? 'text-green-600'
-                                  : order.status === 'Cancelled'
-                                  ? 'text-red-600'
-                                  : 'text-blue-600'
+                                order.status === "Pending"
+                                  ? "text-yellow-900"
+                                  : order.status === "Confirmed"
+                                  ? "text-indigo-600"
+                                  : order.status === "Completed"
+                                  ? "text-green-600"
+                                  : order.status === "Cancelled"
+                                  ? "text-red-600"
+                                  : "text-blue-600"
                               }`}
                               name="status"
                               defaultValue={order.status}

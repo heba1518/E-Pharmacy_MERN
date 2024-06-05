@@ -3,17 +3,16 @@ import { Link } from "react-router-dom";
 import productsLocal, { updateQuantity } from "../../Data/products";
 import WishList from "../Home/WishList/WishList";
 
-
 const Products = () => {
   const [searchItem, setSearchItem] = useState("");
   const [products, setProducts] = useState(productsLocal);
   const [filteredProducts, setFilteredProducts] = useState(products);
+  const [filterProducts, setFilterProducts] = useState([]);
   const [isWishlistActive, setIsWishlistActive] = useState(false);
   const [refresh, setRefresh] = useState(false);
 
   const handleRefresh = () => {
-  
-    setRefresh(prevRefresh => !prevRefresh);
+    setRefresh((prevRefresh) => !prevRefresh);
   };
 
   const isActive = (product) => {
@@ -25,39 +24,39 @@ const Products = () => {
   // let proucts = JSON.parse(local);
   // setProducts(proucts)
 
-  const updateProducts = (id, newData)=>{
-    const index = products.findIndex(item => item._id === id)
-      if (index !== -1) {
-        products[index] = { ...products[index], ...newData };
-        setProducts(products)
-        localStorage.setItem("products", JSON.stringify(products));
-        return true
-      }
-      return false
-  }
 
-  useEffect( () => {
-  }, [products])
-  
-  const handleToggleWishlist = (id,product) => {
+
+  const updateProducts = (id, newData) => {
+    const index = products.findIndex((item) => item._id === id);
+    if (index !== -1) {
+      products[index] = { ...products[index], ...newData };
+      setProducts(products);
+      localStorage.setItem("products", JSON.stringify(products));
+      return true;
+    }
+    return false;
+  };
+
+  useEffect(() => {}, [products]);
+
+  const handleToggleWishlist = (id, product) => {
     product.fav = !product.fav;
     const updated = updateProducts(id, product);
     if (updated) {
-      setFilteredProducts([...products]); 
+      setFilteredProducts([...products]);
     } else {
-      console.log('Product not found');
+      console.log("Product not found");
     }
   };
-  const handleAddToCart = (id,product) => {
+  const handleAddToCart = (id, product) => {
     product.cart = true;
     const updated = updateProducts(id, product);
     if (updated) {
-      setFilteredProducts([...products]); 
+      setFilteredProducts([...products]);
     } else {
-      console.log('Product not found');
+      console.log("Product not found");
     }
   };
-
 
   const handleInputChange = (e) => {
     let searchTerm = e.target.value;
@@ -70,7 +69,7 @@ const Products = () => {
     setFilteredProducts(filteredItems);
   };
 
-  
+
   return (
     <div className="bg-white">
       <div className="max-w-2xl mx-auto pb-10 px-4 sm:px-6 lg:max-w-7xl lg:px-8 pt-10 sm:pt-10">

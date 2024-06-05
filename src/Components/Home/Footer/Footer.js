@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import CompanyLogo from '../NavBar/CompanyLogo';
+import React from "react";
+import { Link } from "react-router-dom";
+import CompanyLogo from "../NavBar/CompanyLogo";
 
 const Footer = () => {
   return (
@@ -11,9 +11,9 @@ const Footer = () => {
             {/* Logo */}
             <CompanyLogo />
             <p className="mt-2 text-base text-gray-500">
-            Say goodbye to all your healthcare worries with us
+              Design, Code and Ship!
             </p>
-            {/* <p className="mt-2 text-base text-gray-500">Take care of your healthcare now!</p> */}
+            <p className="mt-2 text-base text-gray-500">Eet, Code, Sleep!</p>
             <div className="mt-4">
               <span className="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                 <Link
@@ -101,7 +101,7 @@ const Footer = () => {
               <nav className="mb-10 list-none">
                 <li className="mt-3">
                   <Link
-                    to="/"
+                    to="/company"
                     className="text-gray-500 cursor-pointer hover:text-teal-500"
                   >
                     Company
@@ -109,19 +109,21 @@ const Footer = () => {
                 </li>
                 <li className="mt-3">
                   <Link
-                    to="/"
+                    to="/career"
                     className="text-gray-500 cursor-pointer hover:text-teal-500"
                   >
                     Careers
                   </Link>
                 </li>
                 <li className="mt-3">
-                  <Link
-                    to="/"
-                    className="text-gray-500 cursor-pointer hover:text-teal-500"
-                  >
+                  <a
+                  href="#blog"
+                  aria-label="Blog"
+                  title="Blog"
+                  className="text-gray-500 cursor-pointer hover:text-teal-500"
+                  >    
                     Blog
-                  </Link>
+                  </a>               
                 </li>
               </nav>
             </div>
@@ -132,7 +134,7 @@ const Footer = () => {
               <nav className="mb-10 list-none">
                 <li className="mt-3">
                   <Link
-                    to="/"
+                    to="/contact"
                     className="text-gray-500 cursor-pointer hover:text-teal-500"
                   >
                     Contact Support
@@ -140,7 +142,7 @@ const Footer = () => {
                 </li>
                 <li className="mt-3">
                   <Link
-                    to="/"
+                    to="/resources"
                     className="text-gray-500 cursor-pointer hover:text-teal-500"
                   >
                     Help Resources
@@ -148,7 +150,7 @@ const Footer = () => {
                 </li>
                 <li className="mt-3">
                   <Link
-                    to="/"
+                    to="/release-update"
                     className="text-gray-500 cursor-pointer hover:text-teal-500"
                   >
                     Release Updates
@@ -163,7 +165,7 @@ const Footer = () => {
               <nav className="mb-10 list-none">
                 <li className="mt-3">
                   <Link
-                    to="/"
+                    to="/terms&privacy"
                     className="text-gray-500 cursor-pointer hover:text-teal-500"
                   >
                     Terms &amp; Privacy
@@ -171,7 +173,7 @@ const Footer = () => {
                 </li>
                 <li className="mt-3">
                   <Link
-                    to="/"
+                    to="/pricing"
                     className="text-gray-500 cursor-pointer hover:text-teal-500"
                   >
                     Pricing
@@ -179,7 +181,7 @@ const Footer = () => {
                 </li>
                 <li className="mt-3">
                   <Link
-                    to="/"
+                    to="/FAQ"
                     className="text-gray-500 cursor-pointer hover:text-teal-500"
                   >
                     FAQ
@@ -194,7 +196,7 @@ const Footer = () => {
               <nav className="mb-10 list-none">
                 <li className="mt-3">
                   <Link
-                    to="/"
+                    to="/contact"
                     className="text-gray-500 cursor-pointer hover:text-teal-500"
                   >
                     Send a Message
@@ -202,7 +204,7 @@ const Footer = () => {
                 </li>
                 <li className="mt-3">
                   <Link
-                    to="/"
+                    to="/contact"
                     className="text-gray-500 cursor-pointer hover:text-teal-500"
                   >
                     Request a Quote
@@ -223,8 +225,10 @@ const Footer = () => {
         <div className="bg-teal-50">
           <div className="container px-5 py-4 mx-auto">
             <p className="text-sm text-gray-700 capitalize xl:text-center">
-              © 2024 All rights reserved{' '}
-              <span className="text-teal-700">E-Pharmacy</span>
+              © {new Date().getFullYear()} All rights reserved{" "}
+              <a href="/" className="text-teal-700">
+                ENAYA
+              </a>
             </p>
           </div>
         </div>
