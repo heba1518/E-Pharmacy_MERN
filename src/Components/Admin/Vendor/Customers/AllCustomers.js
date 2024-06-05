@@ -5,8 +5,8 @@ const AllCustomers = () => {
     {
       id: "0",
       photo: "https://i.imgur.com/1As0akH.png1",
-      name: "Ahmed Toba",
-      email: "ahmedtoba@gmail.com",
+      name: "Ahmed Maher",
+      email: "ahmedMaher@gmail.com",
       address: "El Hwatem, Faiyum",
       phone: "+201036985253",
       status: "Active",

@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
 const RecentCustomers = () => {
   const customers = [
     {
       id: "0",
       photo: "https://i.imgur.com/1As0akH.png1",
-      name: "Ahmed Toba",
-      email: "ahmedtoba@gmail.com",
-      spent: '2,890 £',
+      name: "Ahmed Maher",
+      email: "ahmedMaher@gmail.com",
+      spent: "2,890£",
     },
     {
       id: "1",
@@ -15,7 +15,7 @@ const RecentCustomers = () => {
       name: "Mohammed Sabry",
       address: "El Haram, Cairo",
       email: "mSabry@gmail.com",
-      spent: '2,767 £',
+      spent: "2,767£",
     },
     {
       id: "2",
@@ -23,14 +23,14 @@ const RecentCustomers = () => {
       name: "Salma Ahmed",
       address: "masla square, Faiyum",
       email: "salmaAhmed@gmail.com",
-      spent: '2,996 £',
+      spent: "2,996£",
     },
     {
       id: "3",
       photo: "https://i.imgur.com/hz6bZkb.png",
       name: "Sayed Yasser",
       email: "sayedY@gmail.com",
-      spent: '1,220 £',
+      spent: "1,220£",
     },
     {
       id: "4",
@@ -38,7 +38,7 @@ const RecentCustomers = () => {
       name: "Heba Amr",
       address: "El Rashidy, Alex",
       email: "hebaamr@gmail.com",
-      spent: '1,890 £',
+      spent: "1,890£",
     },
   ];
 
