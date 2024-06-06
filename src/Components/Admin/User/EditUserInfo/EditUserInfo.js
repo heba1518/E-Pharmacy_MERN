@@ -1,8 +1,10 @@
 import React from 'react';
 import NavBar from '../../../Home/NavBar/NavBar';
 import Footer from '../../../Home/Footer/Footer'
-
+import img from '../../../../Assets/images/logo5.png'
 const EditUserInfo = () => {
+    let u = localStorage.getItem("user");
+    let user = JSON.parse(u)
     return (
         <>
         <NavBar/>
@@ -17,7 +19,7 @@ const EditUserInfo = () => {
                 <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                     <dt className="text-sm font-medium text-gray-500">Name</dt>
                     <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    <span className="flex-grow">Chelsea Hagon</span>
+                    <span className="flex-grow">{user.userName}</span>
                     <span className="ml-4 flex-shrink-0">
                         <button
                         type="button"
@@ -34,7 +36,7 @@ const EditUserInfo = () => {
                     <span className="flex-grow">
                         <img
                         className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src="https://i.imgur.com/1As0akH.png1"
                         alt=""
                         />
                     </span>
@@ -60,7 +62,7 @@ const EditUserInfo = () => {
                 <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:pt-5">
                     <dt className="text-sm font-medium text-gray-500">Email</dt>
                     <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    <span className="flex-grow">chelsea.hagon@example.com</span>
+                    <span className="flex-grow">{user.email}</span>
                     <span className="ml-4 flex-shrink-0">
                         <button
                         type="button"
@@ -74,7 +76,7 @@ const EditUserInfo = () => {
                 <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-b sm:border-gray-200">
                     <dt className="text-sm font-medium text-gray-500">Phone</dt>
                     <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    <span className="flex-grow">+980760984372</span>
+                    <span className="flex-grow">{user.phone}</span>
                     <span className="ml-4 flex-shrink-0">
                         <button
                         type="button"
@@ -85,20 +87,7 @@ const EditUserInfo = () => {
                     </span>
                     </dd>
                 </div>
-                <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-b sm:border-gray-200">
-                    <dt className="text-sm font-medium text-gray-500">Address</dt>
-                    <dd className="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    <span className="flex-grow">32100, Minali</span>
-                    <span className="ml-4 flex-shrink-0">
-                        <button
-                        type="button"
-                        className="bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
-                        >
-                        Update
-                        </button>
-                    </span>
-                    </dd>
-                </div>
+               
                 </dl>
             </div>
             </div>

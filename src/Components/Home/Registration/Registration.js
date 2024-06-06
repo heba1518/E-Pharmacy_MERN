@@ -41,19 +41,7 @@ const Registration = ({ setIsAccount }) => {
     }));
   };
 
-  function generateMongoID() {
-    const timestamp = ((new Date().getTime() / 1000) | 0).toString(16); // Convert current time to hexadecimal
-    const randomString = Math.random().toString(16).substring(2); // Generate a random hexadecimal string
-    const uniqueID =
-      timestamp +
-      " "
-        .repeat(16)
-        .replace(/./g, () =>
-          randomString.charAt(Math.floor(Math.random() * randomString.length))
-        );
-    return uniqueID;
-  }
-
+  
   const check = () => {
     // e.preventDefault();
     const { firstName, lastName, userName, phone, email, password } = formData;
@@ -69,23 +57,9 @@ const Registration = ({ setIsAccount }) => {
       setNotificationMessage("Please Fill All Fields");
       setType("error");
       return;
-    // } else if (Array.isArray(users) && users.length > 0) {
-    //   for (const user of users) {
-    //     if (user.email === email) {
-    //       setShowNotification(true);
-    //       setNotificationMessage("You Already Have Account");
-    //       setType("error");
-    //       return;
-    //     }
-    //   }
+   
     }
-    // const _id = generateMongoID();
-    // users.push({ _id, firstName, lastName, userName, phone, email, password });
-    // localStorage.setItem("users", JSON.stringify(users));
-    // setShowNotification(true);
-    // setNotificationMessage(`${firstName}, You Sign Up Successfuly!`);
-    // setType("success");
-    // window.location.href = "/login";
+    
   };
 
 
@@ -98,6 +72,8 @@ const Registration = ({ setIsAccount }) => {
         email: state.email,
         password: state.password,
         userName: state.userName,
+        phone: state.phone,
+        role: "user"
       };
       axios
         .post("http://localhost:4000/api/users/register", payload)
@@ -198,7 +174,7 @@ const Registration = ({ setIsAccount }) => {
                 <div className="w-full px-3 mb-6 md:w-1/2 md:mb-0">
                   <label
                     className="block mb-2 text-xs font-semibold tracking-wide text-gray-700 uppercase"
-                    for="grid-first-name"
+                    htmlFor="grid-first-name"
                   >
                     First Name
                   </label>
@@ -217,7 +193,7 @@ const Registration = ({ setIsAccount }) => {
                 <div className="w-full px-3 md:w-1/2">
                   <label
                     className="block mb-2 text-xs font-semibold tracking-wide text-gray-700 uppercase"
-                    for="grid-last-name"
+                    htmlFor="grid-last-name"
                   >
                     Last Name
                   </label>
@@ -238,7 +214,7 @@ const Registration = ({ setIsAccount }) => {
                 <div className="w-full px-3">
                   <label
                     className="block mb-2 text-xs font-semibold tracking-wide text-gray-700 uppercase"
-                    for="grid-password"
+                    htmlFor="grid-password"
                   >
                     Username
                   </label>
@@ -258,7 +234,7 @@ const Registration = ({ setIsAccount }) => {
                 <div className="w-full px-3 mb-6 md:w-1/2 md:mb-0">
                   <label
                     className="block mb-2 text-xs font-semibold tracking-wide text-gray-700 uppercase"
-                    for="grid-first-name"
+                    htmlFor="grid-first-name"
                   >
                     Email Address
                   </label>
@@ -276,7 +252,7 @@ const Registration = ({ setIsAccount }) => {
                 <div className="w-full px-3 md:w-1/2">
                   <label
                     className="block mb-2 text-xs font-semibold tracking-wide text-gray-700 uppercase"
-                    for="grid-last-name"
+                    htmlFor="grid-last-name"
                   >
                     Phone Number
                   </label>
@@ -296,7 +272,7 @@ const Registration = ({ setIsAccount }) => {
                 <div className="w-full px-3 mb-6 md:w-1/2 md:mb-0">
                   <label
                     className="block mb-2 text-xs font-semibold tracking-wide text-gray-700 uppercase"
-                    for="grid-first-name"
+                    htmlFor="grid-first-name"
                   >
                     Password
                   </label>
@@ -314,7 +290,7 @@ const Registration = ({ setIsAccount }) => {
                 <div className="w-full px-3 md:w-1/2">
                   <label
                     className="block mb-2 text-xs font-semibold tracking-wide text-gray-700 uppercase"
-                    for="grid-last-name"
+                    htmlFor="grid-last-name"
                   >
                     Confirm Password
                   </label>

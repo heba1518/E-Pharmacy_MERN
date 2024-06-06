@@ -1,9 +1,17 @@
 import React from 'react';
 import img from '../../../../Assets/images/pharmacies/elezaby_logo.png';
 const VendorUser = () => {
+  // const [login, setLogin] = useState(false);
+
+  const handleLogOut = ()=>{
+    localStorage.setItem('profile', false);
+    window.location.href = "/";
+  }
+  
   return (
     <div className="relative inline-flex">
-      <button
+      <button 
+      onClick={() => handleLogOut()}
         className="inline-flex justify-center items-center group"
         aria-haspopup="true"
       >

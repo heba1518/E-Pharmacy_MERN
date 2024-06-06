@@ -24,7 +24,7 @@ const ContactSupport = () => {
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-first-name"
+                htmlFor="grid-first-name"
               >
                 First Name
               </label>
@@ -41,7 +41,7 @@ const ContactSupport = () => {
             <div class="w-full md:w-1/2 px-3">
               <label
                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-last-name"
+                htmlFor="grid-last-name"
               >
                 Last Name
               </label>
@@ -57,7 +57,7 @@ const ContactSupport = () => {
             <div class="w-full px-3">
               <label
                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-password"
+                htmlFor="grid-password"
               >
                 Email Address
               </label>
@@ -74,7 +74,7 @@ const ContactSupport = () => {
             <div class="w-full px-3">
               <label
                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-password"
+                htmlFor="grid-password"
               >
                 Your Message
               </label>
