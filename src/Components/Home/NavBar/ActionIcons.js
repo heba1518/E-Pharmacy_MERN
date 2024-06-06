@@ -38,14 +38,16 @@ const ActionIcons = () => {
 
   const handleLogOut = ()=>{
     localStorage.setItem('profile', false);
+    window.location.href = "/";
     setLogin(false);
   }
   
   const handleProfile = () =>{
-    const u = localStorage.getItem('user');
-    const us = JSON.parse(u);
+    let u = localStorage.getItem("user");
+    let us = JSON.parse(u)
     setUser(us);
-    if(user.role == "pharmacy"){
+
+    if(us.role == "pharmacy"){
       setPath('/vendor/dashboard')
     }else{
       setPath('/userProfile/666044742eac70ecfd68ab73')
@@ -68,11 +70,6 @@ const ActionIcons = () => {
   });
 
 
-  // let totalPrice = 0;
-  // products.forEach(product =>{
-  //   totalPrice += product.price;
-  // })
-  // let favProducts =products.filter(product => product.fav);
   return (
     <>
       <Link to="/vendor/dashboard">

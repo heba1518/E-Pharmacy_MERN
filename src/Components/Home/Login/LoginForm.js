@@ -30,27 +30,7 @@ const LoginForm = () => {
     }));
   };
 
-  const login = (e) => {
-    e.preventDefault();
-    const { email, password } = formData;
-    const arr = localStorage.getItem("users");
-    const users = JSON.parse(arr);
-    if (Array.isArray(users) && users.length > 0) {
-      for (const user of users) {
-        if (user.email === email && user.password === password) {
-          console.log("User logged in:", user);
-          localStorage.setItem("", JSON.stringify(true));
-          setShowNotification(true);
-          setNotificationMessage("Login Successfuly!");
-          setType("success");
-          window.location.href = "/";
-          break;
-        }
-      }
-    } else {
-      console.log("No users found in local storage");
-    }
-  };
+
   const handleSubmitClick = (e) => {
     e.preventDefault();
     const payload = {
@@ -78,6 +58,7 @@ const LoginForm = () => {
           } else {
             setShowNotification(true);
             setNotificationMessage(response.data.msg);
+            console.log("khfgj")
             setType("error");
           }
         } else if (response.code === 204) {
@@ -240,7 +221,7 @@ const LoginForm = () => {
                           className="h-4 w-4 bg-teal-500 focus:ring-teal-400 border-gray-300 rounded"
                         />
                         <label
-                          for="remember_me"
+                          htmlFor="remember_me"
                           className="ml-2 block text-sm text-gray-900"
                         >
                           Remember me
