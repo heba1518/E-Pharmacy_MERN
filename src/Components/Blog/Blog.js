@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useHistory, useEffect } from "react";
 
 function Article() {
+  window.scrollTo(0, 0);
   return (
     <div className="flex flex-col items-center mt-10">
       <div className="w-2/3 container shadow-sm single-layout-1 items-center">

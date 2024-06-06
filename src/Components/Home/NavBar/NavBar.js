@@ -33,7 +33,7 @@ const NavBar = () => {
 
       <div
         className={`${
-          showFixedNav ? 'py-3' : 'py-5'
+          showFixedNav ? 'py-0' : 'py-0'
         } group-hover:px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8`}
       >
         <div className="relative flex items-center justify-between font-sans">
