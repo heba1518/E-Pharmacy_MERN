@@ -68,7 +68,8 @@ const LoginForm = () => {
 
           if (response.data.success) {
             localStorage.setItem("test", response.data.data.token);
-            // localStorage.setItem("id", response.data.user.id);
+            localStorage.setItem("user", JSON.stringify(response.data.data.user));
+            localStorage.setItem("id", response.data.data.user._id);
             localStorage.setItem("profile", true);
             setShowNotification(true);
             setNotificationMessage("Login Successfuly!");
