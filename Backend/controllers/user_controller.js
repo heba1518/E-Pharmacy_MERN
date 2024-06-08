@@ -30,7 +30,7 @@ class User {
   };
   static registerUser = async (req, res) => {
     try {
-      const { userName, email, password } = req.body;
+      const { userName, email, password,phone, role } = req.body;
       const checkUser = await UserModel.findOne({ userName });
       if (checkUser) {
         return res.send({
@@ -43,6 +43,8 @@ class User {
         userName,
         email,
         password,
+        phone,
+        role
       });
       res.send({ success: true, user, msg: "user register successfully" });
     } catch (e) {

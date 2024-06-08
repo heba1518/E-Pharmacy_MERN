@@ -1,78 +1,74 @@
-import React, { useState } from 'react';
-import EditOrders from './EditOrders';
+import React, { useState } from "react";
+import EditOrders from "./EditOrders";
 
 const AllOrders = () => {
   const [editModal, setEditModal] = useState(false);
   const [viewOrder, setViewOrder] = useState();
 
-  const orders = [ {
-    id: "0",
-    photo: "https://i.imgur.com/1As0akH.png1",
-    name: "Ahmed Toba",
-    email: "ahmedtoba@gmail.com",
-    price: '660.00',
-    status: 'Processing',
-    products: '6',
-    address: "El Hwatem, Faiyum",
+  const orders = [
+    {
+      id: "0",
+      photo: "https://i.imgur.com/1As0akH.png1",
+      name: "Ahmed Maher",
+      email: "ahmedMaher@gmail.com",
+      price: "660.00",
+      status: "Processing",
+      products: "6",
+      address: "El Hwatem, Faiyum",
       date: "Apr 22, 2024",
-  },
-  {
-    id: "1",
-    photo: "https://i.imgur.com/UYCE7Rr.png",
-    name: "Mohammed Sabry",
-    address: "El Haram, Cairo",
-    email: "mSabry@gmail.com",
-    products: '19',
-    price: '340.16',
-    status: 'Pending',
- 
+    },
+    {
+      id: "1",
+      photo: "https://i.imgur.com/UYCE7Rr.png",
+      name: "Mohammed Sabry",
+      address: "El Haram, Cairo",
+      email: "mSabry@gmail.com",
+      products: "19",
+      price: "340.16",
+      status: "Pending",
+
       date: "Apr 17, 2024",
-   
-  },
-  {
-    id: "2",
-    photo: "https://i.imgur.com/FHMKqK5.png",
-    name: "Salma Ahmed",
-    address: "masla square, Faiyum",
-    email: "salmaAhmed@gmail.com",
-    products: '9',
-    price: '530.76',
-    status: 'Cancelled',
+    },
+    {
+      id: "2",
+      photo: "https://i.imgur.com/FHMKqK5.png",
+      name: "Salma Ahmed",
+      address: "masla square, Faiyum",
+      email: "salmaAhmed@gmail.com",
+      products: "9",
+      price: "530.76",
+      status: "Cancelled",
 
       date: "Mar 23, 2024",
-
-  },
-  {
-    id: "3",
-    photo: "https://i.imgur.com/hz6bZkb.png",
-    name: "Sayed Yasser",
-    email: "sayedY@gmail.com",
-    products: '14',
-    price: '280.57',
-    status: 'Completed',
-    address: "Mohandessin, Giza",
+    },
+    {
+      id: "3",
+      photo: "https://i.imgur.com/hz6bZkb.png",
+      name: "Sayed Yasser",
+      email: "sayedY@gmail.com",
+      products: "14",
+      price: "280.57",
+      status: "Completed",
+      address: "Mohandessin, Giza",
       date: "Mar 15, 2024",
-
-  },
-  {
-    id: "4",
-    photo: "https://i.imgur.com/udG6SOt.png",
-    name: "Heba Amr",
-    address: "El Rashidy, Alex",
-    email: "hebaamr@gmail.com",
-    products: '10',
-      price: '567.34',
-      status: 'Confirmed',
+    },
+    {
+      id: "4",
+      photo: "https://i.imgur.com/udG6SOt.png",
+      name: "Heba Amr",
+      address: "El Rashidy, Alex",
+      email: "hebaamr@gmail.com",
+      products: "10",
+      price: "567.34",
+      status: "Confirmed",
       date: "Mar 5, 2024",
-
-  },
-   
+    },
   ];
 
   const options = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   };
 
   return (
@@ -193,35 +189,35 @@ const AllOrders = () => {
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                           {order.price}£
+                          {order.price}£
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
                         <span
                           className={`relative inline-block px-3 py-1 w-28 text-center font-semibold leading-tight ${
-                            order.status === 'Pending'
-                              ? 'text-yellow-900'
-                              : order.status === 'Confirmed'
-                              ? 'text-indigo-600'
-                              : order.status === 'Completed'
-                              ? 'text-green-800'
-                              : order.status === 'Cancelled'
-                              ? 'text-red-500'
-                              : 'text-blue-800'
+                            order.status === "Pending"
+                              ? "text-yellow-900"
+                              : order.status === "Confirmed"
+                              ? "text-indigo-600"
+                              : order.status === "Completed"
+                              ? "text-green-800"
+                              : order.status === "Cancelled"
+                              ? "text-red-500"
+                              : "text-blue-800"
                           }`}
                         >
                           <span
                             aria-hidden="true"
                             className={`absolute inset-0 opacity-50 rounded-full ${
-                              order.status === 'Pending'
-                                ? 'bg-yellow-600'
-                                : order.status === 'Confirmed'
-                                ? 'bg-indigo-200'
-                                : order.status === 'Completed'
-                                ? 'bg-green-200'
-                                : order.status === 'Cancelled'
-                                ? 'bg-red-200'
-                                : 'bg-blue-300'
+                              order.status === "Pending"
+                                ? "bg-yellow-600"
+                                : order.status === "Confirmed"
+                                ? "bg-indigo-200"
+                                : order.status === "Completed"
+                                ? "bg-green-200"
+                                : order.status === "Cancelled"
+                                ? "bg-red-200"
+                                : "bg-blue-300"
                             }`}
                           ></span>
                           <span className="relative">{order.status}</span>
@@ -245,7 +241,7 @@ const AllOrders = () => {
                               strokeWidth={2}
                               d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
                             />
-                          </svg>{' '}
+                          </svg>{" "}
                           Edit
                         </button>
                       </td>

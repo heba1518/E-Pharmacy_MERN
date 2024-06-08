@@ -115,7 +115,7 @@ const OrderCart = ({ open, setOpen }) => {
                                     <QuantityButton
                                       product={product}
                                       updateQuantity={updateQuantity}
-                                      value = {true}
+                                      value={true}
                                     />
 
                                     <div className="flex">
@@ -138,7 +138,7 @@ const OrderCart = ({ open, setOpen }) => {
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-800">
                         <p>Subtotal</p>
-                        <p>{totalPrice} £</p>
+                        <p>{totalPrice}£</p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">
                         Shipping and taxes calculated at checkout.
