@@ -24,9 +24,10 @@ import Pricing from './Pages/Platform/Pricing';
 import TermsPrivacy from './Pages/Platform/TermsPrivacy';
 import UserDashboard from './Components/Admin/User/UserDashboard';
 import EditUserInfo from './Components/Admin/User/EditUserInfo/EditUserInfo';
-
+import AdminDashboardPage from './Pages/Admin/Admin/AdminDashboardPage';
 
 const Navigation = () => {
+ 
   return (
     <div>
       <Router>
@@ -56,6 +57,11 @@ const Navigation = () => {
             element={<VenderDashboardPage />}
           />
 
+          <Route
+            exact
+            path="/admin/:panel"
+            element={<AdminDashboardPage />}
+          />
           <Route path="/allShop" element={<AllShop />} />
 
           <Route path="/orderHistory" element={<OrderHistory />} />

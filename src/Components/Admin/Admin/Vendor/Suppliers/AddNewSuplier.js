@@ -1,73 +1,7 @@
-
-import { RadioGroup } from "@headlessui/react";
-import axios from "axios";
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
-import classNames from 'classnames';
-
-// import { createVendorAccount } from "../../Redux/user/actions";
+import React from "react";
 
 
-const AddNewStore = ({ setEditModal }) => {
-  const dispatch = useDispatch();
-  const settings = [
-    {
-      delivery: "Yes",
-      description: "The shop has its own delivery system.",
-    },
-    {
-      delivery: "No",
-      description: "The shop does not have its own delivery system.",
-    },
-  ];
-  
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-  const [isDeliveryHas, setIsDeliveryHas] = useState(settings[0]);
-  const [logoImgURL, setLogoImgURl] = useState(null);
-  const [bannerImgURL, setBannerImgURl] = useState(
-    "https://i.ibb.co/zR760Cw/Image-2.jpg"
-  );
-
-  const handleImageUpload = (e, setImage) => {
-    console.log(e.target.files[0]);
-    const imageData = new FormData();
-    imageData.set("key", "e9b76bac5b575af176bc9b5717b706ca");
-    imageData.append("image", e.target.files[0]);
-
-    axios
-      .post("https://api.imgbb.com/1/upload", imageData)
-      .then(function (response) {
-        setImage(response.data.data.display_url);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  const onSubmit = (data) => {
-    const vendorData = {
-      shopName: data.shopName,
-      name: data.ownerName,
-      email: data.email,
-      phone: data.phone,
-      logo: logoImgURL,
-      banner: bannerImgURL,
-      location: data.address,
-      city: data.city,
-      postalCode: data.zip,
-      password: data.password,
-      confirmPassword: data.confirmPassword,
-      hasOwnDelivery: isDeliveryHas.delivery === "No" ? false : true,
-    };
-    // dispatch(createVendorAccount(vendorData));
-  };
-
+const AddNewSuplier = ({ setEditModal }) => {
   return (
     <section>
       <div className="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none backdrop-filter saturate-150 backdrop-blur-sm">
@@ -82,7 +16,7 @@ const AddNewStore = ({ setEditModal }) => {
               <div className="flex items-center justify-between pt-8 px-5 mb-4">
                 <div>
                   <h3 className="text-lg leading-6 font-medium text-gray-900">
-                  Add Your Pharmacy
+                    New Supplier
                   </h3>
                 </div>
 
@@ -121,7 +55,7 @@ const AddNewStore = ({ setEditModal }) => {
                       htmlFor="username"
                       className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                     >
-                      Product Name
+                      Name
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                       <div className="max-w-lg flex rounded-md shadow-sm">
@@ -136,33 +70,14 @@ const AddNewStore = ({ setEditModal }) => {
                     </div>
                   </div>
 
-                  <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                    <label
-                      htmlFor="about"
-                      className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
-                    >
-                      Product Details
-                    </label>
-                    <div className="mt-1 sm:mt-0 sm:col-span-2">
-                      <textarea
-                        id="about"
-                        name="about"
-                        rows={3}
-                        className="max-w-lg shadow-sm block w-full focus:ring-teal-500 focus:border-teal-500 sm:text-sm border border-gray-300 rounded-md"
-                        defaultValue={""}
-                      />
-                      <p className="mt-2 text-sm text-gray-500">
-                        Write a few sentences about product.
-                      </p>
-                    </div>
-                  </div>
+                 
 
                   <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                     <label
                       htmlFor="cover-photo"
                       className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                     >
-                      Product Image
+                      Image
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                       <div className="max-w-lg flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -209,7 +124,7 @@ const AddNewStore = ({ setEditModal }) => {
                       htmlFor="country"
                       className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                     >
-                      Category
+                      Status
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                       <select
@@ -218,23 +133,36 @@ const AddNewStore = ({ setEditModal }) => {
                         autoComplete="country"
                         className="max-w-lg block focus:ring-teal-500 focus:border-teal-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                       >
-                        <option>diarrhea & gastroenteritis</option>
-                        <option>Enteric disinfectants</option>
-                        <option>Anti-inflammatory</option>
-                        <option>Analgesics and antipyretics</option>
-                        <option>treatment and prevention</option>
-                        <option>sore & itchy throat</option>
-                        <option>Vitamins & Supplements</option>
+                        <option>Active</option>
+                        <option>Deacive</option>
                       </select>
                     </div>
                   </div>
-
                   <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                   <label
                       htmlFor="username"
                       className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                     >
-                      Product Price
+                      Phone
+                    </label>
+                    <div className="mt-1 sm:mt-0 sm:col-span-2">
+                      <div className="max-w-lg flex rounded-md shadow-sm">
+                        <input
+                          type="text"
+                          name="username"
+                          id="username"
+                          autoComplete="username"
+                          className="flex-1 block w-full focus:ring-teal-500 focus:border-teal-500 min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300"
+                        />
+                      </div>
+                    </div>
+                    </div>
+                  <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                  <label
+                      htmlFor="username"
+                      className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
+                    >
+                      Email
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                       <div className="max-w-lg flex rounded-md shadow-sm">
@@ -254,7 +182,7 @@ const AddNewStore = ({ setEditModal }) => {
                       htmlFor="username"
                       className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                     >
-                      Company
+                      Company's Name
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                       <div className="max-w-lg flex rounded-md shadow-sm">
@@ -268,32 +196,35 @@ const AddNewStore = ({ setEditModal }) => {
                       </div>
                     </div>
                   </div>
-
                   <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                  <label
-                      htmlFor="username"
+                    <label
+                      htmlFor="about"
                       className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                     >
-                      Quantity
+                     Company's Address
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                       <div className="max-w-lg flex rounded-md shadow-sm">
                         <input
-                          type="nmber"
-                          name="namber"
-                          id="quantity"
-                          autoComplete="number"
+                          type="text"
+                          name="username"
+                          id="username"
+                          autoComplete="username"
                           className="flex-1 block w-full focus:ring-teal-500 focus:border-teal-500 min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300"
                         />
                       </div>
                     </div>
                   </div>
+                 
+                    
+                  
                 </div>
               </div>
 
               <div className="pt-5">
                 <div className="flex justify-end">
-                <button
+                
+                  <button
                     type="button"
                     aria-label="Close"
                   aria-hidden="true"
@@ -318,8 +249,7 @@ const AddNewStore = ({ setEditModal }) => {
       {/* Background Modal Opacity */}
       <div className="opacity-25 fixed inset-0 z-40 bg-gray-900" />
     </section>
-    
   );
 };
 
-export default AddNewStore;
+export default AddNewSuplier;
