@@ -8,10 +8,13 @@ import QuantityButton from "../../Common/QuantityButton";
 
 const OrderCart = ({ open, setOpen }) => {
   let cartProducts = products.filter((product) => product.cart);
+
+  
   let totalPrice = 0;
   cartProducts.forEach((product) => {
     totalPrice += product.price;
   });
+  
 
   return (
     <div>

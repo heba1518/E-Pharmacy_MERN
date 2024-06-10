@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import img7 from "../../../../Assets/images/products/COMTREX.jpg";
 import img9 from "../../../../Assets/images/products/limitless.jpg";
 import img10 from "../../../../Assets/images/products/Strepsils.jpg";
-
+// import products from "../../../../Data/products";
 const orders = [
   {
     number: "WU88191111",
@@ -51,6 +51,28 @@ const orders = [
 ];
 
 const ActiveOrder = () => {
+  function getFormattedDate() {
+    // Get today's date
+    const today = new Date();
+
+    // Extract year, month, and day
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
+    const day = String(today.getDate()).padStart(2, "0"); // Pad day with leading zeros if necessary
+
+    // Format date as YYYY-MM-DD
+    const formattedDate = `${year}-${month}-${day}`;
+
+    return formattedDate;
+  }
+  const test = localStorage.getItem("orderProducts");
+  // const order = JSON.parse(test);
+  // const [orders, setOrders] = useState(order.filter(p=>{products.forEach(pp=>pp._id ==p._id)}))
+  // let totalPrice = 0
+  // order.forEach((product) => {
+  //   totalPrice += product.price;
+  // });
+
   return (
     <main className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:pb-24 lg:px-8">
       <div className="max-w-xl">
@@ -77,7 +99,9 @@ const ActiveOrder = () => {
                   <div className="flex justify-between sm:block">
                     <dt className="font-medium text-gray-900">Date placed</dt>
                     <dd className="sm:mt-1">
-                      <time dateTime={order.datetime}>{order.date}</time>
+                      <time dateTime={getFormattedDate()}>
+                        {getFormattedDate()}
+                      </time>
                     </dd>
                   </div>
                   <div className="flex justify-between pt-6 sm:block sm:pt-0">
@@ -86,7 +110,7 @@ const ActiveOrder = () => {
                   </div>
                   <div className="flex justify-between pt-6 font-medium text-gray-900 sm:block sm:pt-0">
                     <dt>Total amount</dt>
-                    <dd className="sm:mt-1">{order.total}</dd>
+                    <dd className="sm:mt-1">{order.total}£</dd>
                   </div>
                 </dl>
                 <a

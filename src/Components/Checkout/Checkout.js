@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import QuantityButton from "../Common/QuantityButton";
-import { updateQuantity } from "../../Data/products";
+import productss, { updateQuantity } from "../../Data/products";
 
 const Checkout = () => {
-  let arr = localStorage.getItem("products");
-  let products = JSON.parse(arr);
+  // let arr = localStorage.getItem("products");
+  // let products = JSON.parse(arr);
   const [copon, setCopon] = useState("");
   const [dis, setDis] = useState(0);
-
+  const [products, setProducts] = useState(productss);
   let cartProducts = products.filter((product) => product.cart);
 
   let totalPrice = 0;
@@ -36,6 +36,32 @@ const Checkout = () => {
     let t = s + 10;
     setTotal(t);
   };
+  const updateProducts = (id, newData) => {
+    const index = products.findIndex((item) => item._id === id);
+    if (index !== -1) {
+      products[index] = { ...products[index], ...newData };
+      setProducts(products);
+      localStorage.setItem("products", JSON.stringify(products));
+      return true;
+    }
+    return false;
+  };
+
+  useEffect(() => {}, [products]);
+
+  const handleOrder =()=>{ 
+    localStorage.setItem("orderProducts", JSON.stringify(cartProducts));
+    
+    products.forEach((product) => {
+      if (product.cart) {
+        product.cart = !product.cart;
+      }
+      updateProducts(product._id, product);
+    });
+
+
+  }
+
   return (
     <div className="flex justify-center my-6">
       <div className="flex flex-col w-full p-8 text-gray-800 bg-white pin-r pin-y md:w-4/5 lg:w-4/5">
@@ -333,10 +359,12 @@ const Checkout = () => {
                   </div>
                 </div>
                 <a href="#0">
+                  <button onClick={()=>{handleOrder()}}>
+
                   <Link
-                    to="/orderHistory"
+                    to="/userProfile/666044742eac70ecfd68ab73"
                     className="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-teal-500 rounded-full shadow item-center hover:bg-teal-700 focus:shadow-outline focus:outline-none"
-                  >
+                    >
                     <svg
                       aria-hidden="true"
                       data-prefix="far"
@@ -352,6 +380,7 @@ const Checkout = () => {
                     </svg>
                     <span className="ml-2 pt-1">Place Order</span>
                   </Link>
+                    </button>
                 </a>
               </div>
             </div>
