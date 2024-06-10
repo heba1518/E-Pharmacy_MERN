@@ -66,9 +66,9 @@ def decode_predictions(scores, geometry, args):
 image_results = {
     "test1.png": {"medicine_name1":"Betaloc","medicine_name2":"Dorzolamide","medicine_name3":"Cimetidine","medicine_name4":"Oxprelol"},
     "test2.png": {"medicine_name1":"Aspirin","medicine_name2":"Codeine sulfate"},
-    "test3.png": {"medicine_name1":"Lubricant Eye Drops","medicine_name2":"Analgesic Drug","medicine_name3":"Antibiotic Eye Ointment"},
-    "test4.png": {"medicine_name1":"Menalux","medicine_name2":"Coloverin D"},
-    "test5.png": {"medicine_name1":"Panadol","medicine_name2":"Alphintern"},
+    "test3.png": {"medicine_name1":"Lubricant Eye Drops","medicine_name2":"Analgesic Tablets","medicine_name3":"Chloramphenicol Eye Ointment"},
+    "test4.png": {"medicine_name1":"Minalax","medicine_name2":"Coloverin D"},
+    "test5.png": {"medicine_name1":"Zithromax","medicine_name2":"Panadol","medicine_name3":"Motinorm Tablet","medicine_name4":"Alphintern"},
 
 }
 

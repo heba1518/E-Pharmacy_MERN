@@ -19,6 +19,12 @@ import img18 from "../Assets/images/products/fernilar.jpg";
 import img19 from "../Assets/images/products/betaloc.jpg";
 import img20 from "../Assets/images/products/cimetidine.jpg";
 import img21 from "../Assets/images/products/Codeine-Sulphate.jpg";
+import img22 from "../Assets/images/products/Lubricant-EyeDrops.webp";
+import img23 from "../Assets/images/products/analgesic-tablet.webp";
+import img24 from "../Assets/images/products/chloramphenicol-eye-ointment.webp";
+import img25 from "../Assets/images/products/motinorm.webp";
+import img26 from "../Assets/images/products/minalax.jpg";
+import img27 from "../Assets/images/products/coloverin.jpg";
 
 let productsData = [
   {
@@ -268,7 +274,7 @@ let productsData = [
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
-    name: "Zithromax 250mg",
+    name: "Zithromax",
     image: img14,
     description:
       "Antibiotic, belongs to the macrolides group used in the treatment of pneumonia, Streptococcus infections, sexually transmitted infections, mycobacterial infection, Lyme disease, infectious diarrhea, bronchiolitis and inflammatory acne vulgaris.",
@@ -410,6 +416,119 @@ let productsData = [
     totalReview: 12,
     brand: "Codeine Contin",
     category: "Antitussives",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Lubricant Eye Drops",
+    image: img22,
+    description:
+      "Avenova Lubricating Eye Drops – TWIN PACK. Use throughout the day for instant relief from dry eye symptoms due to MGD, contact lenses, prolonged screen use, or everyday exposure to wind or sun.One box contains 2 x 0.5 fluid oz (15 ml) bottles for a total of 1 fluid ounce (30 ml).",
+    price: 19.99,
+    rating: 0,
+    totalReview: 12,
+    brand: "Avenova Eye Drops",
+    category: "Eye Drops",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Analgesic Tablets",
+    image: img23,
+    description:
+      "Analgesics are medicines that are used to relieve pain. They are also known as painkillers or pain relievers. Technically, the term analgesic refers to a medication that provides relief from pain without putting you to sleep or making you lose consciousness.",
+    price: 24.5,
+    rating: 0,
+    totalReview: 12,
+    brand: "Etoricoxib Tablets",
+    category: "Analgesics",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Chloramphenicol Eye Ointment",
+    image: img24,
+    description:
+      "This medication is used to treat bacterial eye infections. Chloramphenicol is an antibiotic that works by stopping the growth of bacteria. This medication treats only bacterial eye infections. It will not work for other types of eye infections.",
+    price: 100,
+    rating: 0,
+    totalReview: 12,
+    brand: "Chloramphenicol",
+    category: "Eye Ointment",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Motinorm Tablet",
+    image: img25,
+    description:
+      "Motinorm DT 10mg Tablet is used in the treatment of indigestion, nausea, and vomiting. It increases the movement of food through the stomach and intestines, thereby relieving bloating, fullness, and gastric discomfort.",
+    price: 25.75,
+    rating: 0,
+    totalReview: 12,
+    brand: "Medley Pharmaceuticals",
+    category: "Gastrointestinal Diseases",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Minalax",
+    image: img26,
+    description:
+      "Bisacodyl increases the secretion of mucus in the large intestine, accelerates and increases its peristalsis. The action is due to direct stimulation of nerve endings in the mucous membrane of the large intestine. When taken orally, it is absorbed from the intestines in a minimal amount. The laxative effect usually occurs after 6 hours, when taken before bedtime – after 8-12 hours.",
+    price: 11.5,
+    rating: 0,
+    totalReview: 12,
+    brand: "AMOUN",
+    category: "Laxative",
+    stock: 943,
+    document: 74,
+    isDeliveryFree: true,
+    fav: false,
+    cart: false,
+    quantity: 1,
+  },
+  {
+    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
+    name: "Coloverin D",
+    image: img27,
+    description: "Mebeverine HCl 135 mg + Dimethicone 40 mg.",
+    price: 69,
+    rating: 0,
+    totalReview: 12,
+    brand: "Chemipharm",
+    category: "Antispasmodic/Antiflatulent",
     stock: 943,
     document: 74,
     isDeliveryFree: true,
