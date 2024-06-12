@@ -53,6 +53,8 @@ const ActionIcons = () => {
 
     if(us.role == "pharmacy"){
       setPath('/vendor/dashboard')
+    }else if(us.role == "admin"){
+      setPath('/admin/dashboard')
     }else{
       setPath('/userProfile/666044742eac70ecfd68ab73')
     }
