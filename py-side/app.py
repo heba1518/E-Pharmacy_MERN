@@ -6,6 +6,7 @@ import argparse
 import pytesseract
 import cv2
 from flask_cors import CORS
+import base64
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -121,8 +122,13 @@ def detect_text():
             text = pytesseract.image_to_string(roi, config=config)
             extracted_words.append(text.strip())
 
-    # Return the extracted text as JSON response
-    return jsonify({"extracted_words":extracted_words})
+    # Encode the image to base64 string
+    _, buffer = cv2.imencode('.png', image)
+    image_base64 = base64.b64encode(buffer).decode('utf-8')
+
+    # Return the extracted text and the base64 encoded image as JSON response
+    return jsonify({"extracted_words":extracted_words, "image": image_base64})
+
 
 # Run the Flask app
 if __name__ == '__main__':

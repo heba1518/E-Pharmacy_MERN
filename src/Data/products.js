@@ -215,7 +215,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "ab119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Actos 30mg",
     image: img11,
@@ -234,7 +234,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "ac119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Aspirin",
     image: img12,
@@ -253,7 +253,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "ad119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Fucicort cream",
     image: img13,
@@ -272,7 +272,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "af119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Zithromax",
     image: img14,
@@ -291,7 +291,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a1119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Panadol Day",
     image: img15,
@@ -310,7 +310,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a2119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Dorzolamide",
     image: img16,
@@ -319,7 +319,7 @@ let productsData = [
     price: 30,
     rating: 0,
     totalReview: 12,
-    brand: " Dropper",
+    brand: "Dropper",
     category: "Eye Drops",
     stock: 943,
     document: 74,
@@ -329,7 +329,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a3119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Perderm ",
     image: img17,
@@ -348,7 +348,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a4119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Fernilar ",
     image: img18,
@@ -367,7 +367,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a5119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Betaloc",
     image: img19,
@@ -386,7 +386,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a6119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Cimetidine",
     image: img20,
@@ -405,7 +405,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a7119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Codeine sulfate",
     image: img21,
@@ -424,7 +424,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a8219b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Lubricant Eye Drops",
     image: img22,
@@ -443,7 +443,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a8319b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Analgesic Tablets",
     image: img23,
@@ -462,7 +462,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a8419b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Chloramphenicol Eye Ointment",
     image: img24,
@@ -481,7 +481,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a8519b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Motinorm Tablet",
     image: img25,
@@ -500,7 +500,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a8619b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Minalax",
     image: img26,
@@ -519,7 +519,7 @@ let productsData = [
     quantity: 1,
   },
   {
-    // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
+    _id: "a8719b57-d4fb-407b-a2ea-d5c3e3a02d6b",
     shopId: "6d98040f-5b2d-44bb-bace-7a143ffb2af2",
     name: "Coloverin D",
     image: img27,

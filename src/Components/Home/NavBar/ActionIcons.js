@@ -13,22 +13,22 @@ const ActionIcons = () => {
   const [path, setPath] = useState('');
   const [id, setID] = useState('');
   const [data, setData] = useState(localStorage.getItem('products'));
-  useEffect(() => {
-    handleLogin();
-    handleProfile();
-    const handleStorageChange = () => {
-      // Update the component state when localStorage changes
-      setData(localStorage.getItem('products'));
-    };
+  // useEffect(() => {
+  //   handleLogin();
+  //   handleProfile();
+  //   const handleStorageChange = () => {
+  //     // Update the component state when localStorage changes
+  //     setData(localStorage.getItem('products'));
+  //   };
 
-    // Add event listener for storage event
-    window.addEventListener('storage', handleStorageChange);
+  //   // Add event listener for storage event
+  //   window.addEventListener('storage', handleStorageChange);
 
-    return () => {
-      // Clean up by removing the event listener
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, []); // Empty dependency array ensures the effect runs only once after component mounts
+  //   return () => {
+  //     // Clean up by removing the event listener
+  //     window.removeEventListener('storage', handleStorageChange);
+  //   };
+  // }, []); // Empty dependency array ensures the effect runs only once after component mounts
   
   const handleLogin = () => {
     const arr = localStorage.getItem('profile');
@@ -42,17 +42,17 @@ const ActionIcons = () => {
     setLogin(false);
   }
   
-  const handleProfile = () =>{
-    let u = localStorage.getItem("user");
-    let us = JSON.parse(u)
-    setUser(us);
+  // const handleProfile = () =>{
+  //   let u = localStorage.getItem("user");
+  //   let us = JSON.parse(u)
+  //   setUser(us);
 
-    if(us.role == "pharmacy"){
-      setPath('/vendor/dashboard')
-    }else{
-      setPath('/userProfile/666044742eac70ecfd68ab73')
-    }
-  }
+  //   if(us.role == "pharmacy"){
+  //     setPath('/vendor/dashboard')
+  //   }else{
+  //     setPath('/userProfile/666044742eac70ecfd68ab73')
+  //   }
+  // }
   // const array = localStorage.getItem('products');
   // const products = JSON.parse(array);
 

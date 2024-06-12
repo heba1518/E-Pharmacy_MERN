@@ -20,9 +20,13 @@ const ListOfMedicinesInPrescription = () => {
     console.error("Failed to parse extractedWords:", error);
   }
 
-  const matchedMedicines = productsLocal.filter((medicine) =>
-    extractedWordsArray.includes(medicine.name)
-  );
+  useEffect(() => {
+    const matchedMedicines = productsLocal.filter((medicine) =>
+      extractedWordsArray.includes(medicine.name)
+    );
+    setFilteredProducts(matchedMedicines);
+  }, [extractedWordsArray]);
+
   const handleRefresh = () => {
     setRefresh((prevRefresh) => !prevRefresh);
   };
@@ -30,7 +34,10 @@ const ListOfMedicinesInPrescription = () => {
   const isActive = (product) => {
     return product.fav;
   };
-  localStorage.setItem("products", JSON.stringify(products));
+
+  useEffect(() => {
+    localStorage.setItem("products", JSON.stringify(products));
+  }, [products]);
 
   const updateProducts = (id, newData) => {
     const index = products.findIndex((item) => item._id === id);
@@ -42,8 +49,6 @@ const ListOfMedicinesInPrescription = () => {
     }
     return false;
   };
-
-  useEffect(() => {}, [products]);
 
   const handleToggleWishlist = (id, product) => {
     product.fav = !product.fav;
@@ -116,7 +121,7 @@ const ListOfMedicinesInPrescription = () => {
             </thead>
 
             {/* all Orders data row */}
-            {matchedMedicines.map((product) => {
+            {filteredProducts.map((product) => {
               return (
                 <tbody key={product._id}>
                   <tr>
@@ -124,18 +129,18 @@ const ListOfMedicinesInPrescription = () => {
                       <Link to={`/productDetails/${product._id}`}>
                         <div className="flex items-center w-24 sm:w-full">
                           <div className="flex-shrink-0">
-                            <a href="/" className="block relative">
-                              <img
-                                alt="User Avatar"
-                                src={product.image}
-                                className="mx-auto object-cover rounded-full h-10 w-10"
-                              />
-                            </a>
+                            <img
+                              alt="User Avatar"
+                              src={product.image}
+                              className="mx-auto object-cover rounded-full h-10 w-10"
+                            />
                           </div>
                           <div className="ml-3">
-                            <p className="text-gray-900 whitespace-no-wrap">
-                              {product.name}
-                            </p>
+                            <a href={product.href}>
+                              <p className="text-gray-900 whitespace-no-wrap">
+                                {product.name}
+                              </p>
+                            </a>
                           </div>
                         </div>
                       </Link>

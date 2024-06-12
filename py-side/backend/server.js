@@ -32,13 +32,26 @@ app.post("/detect_text", upload.single("image"), async (req, res) => {
       }
     );
 
-    // Return the text detected by the Flask API
-    res.send(flaskResponse.data);
+    // Extract the text and image data from the Flask API response
+    const { extracted_words, image } = flaskResponse.data;
+
+    // Return the text detected by the Flask API and the uploaded image
+    res.json({
+      extracted_words,
+      image,
+    });
   } catch (error) {
     console.error("Error processing image:", error);
     res
       .status(500)
       .send({ error: "An error occurred while processing the image" });
+  } finally {
+    // Clean up the uploaded file
+    fs.unlink(req.file.path, (err) => {
+      if (err) {
+        console.error("Error deleting uploaded file:", err);
+      }
+    });
   }
 });
 

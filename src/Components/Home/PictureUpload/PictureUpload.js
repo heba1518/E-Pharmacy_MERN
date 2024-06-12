@@ -18,6 +18,7 @@ const PictureUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [extractedText, setExtractedText] = useState("");
+  const [image, setImage] = useState('');
   const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
@@ -57,15 +58,18 @@ const PictureUpload = () => {
 
       if (response.data.extracted_words) {
         setExtractedText(JSON.stringify(response.data.extracted_words));
+        setImage(`data:image/png;base64,${response.data.image}`);
         setError("");
       } else {
         setError("No text extracted from the image");
         setExtractedText("");
+        setImage("");
       }
     } catch (error) {
       console.error("Error uploading image:", error);
       setError("An error occurred while processing the image");
       setExtractedText("");
+      setImage("");
     }
   };
 
