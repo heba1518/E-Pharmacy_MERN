@@ -12,6 +12,7 @@ const ActionIcons = () => {
   const [user, setUser] = useState(false);
   const [path, setPath] = useState('');
   const [id, setID] = useState('');
+
   const [data, setData] = useState(localStorage.getItem('products'));
   useEffect(() => {
     handleLogin();
@@ -36,6 +37,9 @@ const ActionIcons = () => {
     setLogin(profile);
   }
 
+  const handleCart = () =>{
+
+  } 
   const handleLogOut = ()=>{
     localStorage.setItem('profile', false);
     window.location.href = "/";
@@ -49,6 +53,8 @@ const ActionIcons = () => {
 
     if(us.role == "pharmacy"){
       setPath('/vendor/dashboard')
+    }else if(us.role == "admin"){
+      setPath('/admin/dashboard')
     }else{
       setPath('/userProfile/666044742eac70ecfd68ab73')
     }
