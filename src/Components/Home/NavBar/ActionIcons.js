@@ -8,42 +8,51 @@ const ActionIcons = () => {
   const [openFav, setOpenFav] = useState(false);
   const [openCart, setOpenCart] = useState(false);
   const [login, setLogin] = useState(false);
-  const [user, setUser] = useState(true);
+  // const [profile, setProfile] = useState();
+  const [user, setUser] = useState(false);
   const [path, setPath] = useState('');
   const [id, setID] = useState('');
   const [data, setData] = useState(localStorage.getItem('products'));
-  useEffect(() => {
-    handleLogin();
-    handleProfile();
-    const handleStorageChange = () => {
-      // Update the component state when localStorage changes
-      setData(localStorage.getItem('products'));
-    };
+  // useEffect(() => {
+  //   handleLogin();
+  //   handleProfile();
+  //   const handleStorageChange = () => {
+  //     // Update the component state when localStorage changes
+  //     setData(localStorage.getItem('products'));
+  //   };
 
-    // Add event listener for storage event
-    window.addEventListener('storage', handleStorageChange);
+  //   // Add event listener for storage event
+  //   window.addEventListener('storage', handleStorageChange);
 
-    return () => {
-      // Clean up by removing the event listener
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, []); // Empty dependency array ensures the effect runs only once after component mounts
+  //   return () => {
+  //     // Clean up by removing the event listener
+  //     window.removeEventListener('storage', handleStorageChange);
+  //   };
+  // }, []); // Empty dependency array ensures the effect runs only once after component mounts
   
   const handleLogin = () => {
     const arr = localStorage.getItem('profile');
     const profile = JSON.parse(arr);
     setLogin(profile);
   }
-  
-  const handleProfile = () =>{
-    const u = localStorage.getItem('user');
-    const us = JSON.parse(u);
-    setUser(us);
-    const i = localStorage.getItem('id');
-    const d = JSON.parse(i);
-    setID(d);
-    user? setPath(`/profile/${id}`) : setPath('/vendor/dashboard')
+
+  const handleLogOut = ()=>{
+    localStorage.setItem('profile', false);
+    window.location.href = "/";
+    setLogin(false);
   }
+  
+  // const handleProfile = () =>{
+  //   let u = localStorage.getItem("user");
+  //   let us = JSON.parse(u)
+  //   setUser(us);
+
+  //   if(us.role == "pharmacy"){
+  //     setPath('/vendor/dashboard')
+  //   }else{
+  //     setPath('/userProfile/666044742eac70ecfd68ab73')
+  //   }
+  // }
   // const array = localStorage.getItem('products');
   // const products = JSON.parse(array);
 
@@ -61,11 +70,6 @@ const ActionIcons = () => {
   });
 
 
-  // let totalPrice = 0;
-  // products.forEach(product =>{
-  //   totalPrice += product.price;
-  // })
-  // let favProducts =products.filter(product => product.fav);
   return (
     <>
       <Link to="/vendor/dashboard">
@@ -86,26 +90,7 @@ const ActionIcons = () => {
           </svg>
         </li>
       </Link>
-      <Link to = {path}>
-          {login && (   
-            <li>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 font-medium cursor-pointer text-gray-700 transition-colors duration-200 hover:text-teal-accent-700"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-              />
-          </svg>
-        </li>
-        )}
-        </Link>
+      
       <li>
         <button
           onClick={() => setOpenFav(true)}
@@ -160,10 +145,58 @@ const ActionIcons = () => {
           </span>
         </button>
       </li>
+      <Link to = {path}>
+          {login && (   
+            <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 font-medium cursor-pointer text-gray-700 transition-colors duration-200 hover:text-teal-accent-700"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
+          </svg>
+        </li>
+        )}
+        </Link>
       {!login && (
 
         <a href="/login"><p class="px-3 py-1 text-lg font-medium tracking-wide text-white transition-colors duration-200 bg-teal-500 rounded-md hover:bg-teal-700">Login</p></a>
        )}
+       <div className="relative inline-flex">
+       {login && (
+      <button
+      onClick={() => handleLogOut()}
+        className="inline-flex justify-center items-center group"
+        aria-haspopup="true"
+      >
+        <div className="flex items-center truncate">
+          <span className="font-body truncate ml-2 mr-1 text-base font-medium text-teal-500 hover:text-teal-800">
+            Logout
+          </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 text-teal-500 hover:text-teal-800"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+            />
+          </svg>
+        </div>
+      </button>)}
+    </div>
 
       {/* Open cart modal */}
       <OrderCart open={openCart} setOpen={setOpenCart} />

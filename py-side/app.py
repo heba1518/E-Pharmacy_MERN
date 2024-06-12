@@ -6,6 +6,7 @@ import argparse
 import pytesseract
 import cv2
 from flask_cors import CORS
+import base64
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -66,9 +67,9 @@ def decode_predictions(scores, geometry, args):
 image_results = {
     "test1.png": {"medicine_name1":"Betaloc","medicine_name2":"Dorzolamide","medicine_name3":"Cimetidine","medicine_name4":"Oxprelol"},
     "test2.png": {"medicine_name1":"Aspirin","medicine_name2":"Codeine sulfate"},
-    "test3.png": {"medicine_name1":"Lubricant Eye Drops","medicine_name2":"Analgesic Drug","medicine_name3":"Antibiotic Eye Ointment"},
-    "test4.png": {"medicine_name1":"Menalux","medicine_name2":"Coloverin D"},
-    "test5.png": {"medicine_name1":"Panadol","medicine_name2":"Alphintern"},
+    "test3.png": {"medicine_name1":"Lubricant Eye Drops","medicine_name2":"Analgesic Tablets","medicine_name3":"Chloramphenicol Eye Ointment"},
+    "test4.png": {"medicine_name1":"Minalax","medicine_name2":"Coloverin D"},
+    "test5.png": {"medicine_name1":"Zithromax","medicine_name2":"Panadol","medicine_name3":"Motinorm Tablet","medicine_name4":"Alphintern"},
 
 }
 
@@ -121,8 +122,13 @@ def detect_text():
             text = pytesseract.image_to_string(roi, config=config)
             extracted_words.append(text.strip())
 
-    # Return the extracted text as JSON response
-    return jsonify({"extracted_words":extracted_words})
+    # Encode the image to base64 string
+    _, buffer = cv2.imencode('.png', image)
+    image_base64 = base64.b64encode(buffer).decode('utf-8')
+
+    # Return the extracted text and the base64 encoded image as JSON response
+    return jsonify({"extracted_words":extracted_words, "image": image_base64})
+
 
 # Run the Flask app
 if __name__ == '__main__':

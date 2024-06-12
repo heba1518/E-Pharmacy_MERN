@@ -1,59 +1,61 @@
 import React from "react";
-import img7 from "../../../../Assets/images/products/COMTREX.jpg";
-import img9 from "../../../../Assets/images/products/limitless.jpg";
-import img10 from "../../../../Assets/images/products/Strepsils.jpg";
+import img7 from "../../../../Assets/images/products/cimetidine.jpg";
+import img9 from "../../../../Assets/images/products/dorzolamide.webp";
+import img10 from "../../../../Assets/images/products/betaloc.jpg";
+import pImg from "../../../../Assets/images/test1.png";
 
-const EditOrders = ({ setEditModal }) => {
+const EditOrders = ({ setEditModal, extractedText, image }) => {
   const orders = [
     {
       id: "0",
       photo: "https://i.imgur.com/1As0akH.png1",
-      name: "Ahmed Toba",
+      name: "Ahmed Maher",
       address: "El Hwatem, Faiyum",
       price: "890.66",
       status: "In Progress",
-      email: "ahmedtoba@gmail.com",
+      email: "ahmedMaher@gmail.com",
       number: "WU88191111",
       date: "April 22, 2024",
       datetime: "2024-01-22",
       phone: "+201036985253",
       invoiceHref: "#",
-      total: "660.00",
+      total: "654.00",
       products: [
         {
           id: 1,
-          name: "Strepsils",
+          name: "Betaloc",
           quantity: "1",
-          price: "165 £",
-          brand: "Reckitt Benckiser",
-          category: "sore & itchy throat",
+          price: "124£",
+          brand: "AstraZeneca",
+          category: "Hypertension",
           status: "Delivered April 22, 2024",
           imageSrc: img10,
           imageAlt: "Detail of mechanical pencil ",
         },
         {
           id: 2,
-          name: "LIMITLESS OMEGA 3",
-          quantity: "3",
-          price: "145 £",
-          brand: "EVA PHARMA",
-          category: "Vitamins & Supplements",
+          name: "Dorzolamide",
+          quantity: "1",
+          price: "30£",
+          brand: "Dropper",
+          category: "Eye Drops",
           status: "Delivered April 22, 2024",
           imageSrc: img9,
           imageAlt: "Detail of mechanical pencil ",
         },
         {
           id: 3,
-          name: "COMTREX",
-          quantity: "2",
-          brand: "GSK",
-          price: "30 £",
-          category: "Soft Flooring and Base",
+          name: "Cimetidine",
+          quantity: "1",
+          brand: "Tagamet",
+          price: "500£",
+          category: "Death Diseases",
           status: "Delivered April 22, 2024",
           imageSrc: img7,
           imageAlt: "Detail of mechanical pencil ",
         },
       ],
+      PriscriptionImg: pImg,
     },
   ];
 
@@ -213,78 +215,87 @@ const EditOrders = ({ setEditModal }) => {
                             </select>
                           </div>
 
-                          <table className="mt-4 w-full text-gray-500 sm:mt-6">
-                            <caption className="sr-only">Products</caption>
-                            <thead className="sr-only text-sm text-gray-900 text-left sm:not-sr-only">
-                              <tr>
-                                <th
-                                  scope="col"
-                                  className="sm:w-2/5 lg:w-1/3 pr-8 py-3 font-medium"
-                                >
-                                  Product
-                                </th>
-                                <th
-                                  scope="col"
-                                  className="hidden w-1/6 pr-8 py-3 font-medium sm:table-cell"
-                                >
-                                  Price
-                                </th>
-                                <th
-                                  scope="col"
-                                  className="hidden w-1/6 pr-8 py-3 font-medium sm:table-cell"
-                                >
-                                  Quantity
-                                </th>
-                                <th
-                                  scope="col"
-                                  className="hidden w-1/5 pr-8 py-3 font-medium sm:table-cell"
-                                >
-                                  Category
-                                </th>
-                                <th
-                                  scope="col"
-                                  className="hidden pr-8 py-3 font-medium sm:table-cell"
-                                >
-                                  Brand
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody className="border-b border-gray-200 divide-y text-gray-800 divide-gray-200 text-sm sm:border-t">
-                              {order.products.map((product) => (
-                                <tr key={product.id}>
-                                  <td className="py-6 pr-8">
-                                    <div className="flex items-center">
-                                      <img
-                                        src={product.imageSrc}
-                                        alt={product.imageAlt}
-                                        className="w-16 h-16 object-center object-cover rounded mr-6"
-                                      />
-                                      <div>
-                                        <div className="font-medium text-gray-800">
-                                          {product.name}
-                                        </div>
-                                        <div className="mt-1 sm:hidden">
-                                          {product.price}
+                          <div className="flex">
+                            <table className="mt-4 w-full text-gray-500 sm:w-1/2 sm:mt-6">
+                              <caption className="sr-only">Products</caption>
+                              <thead className="sr-only text-sm text-gray-900 text-left sm:not-sr-only">
+                                <tr>
+                                  <th
+                                    scope="col"
+                                    className="sm:w-2/5 lg:w-1/3 pr-8 py-3 font-medium"
+                                  >
+                                    Product
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    className="hidden w-1/6 pr-8 py-3 font-medium sm:table-cell"
+                                  >
+                                    Price
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    className="hidden w-1/6 pr-8 py-3 font-medium sm:table-cell"
+                                  >
+                                    Quantity
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    className="hidden w-1/5 pr-8 py-3 font-medium sm:table-cell"
+                                  >
+                                    Category
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    className="hidden pr-8 py-3 font-medium sm:table-cell"
+                                  >
+                                    Brand
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody className="border-b border-gray-200 divide-y text-gray-800 divide-gray-200 text-sm sm:border-t">
+                                {order.products.map((product) => (
+                                  <tr key={product.id}>
+                                    <td className="py-6 pr-8">
+                                      <div className="flex items-center">
+                                        <img
+                                          src={product.imageSrc}
+                                          alt={product.imageAlt}
+                                          className="w-16 h-16 object-center object-cover rounded mr-6"
+                                        />
+                                        <div>
+                                          <div className="font-medium text-gray-800">
+                                            {product.name}
+                                          </div>
+                                          <div className="mt-1 sm:hidden">
+                                            {product.price}
+                                          </div>
                                         </div>
                                       </div>
-                                    </div>
-                                  </td>
-                                  <td className="hidden py-6 pr-8 sm:table-cell">
-                                    {product.price}
-                                  </td>
-                                  <td className="hidden py-6 pr-8 sm:table-cell">
-                                    {product.quantity}
-                                  </td>
-                                  <td className="hidden py-6 pr-8 sm:table-cell">
-                                    {product.category}
-                                  </td>
-                                  <td className="hidden py-6 pr-8 sm:table-cell">
-                                    {product.brand}
-                                  </td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
+                                    </td>
+                                    <td className="hidden py-6 pr-8 sm:table-cell">
+                                      {product.price}
+                                    </td>
+                                    <td className="hidden py-6 pr-8 sm:table-cell">
+                                      {product.quantity}
+                                    </td>
+                                    <td className="hidden py-6 pr-8 sm:table-cell">
+                                      {product.category}
+                                    </td>
+                                    <td className="hidden py-6 pr-8 sm:table-cell">
+                                      {product.brand}
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                            <div className="w-1/2 flex justify-center items-center">
+                              <img
+                                src={order.PriscriptionImg}
+                                alt="Image description"
+                                className="object-center object-cover rounded"
+                              />
+                            </div>
+                          </div>
                         </div>
                       ))}
                     </div>

@@ -1,11 +1,9 @@
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Dropzone from "react-dropzone";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import PictureContent from "../../Home/PictureUpload/PictureContent";
 
 const PictureUpload = () => {
   const navigate = useNavigate();
@@ -15,41 +13,26 @@ const PictureUpload = () => {
     age: "",
     weight: "",
     phoneNumber: "",
-    // picture: null,
   });
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [extractedText, setExtractedText] = useState("");
+  const [image, setImage] = useState('');
   const [error, setError] = useState("");
 
-  // const [formCompleted, setFormCompleted] = useState(false);
-
-  // Function to handle form input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
     });
-    // Check if all form fields are filled
-    // const isFormFilled =
-    //   formData.fullName !== "" &&
-    //   formData.gender !== "" &&
-    //   formData.age !== "" &&
-    //   formData.weight !== "" &&
-    //   formData.phoneNumber !== "" &&
-    //   selectedFile !== null;
-
-    // // Update formCompleted state based on whether the form is filled or not
-    // setFormCompleted(isFormFilled);
   };
 
   const handleFileSelect = (files) => {
     setSelectedFile(files[0]);
   };
 
-  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -75,21 +58,24 @@ const PictureUpload = () => {
 
       if (response.data.extracted_words) {
         setExtractedText(JSON.stringify(response.data.extracted_words));
+        setImage(`data:image/png;base64,${response.data.image}`);
         setError("");
       } else {
         setError("No text extracted from the image");
         setExtractedText("");
+        setImage("");
       }
     } catch (error) {
       console.error("Error uploading image:", error);
       setError("An error occurred while processing the image");
       setExtractedText("");
+      setImage("");
     }
   };
 
   const handleText = () => {
     if (extractedText) {
-      setError(""); // Clear any existing errors
+      setError(""); 
       navigate("/Prescription", { state: { extractedWords: extractedText } });
     } else {
       setError("No extracted text available");
@@ -102,7 +88,6 @@ const PictureUpload = () => {
     }
   }, [extractedText, navigate]);
 
-  // Function to reset the form
   const handleResetForm = () => {
     setFormData({
       fullName: "",
@@ -304,8 +289,6 @@ const PictureUpload = () => {
           </div>
         </div>
       )}
-      {/* {extractedText && <PictureContent extractedWords={extractedText} />}
-      {error && <p style={{ color: "red" }}>{error}</p>} */}
     </div>
   );
 };

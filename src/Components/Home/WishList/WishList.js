@@ -1,59 +1,55 @@
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Dialog, Transition } from '@headlessui/react';
-import React, { Fragment ,useEffect,useState}from 'react';
-import { Link } from 'react-router-dom';
-import productsLocal, {updateQuantity} from '../../../Data/products'
-import QuantityButton from '../../Common/QuantityButton';
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Dialog, Transition } from "@headlessui/react";
+import React, { Fragment, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import productsLocal, { updateQuantity } from "../../../Data/products";
+import QuantityButton from "../../Common/QuantityButton";
 
 const WishList = ({ open, setOpen }) => {
   const [products, setProducts] = useState(productsLocal);
 
+  const updateProducts = (id, newData) => {
+    const index = products.findIndex((item) => item._id === id);
+    if (index !== -1) {
+      products[index] = { ...products[index], ...newData };
+      setProducts(products);
+      localStorage.setItem("products", JSON.stringify(products));
+      return true;
+    }
+    return false;
+  };
+  useEffect(() => {}, [products]);
 
-  const updateProducts = (id, newData)=>{
-    const index = products.findIndex(item => item._id === id)
-      if (index !== -1) {
-        products[index] = { ...products[index], ...newData };
-        setProducts(products)
-        localStorage.setItem("products", JSON.stringify(products));
-        return true
-      }
-      return false
-  }
-  useEffect( () => {
-  }, [products])
-  
-  let favProducts =products.filter(product => product.fav);
+  let favProducts = products.filter((product) => product.fav);
 
   let totalPrice = 0;
-  products.forEach(product =>{
+  products.forEach((product) => {
     totalPrice += product.price;
-  })
-  const addAll = ()=>{
+  });
+  const addAll = () => {
     setOpen(false);
-    favProducts.forEach(product=>{
+    favProducts.forEach((product) => {
       product.cart = true;
-      if(product.fav){
+      if (product.fav) {
         product.fav = !product.fav;
       }
       updateProducts(product._id, product);
-    })
-    favProducts =[]
-  }
-  const handleAddToCart = (id,product) => {
-
-    favProducts = favProducts.filter(product=>{
-      if(product._id === id){
+    });
+    favProducts = [];
+  };
+  const handleAddToCart = (id, product) => {
+    favProducts = favProducts.filter((product) => {
+      if (product._id === id) {
         product.cart = true;
         product.fav = false;
         updateProducts(id, product);
       }
-    })
-   
+    });
   };
-    return (
-        <div>
-            <Transition.Root show={open} as={Fragment}>
+  return (
+    <div>
+      <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
           className="fixed inset-0 overflow-hidden z-50"
@@ -113,12 +109,14 @@ const WishList = ({ open, setOpen }) => {
                             {favProducts.map((product) => (
                               <li key={product._id} className="py-6 flex">
                                 <div className="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
-                                <a href={`http://localhost:3000/productDetails/${product._id}`}>
-                                  <img
-                                    src={product.image}
-                                    alt={product.name}
-                                    className="w-full h-full object-center object-cover"
-                                  />
+                                  <a
+                                    href={`http://localhost:3000/productDetails/${product._id}`}
+                                  >
+                                    <img
+                                      src={product.image}
+                                      alt={product.name}
+                                      className="w-full h-full object-center object-cover"
+                                    />
                                   </a>
                                 </div>
 
@@ -126,7 +124,9 @@ const WishList = ({ open, setOpen }) => {
                                   <div>
                                     <div className="flex justify-between text-base font-medium text-gray-800">
                                       <h3>
-                                        <a href={`http://localhost:3000/productDetails/${product._id}`}>
+                                        <a
+                                          href={`http://localhost:3000/productDetails/${product._id}`}
+                                        >
                                           {product.name}
                                         </a>
                                       </h3>
@@ -145,12 +145,16 @@ const WishList = ({ open, setOpen }) => {
 
                                       <i className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-normal text-teal-600"></i>
                                     </div>  */}
-                                     <button class="flex flex-wrap items-center py-1 px-1 text-lg rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700"
-                                     onClick={()=>{handleAddToCart(product._id, product)}}
-                                     >
-                                        <i class="fas fa-cart-plus"></i> &nbsp; Add To Cart
+                                    <button
+                                      class="flex flex-wrap items-center py-1 px-1 text-lg rounded shadow-lg bg-teal-500 focus:outline-none active:bg-teal-500 text-white transition duration-150 ease-in-out hover:bg-teal-700"
+                                      onClick={() => {
+                                        handleAddToCart(product._id, product);
+                                      }}
+                                    >
+                                      <i class="fas fa-cart-plus"></i> &nbsp;
+                                      Add To Cart
                                     </button>
-                                      {/* <div className="flex">
+                                    {/* <div className="flex">
                                       <button
                                         type="button"
                                         className="font-medium tracking-wide text-teal-600 hover:text-teal-800"
@@ -162,7 +166,6 @@ const WishList = ({ open, setOpen }) => {
                                       <button
                                         type="button"
                                         className="font-medium tracking-wide text-teal-600 hover:text-teal-800"
-                                        
                                       >
                                         Remove
                                       </button>
@@ -176,15 +179,15 @@ const WishList = ({ open, setOpen }) => {
                       </div>
                     </div>
 
-                  <div className="border-t border-gray-200 py-6 px-4 sm:px-6"> 
+                    <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       {/* <div className="flex justify-between text-base font-medium text-gray-800">
                         <p>Subtotal</p>
-                        <p>{totalPrice} £</p>
+                        <p>{totalPrice}£</p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">
                         Shipping and taxes calculated at checkout.
                       </p> */}
-                      <div className="mt-6"> 
+                      <div className="mt-6">
                         <Link
                           onClick={() => addAll()}
                           className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-500 hover:bg-teal-700"
@@ -203,12 +206,12 @@ const WishList = ({ open, setOpen }) => {
                               d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                             />
                           </svg>
-                         Add All To Cart
+                          Add All To Cart
                         </Link>
                       </div>
                       <div className="mt-6 flex justify-center text-sm text-center text-gray-500">
                         <p>
-                          or{' '}
+                          or{" "}
                           <button
                             type="button"
                             className="text-teal-500 font-medium hover:text-teal-700"
@@ -227,8 +230,8 @@ const WishList = ({ open, setOpen }) => {
           </div>
         </Dialog>
       </Transition.Root>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default WishList;

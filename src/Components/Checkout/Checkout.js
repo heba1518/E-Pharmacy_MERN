@@ -1,43 +1,41 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import QuantityButton from "../Common/QuantityButton";
-import {updateQuantity} from '../../Data/products'
+import { updateQuantity } from "../../Data/products";
 
 const Checkout = () => {
   let arr = localStorage.getItem("products");
   let products = JSON.parse(arr);
-  const [copon, setCopon] = useState('')
-  const [dis, setDis] = useState(0)
-  
+  const [copon, setCopon] = useState("");
+  const [dis, setDis] = useState(0);
+
   let cartProducts = products.filter((product) => product.cart);
 
   let totalPrice = 0;
   cartProducts.forEach((product) => {
-    console.log(product.name)
+    console.log(product.name);
     totalPrice += product.price;
   });
 
-  const [newS, setNew] = useState(totalPrice)
-  const [total, setTotal] = useState(totalPrice+10)
+  const [newS, setNew] = useState(totalPrice);
+  const [total, setTotal] = useState(totalPrice + 10);
 
-  const handelBlur =(e)=>{
+  const handelBlur = (e) => {
     const test = e.target.value;
 
-    let disc = totalPrice
-    if(test == "90off"){
+    let disc = totalPrice;
+    if (test == "90off") {
       disc = totalPrice * 0.1;
-      
-    }else {
+    } else {
       disc = totalPrice * 0.05;
     }
-    setDis(disc)
+    setDis(disc);
     let s = totalPrice - disc;
-    setNew(s)
+    setNew(s);
     setCopon(e.target.value);
     let t = s + 10;
-    setTotal(t)
-
-  }
+    setTotal(t);
+  };
   return (
     <div className="flex justify-center my-6">
       <div className="flex flex-col w-full p-8 text-gray-800 bg-white pin-r pin-y md:w-4/5 lg:w-4/5">
@@ -73,28 +71,32 @@ const Checkout = () => {
               </tr>
               {cartProducts.map((product) => (
                 <tr>
-                <td className="hidden pb-4 md:table-cell">
-                  <a href="#0">
-                    <img
-                      src={product.image}
-                      className="w-20 rounded"
-                      alt={product.name}
-                    />
-                  </a>
-                </td>
-                <td>
-                  <a href="#0">
-                    <p className="mb-2 ">{product.name}</p>
-                    {/* <form action="" method="POST">
+                  <td className="hidden pb-4 md:table-cell">
+                    <a href="#0">
+                      <img
+                        src={product.image}
+                        className="w-20 rounded"
+                        alt={product.name}
+                      />
+                    </a>
+                  </td>
+                  <td>
+                    <a href="#0">
+                      <p className="mb-2 ">{product.name}</p>
+                      {/* <form action="" method="POST">
                       <button type="submit" className="text-gray-700">
                         <small>Structural (Fabrication)</small>
                       </button>
                     </form> */}
-                  </a>
-                </td>
-                <td className="flex justify-start  md:flex md:mt-8">
-                <QuantityButton product = {product} updateQuantity ={updateQuantity} value = {true}/>
-                  {/* <div className="flex-1 flex items-end justify-between text-sm">
+                    </a>
+                  </td>
+                  <td className="flex justify-start  md:flex md:mt-8">
+                    <QuantityButton
+                      product={product}
+                      updateQuantity={updateQuantity}
+                      value={true}
+                    />
+                    {/* <div className="flex-1 flex items-end justify-between text-sm">
                     <div className="border border-gray-400 rounded">
                       <i className="fas fa-plus m-1 py-1 px-4 cursor-pointer font-medium text-teal-600"></i>
                       <input
@@ -106,36 +108,35 @@ const Checkout = () => {
                       <i className="fas fa-minus m-1 py-1 px-4 cursor-pointer font-medium text-teal-600"></i>
                     </div>
                   </div> */}
-                </td>
-                <td className="text-right px-5 md:table-cell">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-gray-00"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                    />
-                  </svg>
-                </td>
-                <td className="hidden text-right md:table-cell">
-                  <span className="text-sm lg:text-base font-medium">
-                    {product.price} £
-                  </span>
-                </td>
-                <td className="text-right">
-                  <span className="text-sm lg:text-base font-medium">
-                    {product.price * product.quantity} £
-                  </span>
-                </td>
-              </tr>
+                  </td>
+                  <td className="text-right px-5 md:table-cell">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-gray-00"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                      />
+                    </svg>
+                  </td>
+                  <td className="hidden text-right md:table-cell">
+                    <span className="text-sm lg:text-base font-medium">
+                      {product.price}£
+                    </span>
+                  </td>
+                  <td className="text-right">
+                    <span className="text-sm lg:text-base font-medium">
+                      {product.price * product.quantity}£
+                    </span>
+                  </td>
+                </tr>
               ))}
-             
             </tbody>
           </table>
           <hr className="pb-6 mt-6" />
@@ -258,7 +259,7 @@ const Checkout = () => {
                       className="form-radio h-5 w-5 text-gray-600"
                     />
                     <span className="ml-2 text-gray-800 font-medium">
-                    credit Card
+                      credit Card
                     </span>
                   </label>
                 </div>
@@ -279,7 +280,7 @@ const Checkout = () => {
                     Subtotal
                   </div>
                   <div className="lg:px-4 lg:py-2 m-1 lg:text-lg font-medium text-center text-gray-800">
-                    {totalPrice} £
+                    {totalPrice}£
                   </div>
                 </div>
                 <div className="flex justify-between pt-2 border-b">
@@ -304,7 +305,7 @@ const Checkout = () => {
                     Coupon "{copon}"
                   </div>
                   <div className="lg:px-4 lg:py-2 m-1 lg:text-lg font-medium text-center text-green-600">
-                    {dis} £
+                    {dis}£
                   </div>
                 </div>
                 <div className="flex justify-between pt-2 border-b">
@@ -312,7 +313,7 @@ const Checkout = () => {
                     New Subtotal
                   </div>
                   <div className="lg:px-4 lg:py-2 m-1 lg:text-lg font-medium text-center text-gray-800">
-                   {newS} £
+                    {newS}£
                   </div>
                 </div>
                 <div className="flex justify-between pt-2 border-b">
@@ -320,7 +321,7 @@ const Checkout = () => {
                     Tax
                   </div>
                   <div className="lg:px-4 lg:py-2 m-1 lg:text-lg font-medium text-center text-gray-800">
-                    10 £
+                    10£
                   </div>
                 </div>
                 <div className="flex justify-between pt-2 border-b">

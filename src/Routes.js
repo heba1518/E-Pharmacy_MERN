@@ -89,7 +89,7 @@ const Navigation = () => {
           <Route exact path="/terms&privacy" element ={<TermsPrivacy />}/>
             
         
-          <Route exact path="/userDashboard" element ={<UserDashboard/>}/>
+          <Route exact path="/userProfile/:id" element ={<UserDashboard/>}/>
             
         
           <Route exact path="/editUserInfo" element ={<EditUserInfo/>}/>
