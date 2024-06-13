@@ -20,7 +20,7 @@ import img19 from "../Assets/images/products/betaloc.jpg";
 import img20 from "../Assets/images/products/cimetidine.jpg";
 import img21 from "../Assets/images/products/Codeine-Sulphate.jpg";
 import img22 from "../Assets/images/products/Lubricant-EyeDrops.webp";
-import img23 from "../Assets/images/products/analgesic-tablet.webp";
+import img23 from "../Assets/images/products/analgesic-tablet.png";
 import img24 from "../Assets/images/products/chloramphenicol-eye-ointment.webp";
 import img25 from "../Assets/images/products/motinorm.webp";
 import img26 from "../Assets/images/products/minalax.jpg";
