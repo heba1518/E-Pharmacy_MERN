@@ -58,6 +58,11 @@ const Pharmacies = () => {
       date: "Mar 5, 2024",
     },
   ];
+  const p = localStorage.getItem("newPharmacy");
+  let newP = JSON.parse(p)
+  if(newP.reqest){
+    orders.push(newP)
+  }
 
 
   return (

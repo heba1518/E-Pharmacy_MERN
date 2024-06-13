@@ -2,7 +2,7 @@ import React from "react";
 import './Hero.css';
 const Hero = () => {
   return (
-    <section>
+    <section id="search">
       <div className="w-full px-3 antialiased lg:px-6">
         <div className="mx-auto max-w-7xl">
           <div class="container py-24 mx-auto text-center sm:px-4 font-sans">

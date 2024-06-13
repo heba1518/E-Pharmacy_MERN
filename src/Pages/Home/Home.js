@@ -9,7 +9,7 @@ import PictureUpload from '../../Components/Home/PictureUpload/PictureUpload';
 import ShopCard from '../../Components/Home/ShopCard/ShopCard';
 import VendorCTA from '../../Components/Home/VendorCTA/VendorCTA';
 import Test from '../../Components/Home/OfferCard/OfferCard';
-
+// import MapComponent from '../../Components/Home/MapComponent/MapComponent'
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,7 +29,7 @@ const Home = () => {
         <NavBar />
         <Hero />
       </div>
-      
+      {/* <MapComponent/> */}
       <OfferCard />
       <ShopCard />
       <PictureUpload />

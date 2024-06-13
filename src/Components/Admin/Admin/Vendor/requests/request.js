@@ -1,8 +1,6 @@
 import React from "react";
-import img1 from '../../../../../Assets/images/pharmacies/gemy_pharmacies_logo.png'
-import img2 from '../../../../../Assets/images/pharmacies/delta_pharma_logo.png';
-import img3 from '../../../../../Assets/images/pharmacies/roshetta_pharmacy_logo.png';
-import img4 from '../../../../../Assets/images/pharmacies/elghibili_logo.png';
+import img1 from '../../../../../Assets/images/pharmacies/roshdy_pharmacy_logo.png';
+import { set } from "react-hook-form";
 
 const Requests = () => {
   const orders = [
@@ -13,53 +11,23 @@ const Requests = () => {
       email: "rushdypharmacies@gmail.com",
       address: "Ard El Golf Heliopolis, Cairo",
       phone: "+2024141445",
-      status: "Active",
       date: "Apr 17, 2024",
     },
-    {
-      id: "1",
-      photo: img2,
-      name: "Misr ",
-      address: "Mohandessin, Giza",
-      email: "support@misrpharmacies.com",
-      phone: "+201004819110",
-      status: "Active",
-
-      date: "Apr 1, 2024",
-    },
-    {
-      id: "2",
-      photo: img3,
-      name: "Elhakim",
-      address: "El-Khalifa El-Maamoun, Faiyum",
-      email: "elhakimph@gmail.com",
-      phone: "+2040706084",
-      status: "Active",
-      date: "Mar 23, 2024",
-    },
-    {
-      id: "3",
-      photo: img4,
-      name: "19011",
-      email: "pharmacies19011@gmail.com",
-      address: "el baraka pastry, Faiyum",
-      phone: "+02 26737212",
-      status: "Active",
-      date: "Mar 15, 2024",
-    },
-    {
-      id: "4",
-      photo: img5,
-      name: "Roshdy",
-      address: "El Rashidy, Alex",
-      email: "rushdypharmacies@gmail.com",
-      phone: "01208070022",
-      status: "Deactive",
-      date: "Mar 5, 2024",
-    },
+    
   ];
-
-
+  const p = localStorage.getItem("newPharmacy");
+  let newP = JSON.parse(p)
+  if(!newP.reqest){
+    orders.push(newP)
+    console.log(p)
+  
+  }
+ 
+  const handleAccept = ()=>{
+    newP.reqest = true;
+    localStorage.setItem(newP);
+    orders.pop();
+  }
   return (
     <section>
       <div className="container mx-auto px-4 sm:px-8 max-w-full sm:max-w-5xl">
@@ -123,6 +91,18 @@ const Requests = () => {
                   >
                     Register Date
                   </th>
+                  <th
+                    scope="col"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                  >
+                    Message
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                  >
+                    Action
+                  </th>
                 </tr>
               </thead>
 
@@ -169,7 +149,7 @@ const Requests = () => {
                           {order.date}
                         </p>
                       </td>
-                      {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <button className="flex align-center justify-center font-sans font-medium text-teal-600 hover:text-teal-900">
                           Message{"  "}
                           <svg
@@ -187,7 +167,12 @@ const Requests = () => {
                             />
                           </svg>
                         </button>
-                      </td> */}
+                      </td>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <button onClick={()=>{handleAccept()}}>
+                          Accept
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
                 );
