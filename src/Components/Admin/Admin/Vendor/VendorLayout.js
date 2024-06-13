@@ -7,7 +7,7 @@ import VendorNavbar from './Partials/VendorNavbar';
 import VendorSidebar from './Partials/VendorSidebar';
 import VendorDashboard from './VendorDashboard';
 import Pharmacies from './Pharmacies/Pharamacies';
-
+import Requests from './requests/request';
 const VendorLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { panel } = useParams();
@@ -45,6 +45,8 @@ const VendorLayout = () => {
               <Pharmacies />
             ) : panel === 'messages' ? (
               <AllMessages />
+            ): panel === 'requests' ? (
+              <Requests/>
             ) : null}
           </div>
         </main>

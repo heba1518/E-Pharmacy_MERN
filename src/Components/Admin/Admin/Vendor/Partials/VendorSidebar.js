@@ -178,12 +178,12 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
                 <span className="ml-4">All Pharmacies</span>
               </Link> 
              </li>
-            {/* <li>
+            <li>
               <Link
                 className={
-                  panel === "suppliers" ? "sidebar-item-active" : "sidebar-item"
+                  panel === "requests" ? "sidebar-item-active" : "sidebar-item"
                 }
-                to="/vendor/suppliers"
+                to="/admin/requests"
                 onClick={() => setSidebarOpen(!sidebarOpen)}
               >
                 <svg
@@ -200,9 +200,9 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
                     d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
                   />
                 </svg>
-                <span className="ml-4">Suppliers</span>
+                <span className="ml-4">All Requests</span>
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link
                 className={

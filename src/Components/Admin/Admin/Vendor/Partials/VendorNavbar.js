@@ -42,6 +42,8 @@ const VendorNavbar = ({ sidebarOpen, setSidebarOpen }) => {
                 ? 'All Customers'
                 : panel === 'messages'
                 ? 'All Messages'
+                : panel === 'requests'
+                ? 'All Requests'
                 : null}
               <span className="hidden sm:inline-flex">🚀</span>
             </h1>
