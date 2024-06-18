@@ -1,10 +1,9 @@
 import React from "react";
-import img7 from "../../../../Assets/images/products/cimetidine.jpg";
-import img9 from "../../../../Assets/images/products/dorzolamide.webp";
-import img10 from "../../../../Assets/images/products/betaloc.jpg";
-import pImg from "../../../../Assets/images/test1.png";
+import img2 from "../../../../Assets/images/products/coloverin.jpg";
+import img1 from "../../../../Assets/images/products/minalax.jpg";
+import pImg from "../../../../Assets/images/test4.png";
 
-const EditOrders = ({ setEditModal, extractedText, image }) => {
+const EditOrders = ({ setEditModal}) => {
   const orders = [
     {
       id: "0",
@@ -23,35 +22,24 @@ const EditOrders = ({ setEditModal, extractedText, image }) => {
       products: [
         {
           id: 1,
-          name: "Betaloc",
+          name: "Minalax",
           quantity: "1",
-          price: "124£",
-          brand: "AstraZeneca",
-          category: "Hypertension",
+          price: "11.5£",
+          brand: "AMOUN",
+          category: "Laxative",
           status: "Delivered April 22, 2024",
-          imageSrc: img10,
+          imageSrc: img1,
           imageAlt: "Detail of mechanical pencil ",
         },
         {
           id: 2,
-          name: "Dorzolamide",
+          name: "Coloverin D",
           quantity: "1",
-          price: "30£",
-          brand: "Dropper",
-          category: "Eye Drops",
+          price: "69£",
+          brand: "Chemipharm",
+          category: "Antiflatulent",
           status: "Delivered April 22, 2024",
-          imageSrc: img9,
-          imageAlt: "Detail of mechanical pencil ",
-        },
-        {
-          id: 3,
-          name: "Cimetidine",
-          quantity: "1",
-          brand: "Tagamet",
-          price: "500£",
-          category: "Death Diseases",
-          status: "Delivered April 22, 2024",
-          imageSrc: img7,
+          imageSrc: img2,
           imageAlt: "Detail of mechanical pencil ",
         },
       ],
@@ -292,7 +280,7 @@ const EditOrders = ({ setEditModal, extractedText, image }) => {
                               <img
                                 src={order.PriscriptionImg}
                                 alt="Image description"
-                                className="object-center object-cover rounded"
+                                className="w-1/2 object-center object-cover rounded"
                               />
                             </div>
                           </div>
