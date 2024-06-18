@@ -51,14 +51,14 @@ const ActionIcons = () => {
   //   let us = JSON.parse(u)
   //   setUser(us);
 
-<<<<<<< HEAD:src/Components/Home/NavBar/ActionIcons.js
+// <<<<<<< HEAD:src/Components/Home/NavBar/ActionIcons.js
   //   if(us.role == "pharmacy"){
   //     setPath('/vendor/dashboard')
   //   }else{
   //     setPath('/userProfile/666044742eac70ecfd68ab73')
   //   }
   // }
-=======
+// =======
     if(us.role == "pharmacy"){
       setPath('/vendor/dashboard')
     }else if(us.role == "admin"){
@@ -67,7 +67,7 @@ const ActionIcons = () => {
       setPath('/userProfile/666044742eac70ecfd68ab73')
     }
   }
->>>>>>> ff43e30195b9f914ca738fa8389c44d4f422294a:client/src/Components/Home/NavBar/ActionIcons.js
+// >>>>>>> ff43e30195b9f914ca738fa8389c44d4f422294a:client/src/Components/Home/NavBar/ActionIcons.js
   // const array = localStorage.getItem('products');
   // const products = JSON.parse(array);
 
