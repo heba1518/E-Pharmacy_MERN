@@ -16,16 +16,16 @@ mongoose.connect(url, () => {
 });
 
 //middelwares
-// app.use(cors());
-// app.use(express.json());
+app.use(cors());
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/images", express.static(__dirname + "/images"));
 
-const corsOptions = {
-  origin: "http://localhost:3000" // frontend URI (ReactJS)
-}
-app.use(express.json());
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: "http://localhost:3000" // frontend URI (ReactJS)
+// }
+// app.use(express.json());
+// app.use(cors(corsOptions));
 
 
 //routes
