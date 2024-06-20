@@ -11,9 +11,9 @@ const Footer = () => {
             {/* Logo */}
             <CompanyLogo />
             <p className="mt-2 text-base text-gray-500">
-              Design, Code and Ship!
+            Find, Order and Heal!
             </p>
-            <p className="mt-2 text-base text-gray-500">Eet, Code, Sleep!</p>
+            <p className="mt-2 text-base text-gray-500">Your Health, Just a Click Away</p>
             <div className="mt-4">
               <span className="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                 <Link

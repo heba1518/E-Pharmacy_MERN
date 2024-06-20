@@ -4,18 +4,45 @@ import EditOrders from "./EditOrders";
 const AllOrders = () => {
   const [editModal, setEditModal] = useState(false);
   const [viewOrder, setViewOrder] = useState();
+  const [status, setStatus] = useState("Processing");
+  const u = localStorage.getItem("userBuy");
+  let user = JSON.parse(u);
+  const p = localStorage.getItem("orderProducts");
+  let pro = JSON.parse(p);
+  let total = 0;
+  pro.forEach((product) => {
+    total += product.tot;
+  });
+  let tot = 0;
+  pro.forEach((product) => {
+    tot += product.products.length;
+  });
 
+  function getFormattedDate() {
+    // Get today's date
+    const today = new Date();
+
+    // Extract year, month, and day
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
+    const day = String(today.getDate()).padStart(2, "0"); // Pad day with leading zeros if necessary
+
+    // Format date as YYYY-MM-DD
+    const formattedDate = `${year}-${month}-${day}`;
+
+    return formattedDate;
+  }
   const orders = [
     {
       id: "0",
       photo: "https://i.imgur.com/1As0akH.png1",
-      name: "Ahmed Maher",
-      email: "ahmedMaher@gmail.com",
-      price: "660.00",
-      status: "Processing",
-      products: "6",
+      name: user.userName,
+      email: user.email,
+      price: total,
+      status: status,
+      products: tot,
       address: "El Hwatem, Faiyum",
-      date: "Apr 22, 2024",
+      date: getFormattedDate(),
     },
     {
       id: "1",
@@ -116,12 +143,7 @@ const AllOrders = () => {
                   >
                     Address
                   </th>
-                  <th
-                    scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
-                  >
-                    Products
-                  </th>
+
                   <th
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
@@ -142,7 +164,8 @@ const AllOrders = () => {
                   </th>
                   <th
                     scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
+                    colspan="2"
+                    className="px-20 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800 text-center text-sm uppercase font-semibold"
                   >
                     Action
                   </th>
@@ -177,11 +200,7 @@ const AllOrders = () => {
                           {order.address}
                         </p>
                       </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-center text-sm">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          {order.products}
-                        </p>
-                      </td>
+
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
                           {order.date}
@@ -244,6 +263,28 @@ const AllOrders = () => {
                           </svg>{" "}
                           Edit
                         </button>
+                      </td>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <a href="https://t.me/+201012540959" target="_blank">
+
+                        <button className="flex align-center justify-center font-sans font-medium text-teal-600 hover:text-teal-900">
+                          Message{"  "}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                              />
+                          </svg>
+                        </button>
+                              </a>
                       </td>
                     </tr>
                   </tbody>
