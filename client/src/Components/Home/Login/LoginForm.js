@@ -48,6 +48,9 @@ const LoginForm = () => {
 
           if (response.data.success) {
             localStorage.setItem("test", response.data.data.token);
+            if(response.data.data.user.role == "user"){
+              localStorage.setItem("userBuy", JSON.stringify(response.data.data.user));
+            }
             localStorage.setItem("user", JSON.stringify(response.data.data.user));
             localStorage.setItem("id", response.data.data.user._id);
             localStorage.setItem("profile", true);

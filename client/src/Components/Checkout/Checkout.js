@@ -30,6 +30,7 @@ const Checkout = () => {
     } else {
       disc = totalPrice * 0.05;
     }
+    disc = Math.round(disc * 100) / 100;
     setDis(disc);
     let s = totalPrice - disc;
     setNew(s);
@@ -55,19 +56,18 @@ const Checkout = () => {
     let orderProducts;
 
     try {
-        const storedData = localStorage.getItem('orderProducts');
-        orderProducts = storedData ? JSON.parse(storedData) : [];
+      const storedData = localStorage.getItem("orderProducts");
+      orderProducts = storedData ? JSON.parse(storedData) : [];
     } catch (error) {
-        console.error('Error parsing JSON from localStorage:', error);
-        orderProducts = [];
+      console.error("Error parsing JSON from localStorage:", error);
+      orderProducts = [];
     }
-   
-    const newEntry = { status:"In Process",products: cartProducts };
+
+    const newEntry = { status: "In Process", products: cartProducts , tot:total};
 
     orderProducts.push(newEntry);
     const updatedOrderProducts = JSON.stringify(orderProducts);
-    localStorage.setItem('orderProducts', updatedOrderProducts);
-
+    localStorage.setItem("orderProducts", updatedOrderProducts);
 
     products.forEach((product) => {
       if (product.cart) {
