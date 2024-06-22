@@ -133,12 +133,10 @@ const Footer = () => {
               </h2>
               <nav className="mb-10 list-none">
                 <li className="mt-3">
-                  <Link
-                    to="/contact"
-                    className="text-gray-500 cursor-pointer hover:text-teal-500"
-                  >
+          
+                <a href='https://t.me/+201013290987' target="_blank" className="text-gray-500 cursor-pointer hover:text-teal-500">
                     Contact Support
-                  </Link>
+                  </a>
                 </li>
                 <li className="mt-3">
                   <Link
@@ -195,12 +193,9 @@ const Footer = () => {
               </h2>
               <nav className="mb-10 list-none">
                 <li className="mt-3">
-                  <Link
-                    to="/contact"
-                    className="text-gray-500 cursor-pointer hover:text-teal-500"
-                  >
+                <a href='https://t.me/+201013290987' target="_blank" className="text-gray-500 cursor-pointer hover:text-teal-500">
                     Send a Message
-                  </Link>
+                  </a>
                 </li>
                 <li className="mt-3">
                   <Link
@@ -211,12 +206,9 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="mt-3">
-                  <Link
-                    to="/"
-                    className="text-gray-500 cursor-pointer hover:text-teal-500"
-                  >
-                    +123-456-7890
-                  </Link>
+                <a href='https://t.me/+201013290987'  target="_blank" className="text-gray-500 cursor-pointer hover:text-teal-500">
+                    First Aid
+                  </a>
                 </li>
               </nav>
             </div>

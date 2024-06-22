@@ -150,12 +150,12 @@ const AllOrders = () => {
                   >
                     Order Date
                   </th>
-                  <th
+                  {/* <th
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
                   >
                     Price
-                  </th>
+                  </th> */}
                   <th
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left pl-12 text-sm uppercase font-semibold"
@@ -206,11 +206,11 @@ const AllOrders = () => {
                           {order.date}
                         </p>
                       </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
                           {order.price}£
                         </p>
-                      </td>
+                      </td> */}
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
                         <span
                           className={`relative inline-block px-3 py-1 w-28 text-center font-semibold leading-tight ${

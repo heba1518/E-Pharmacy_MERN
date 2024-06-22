@@ -1,6 +1,6 @@
 import React from "react";
-import img1 from '../../../../../Assets/images/pharmacies/roshdy_pharmacy_logo.png';
-import { set } from "react-hook-form";
+import img1 from "../../../../../Assets/images/pharmacies/roshdy_pharmacy_logo.png";
+import img from "../../../../../Assets/images/pharmacies/gemy_pharmacies_logo.png";
 
 const Requests = () => {
   const orders = [
@@ -13,21 +13,19 @@ const Requests = () => {
       phone: "+2024141445",
       date: "Apr 17, 2024",
     },
-    
   ];
   const p = localStorage.getItem("newPharmacy");
-  let newP = JSON.parse(p)
-  if(!newP.reqest){
-    orders.push(newP)
-    console.log(p)
-  
+  let newP = JSON.parse(p);
+  if (!newP.reqest) {
+    orders.push(newP);
+    console.log(p);
   }
- 
-  const handleAccept = ()=>{
+
+  const handleAccept = () => {
     newP.reqest = true;
     localStorage.setItem(newP);
     orders.pop();
-  }
+  };
   return (
     <section>
       <div className="container mx-auto px-4 sm:px-8 max-w-full sm:max-w-5xl">
@@ -117,7 +115,7 @@ const Requests = () => {
                             <a href="/" className="block relative">
                               <img
                                 alt="User Avatar"
-                                src={order.photo}
+                                src={order.photo ? order.photo : img}
                                 className="mx-auto object-cover rounded-full h-10 w-10"
                               />
                             </a>
@@ -169,7 +167,12 @@ const Requests = () => {
                         </button>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <button onClick={()=>{handleAccept()}}>
+                        <button
+                          className="flex-shrink-0 px-4 py-2 text-base font-medium tracking-wide text-white bg-teal-500 rounded-lg shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-teal-200"
+                          onClick={() => {
+                            handleAccept();
+                          }}
+                        >
                           Accept
                         </button>
                       </td>

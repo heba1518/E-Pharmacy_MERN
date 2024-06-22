@@ -4,19 +4,37 @@ import img9 from "../../../../Assets/images/products/limitless.jpg";
 import img10 from "../../../../Assets/images/products/Strepsils.jpg";
 
 const EditOrders = ({ setEditModal }) => {
+  const u = localStorage.getItem("userBuy");
+  let user = JSON.parse(u);
+  const p = localStorage.getItem("orderProducts");
+  let pro = JSON.parse(p);
+  function getFormattedDate() {
+    // Get today's date
+    const today = new Date();
+
+    // Extract year, month, and day
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
+    const day = String(today.getDate()).padStart(2, "0"); // Pad day with leading zeros if necessary
+
+    // Format date as YYYY-MM-DD
+    const formattedDate = `${year}-${month}-${day}`;
+
+    return formattedDate;
+  }
   const orders = [
     {
       id: "0",
       photo: "https://i.imgur.com/1As0akH.png1",
-      name: "Ahmed Maher",
+      name: user.userName,
       address: "El Hwatem, Faiyum",
       price: "890.66",
       status: "In Progress",
-      email: "ahmedMaher@gmail.com",
+      email: user.email,
       number: "WU88191111",
-      date: "April 22, 2024",
+      date: getFormattedDate(),
       datetime: "2024-01-22",
-      phone: "+201036985253",
+      phone: user.phone,
       invoiceHref: "#",
       total: "660.00",
       products: [
