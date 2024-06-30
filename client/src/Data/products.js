@@ -34,7 +34,9 @@ let productsData = [
     document: 20,
     isDeliveryFree: false,
     fav: false,
+    order:false,
     cart: false,
+    prev:false,
     quantity: 1,
   },
   {
@@ -54,6 +56,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    order:false,
+    prev:false,
   },
   {
     _id: "c990a9e3-0b7a-4d43-822d-4d81048f5852",
@@ -72,6 +76,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     _id: "f0d2c336-5b07-45a5-8676-993fa5b45b11",
@@ -79,7 +85,10 @@ let productsData = [
     name: "Panadol",
     image: img2,
     description:
-      "This medication is a trusted ally in managing a spectrum of discomforts, including headaches, muscle aches, arthritis, backaches, toothaches, colds, and fevers. It is important to note that while it eases the pain of mild arthritis, it does not address the root cause of inflammation. For optimal relief, it is recommended to adhere to dosing guidelines: orally or rectally, take 325 to 650 mg every 4 to 6 hours, or 1000 mg every 6 to 8 hours. While rare, some individuals may experience side effects such as bloody stools, cloudy urine, fever, skin rash, sore throat, or unusual tiredness. Should any of these symptoms manifest, it is crucial to promptly consult with your healthcare provider. Additionally, safeguard your health by strictly adhering to the prescribed dosage to mitigate the risk of liver damage. Your well-being is paramount, so please feel free to voice any questions or concerns you may have. Your health journey is important to us, and we are here to support you every step of the way.",
+      `This medication is a trusted ally in managing a spectrum of discomforts, 
+      including headaches, muscle aches, arthritis, backaches, toothaches, colds, and fevers.
+       It is important to note that while it eases the pain of mild arthritis, it does not address
+        the root cause of inflammation. For optimal relief, it is recommended to adhere to dosing guidelines: orally or rectally, take 325 to 650 mg every 4 to 6 hours, or 1000 mg every 6 to 8 hours. While rare, some individuals may experience side effects such as bloody stools, cloudy urine, fever, skin rash, sore throat, or unusual tiredness. Should any of these symptoms manifest, it is crucial to promptly consult with your healthcare provider. Additionally, safeguard your health by strictly adhering to the prescribed dosage to mitigate the risk of liver damage. Your well-being is paramount, so please feel free to voice any questions or concerns you may have. Your health journey is important to us, and we are here to support you every step of the way.`,
     price: 36,
     rating: 5,
     totalReview: 12,
@@ -91,6 +100,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     _id: "1ff9b0c2-d0b5-4bf4-a44d-8a441bd44fc1",
@@ -110,6 +121,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     _id: "22a8d485-9a9e-4b76-9479-7240b7889812",
@@ -128,7 +141,9 @@ let productsData = [
     isDeliveryFree: true,
     fav: false,
     cart: false,
+    prev:false,
     quantity: 1,
+    order:false
   },
   {
     _id: "c07c8a5a-24ec-49d8-9189-8db3e8b9c2fd",
@@ -148,6 +163,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     _id: "c89ecf6b-2260-4d11-b49a-7a9f4e73e186",
@@ -167,6 +184,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     _id: "d9dab99d-4b4c-4f99-b35a-0f99b1bc0c2a",
@@ -186,6 +205,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
@@ -204,6 +225,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
@@ -223,6 +246,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
@@ -242,6 +267,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
@@ -261,6 +288,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
@@ -280,6 +309,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
@@ -299,6 +330,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
@@ -318,6 +351,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
@@ -337,6 +372,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    prev:false,
+    order:false
   },
   {
     // _id: "a8119b57-d4fb-407b-a2ea-d5c3e3a02d6b",
@@ -356,6 +393,8 @@ let productsData = [
     fav: false,
     cart: false,
     quantity: 1,
+    order:false,
+    prev:false,
   },
 ];
 

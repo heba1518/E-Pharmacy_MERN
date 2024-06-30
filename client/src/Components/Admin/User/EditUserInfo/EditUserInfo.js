@@ -36,7 +36,7 @@ const EditUserInfo = () => {
                     <span className="flex-grow">
                         <img
                         className="h-8 w-8 rounded-full"
-                        src="https://i.imgur.com/1As0akH.png1"
+                        src="https://i.imgur.com/FHMKqK5.png"
                         alt=""
                         />
                     </span>

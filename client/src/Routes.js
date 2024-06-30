@@ -13,6 +13,8 @@ import Medicines from "./Components/Home/Medicine/Medicine";
 import PictureUpload from "./Pages/PictureUpload/PictureUpload";
 import Blog from "./Pages/Blog/Blog";
 
+import Pharmacy from './Pages/Admin/pharmacy/pharmacy'
+
 import CreateShop from './Pages/Shop/CreateShop';
 import Company from './Pages/About/Company';
 import Career from './Pages/About/Career';
@@ -50,11 +52,16 @@ const Navigation = () => {
             path="/productDetails/:productId"
             element={<ProductDetails />}
           />
-
+{/* client/src/Components/Admin/Vendor */}
           <Route
             exact
             path="/vendor/:panel"
             element={<VenderDashboardPage />}
+          />
+          <Route
+            exact
+            path="/vendo/:panel"
+            element={<Pharmacy />}
           />
 
           <Route

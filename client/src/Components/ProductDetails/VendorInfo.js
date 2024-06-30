@@ -13,13 +13,7 @@ const VendorInfo = () => {
       <h3>
         Address: {vendor.location} {vendor.location && ','} {vendor.city}
       </h3>
-      <h3 className="flex">
-        <div className= "pt-1">
-          {vendor.rating} rating from {vendor.totalReview} reviews: &nbsp;{' '}
-        </div>
-        <ShowRating value={vendor.rating} />
-        
-      </h3>
+      
     </div>
   );
 };

@@ -13,7 +13,7 @@ const NavLinks = () => {
           title="Our product"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-accent-700"
           >
-          Shop
+          Pharmacies
         </a>
           </Link>
       </li>

@@ -12,16 +12,8 @@ const Header = () => {
         <div className="flex items-center justify-between mx-auto max-w-7xl font-sans">
           <div className="flex items-center space-x-4">
             <h2 className="text-xs sm:text-sm font-medium text-gray-500 tracking-wider">
-              Free delivery for orders over 199£.{' '}
-              <span className="block sm:inline-block">
-                20£ delivery on 99+ !{' '}
-                <a
-                  href="/"
-                  className="text-teal-accent-700 hover:text-teal-700"
-                >
-                  View Offer
-                </a>
-              </span>
+             
+            For first aid emergencies, call our hotline 
             </h2>
           </div>
           <div className="flex items-center space-x-1">
@@ -41,7 +33,9 @@ const Header = () => {
             </svg>
 
             <span className="text-xs sm:text-sm font-medium text-gray-500 hover:text-teal-accent-700 cursor-pointer">
-              (+20) 1012540959
+            <a href='https://t.me/+201013290987' target="_blank" className="text-gray-500 cursor-pointer hover:text-teal-500">
+              First Aid  
+            </a>
             </span>
           </div>
         </div>

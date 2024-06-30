@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import shopCard from '../../../Data/vendor';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import shopCard from "../../../Data/vendor";
+import MapComponent from "../MapComponent/MapComponent";
 
 const ShopCard = () => {
-  const first6 = shopCard.slice(0, 6);
+  const first6 = shopCard.slice(0, 3);
   const [shopCards, setShopCards] = useState(first6);
+  const [value, setValue] = useState("");
+
+  const handleValueChange = (newValue) => {
+    setValue(newValue);
+    let filteredItems = shopCard.filter((product) =>
+      product.shopName.toLowerCase().includes(value.toLowerCase())
+    );
+    setShopCards(filteredItems);
+    console.log("Received value from child:", newValue);
+  };
 
   return (
-    <div className="pb-10 pt-8 bg-teal-50">
+    <div className="pb-10 pt-8 bg-teal-50" id="features">
       {/* Shop Card */}
       <div className="w-full text-center py-8">
         <h1 className="font-medium text-4xl font-display tracking-wide text-teal-700">
@@ -17,9 +28,14 @@ const ShopCard = () => {
           Search for Medicine, Filter by your location
         </p>
       </div>
+      <MapComponent onValueChange={handleValueChange} />
+
       <div className="cards flex flex-wrap justify-center">
         {shopCards.map((shopCard) => (
-          <div key={shopCard._id} className="pb-4 m-6 rounded-lg shadow-3xl w-96 md:w-2/5 lg:w-1/4 bg-white">
+          <div
+            key={shopCard._id}
+            className="pb-4 m-6 rounded-lg shadow-3xl w-96 md:w-2/5 lg:w-1/4 bg-white"
+          >
             <img src={shopCard.cardBanner} className="rounded-t-lg" alt="" />
 
             <div className="relative pt-2">
@@ -35,9 +51,9 @@ const ShopCard = () => {
                 <div className="absolute right-4 top-8 shadow-4xl">
                   <p
                     className={`rounded border border-teal-300 py-0.5 px-3 ${
-                      shopCard.status === 'Open'
-                        ? 'text-green-800'
-                        : 'text-red-400'
+                      shopCard.status === "Open"
+                        ? "text-green-800"
+                        : "text-red-400"
                     }`}
                   >
                     {shopCard.status}
@@ -50,7 +66,7 @@ const ShopCard = () => {
                 <div className="text-sm font-sans text-gray-800">
                   <p className="pb-1 text-yellow-800">⭐ {shopCard.rating}</p>
                   <p className="pb-1">
-                    {shopCard.location} {shopCard['postal code']}
+                    {shopCard.location} {shopCard["postal code"]}
                   </p>
                   <p className="pb-1">{shopCard.city}</p>
                   <p className="pb-1">{shopCard.address3}</p>
@@ -99,7 +115,7 @@ const ShopCard = () => {
             </div>
           </div>
         ))}
-      </div> 
+      </div>
 
       {/* More button */}
       <div className="text-center mt-8">
@@ -107,21 +123,15 @@ const ShopCard = () => {
           to="/allShop"
           className="inline-flex items-center justify-center h-12 px-6 font-sans font-medium tracking-wider transition duration-200 rounded shadow-md bg-teal-500 text-white hover:bg-teal-700 focus:shadow-outline focus:outline-none"
         >
-          See More{' '}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 ml-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
+          See More{" "}
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             {/* <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
               d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
             /> */}
-          </svg>
+          {/* </svg> */}
         </Link>
       </div>
     </div>

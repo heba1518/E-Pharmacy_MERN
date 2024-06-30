@@ -29,7 +29,7 @@ const Home = () => {
         <NavBar />
         <Hero />
       </div>
-      <MapComponent/>
+      {/* <MapComponent/> */}
       <OfferCard />
       <ShopCard />
       <PictureUpload />

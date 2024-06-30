@@ -6,11 +6,9 @@ const USER_SCHEMA = mongoose.Schema(
   {
     fastName: {
       type: String,
-      // required: true,
     },
     lastName: {
       type: String,
-      // required: true,
     },
     userName: {
       type: String,
