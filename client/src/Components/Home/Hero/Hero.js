@@ -1,6 +1,11 @@
 import React from "react";
-import './Hero.css';
+import "./Hero.css";
 const Hero = () => {
+  // const handleInputChange()
+  const handleInputChange = (e) => {
+    let searchTerm = e.target.value;
+    localStorage.setItem("serch", JSON.stringify(searchTerm));
+  };
   return (
     <section id="search">
       <div className="w-full px-3 antialiased lg:px-6">
@@ -21,12 +26,21 @@ const Hero = () => {
               <input
                 type="text"
                 name="search"
+                // value={searchItem}
+                onChange={handleInputChange}
                 placeholder="Search your medicine from here"
                 class="w-full h-12 px-6 py-2 font-medium text-teal-800 placeholder-gray-400 tracking-wide focus:outline-none border-none"
               />
               <span class="relative top-0 right-0 block ">
-                <button type="button" class="hero-search-button">
+                <button
+                  type="button"
+                  class="hero-search-button"
+                  
+                >
+                  <a href="#features">
+
                   Search
+                  </a>
                 </button>
               </span>
             </div>

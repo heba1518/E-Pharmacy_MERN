@@ -7,7 +7,7 @@ const includedFeatures = [
   'Private forum access',
   'Member resources',
   'Entry to annual conference',
-  'Official member t-shirt',
+  'Official member ',
 ]
 
 const Pricing = () => {
@@ -34,7 +34,7 @@ const Pricing = () => {
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
                     <div className="flex-1 bg-white px-6 py-8 lg:p-12">
-                      <h3 className="text-2xl font-extrabold text-teal-700 sm:text-3xl">Lifetime Membership</h3>
+                      <h3 className="text-2xl font-extrabold text-teal-700 sm:text-3xl"> Membership</h3>
                       <p className="mt-6 text-base text-gray-500">
                         Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis
                         repellendus etur quidem assumenda.
@@ -59,9 +59,9 @@ const Pricing = () => {
                       </div>
                     </div>
                     <div className="py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
-                      <p className="text-lg leading-6 font-medium text-gray-900">Pay once, own it forever</p>
+                      <p className="text-lg leading-6 font-medium text-gray-900">Monthly</p>
                       <div className="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
-                        <span>$349</span>
+                        <span>$39</span>
                         <span className="ml-3 text-xl font-medium text-gray-500">USD</span>
                       </div>
                       <p className="mt-4 text-sm">

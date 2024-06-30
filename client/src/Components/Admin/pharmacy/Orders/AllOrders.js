@@ -35,63 +35,7 @@ const AllOrders = () => {
     return formattedDate;
   }
   const orders = [
-    {
-      id: "0",
-      photo: "https://i.imgur.com/FHMKqK5.png",
-      name: user.userName,
-      email: user.email,
-      price: total,
-      status: r,
-      products: tot,
-      address: "El Hwatem, Faiyum",
-      date: getFormattedDate(),
-    },
-    {
-      id: "1",
-      photo: "https://i.imgur.com/UYCE7Rr.png",
-      name: "Mohammed Sabry",
-      address: "El Haram, Cairo",
-      email: "mSabry@gmail.com",
-      products: "19",
-      price: "340.16",
-      status: "Pending",
-
-      date: "Apr 17, 2024",
-    },
-    {
-      id: "2",
-      photo: "https://i.imgur.com/1As0akH.png1",
-      name: "Ahmed Maher",
-      address: "masla square, Faiyum",
-      email: "ahmedMaher@gmail.com",
-      products: "9",
-      price: "530.76",
-      status: "Cancelled",
-
-      date: "Mar 23, 2024",
-    },
-    {
-      id: "3",
-      photo: "https://i.imgur.com/hz6bZkb.png",
-      name: "Sayed Yasser",
-      email: "sayedY@gmail.com",
-      products: "14",
-      price: "280.57",
-      status: "Completed",
-      address: "Mohandessin, Giza",
-      date: "Mar 15, 2024",
-    },
-    {
-      id: "4",
-      photo: "https://i.imgur.com/udG6SOt.png",
-      name: "Heba Amr",
-      address: "El Rashidy, Alex",
-      email: "hebaamr@gmail.com",
-      products: "10",
-      price: "567.34",
-      status: "Confirmed",
-      date: "Mar 5, 2024",
-    },
+   
   ];
 
   const options = {
@@ -295,7 +239,7 @@ const AllOrders = () => {
             </table>
 
             {/* Pagination */}
-            <div className="px-5 bg-white py-5 flex flex-col xs:flex-row items-center xs:justify-between">
+            {/* <div className="px-5 bg-white py-5 flex flex-col xs:flex-row items-center xs:justify-between">
               <div className="flex items-center">
                 <button
                   type="button"
@@ -346,7 +290,7 @@ const AllOrders = () => {
                   </svg>
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

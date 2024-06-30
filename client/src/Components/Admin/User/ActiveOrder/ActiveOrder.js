@@ -39,6 +39,7 @@ const ActiveOrder = () => {
   const or = JSON.parse(test);
   const [orders, setOrders] = useState(or);
 
+
   function calOrder(order) {
     let totalPrice = 0;
     order.products.forEach((product) => {
@@ -53,6 +54,7 @@ const ActiveOrder = () => {
           Active Orders
         </h1>
       </div>
+
 
       <section aria-labelledby="recent-heading" className="mt-16">
         <h2 id="recent-heading" className="sr-only">
@@ -95,6 +97,7 @@ const ActiveOrder = () => {
                 </a>
               </div>
 
+{!order.prescription && 
               <table className="mt-4 w-full text-gray-500 sm:mt-6">
                 <caption className="sr-only">Products</caption>
                 <thead className="sr-only text-sm text-gray-500 text-left sm:not-sr-only">
@@ -160,11 +163,12 @@ const ActiveOrder = () => {
                     </tr>
                   ))}
                 </tbody>
-              </table>
+              </table>}
             </div>
           ))}
         </div>
       </section>
+      
     </main>
   );
 };

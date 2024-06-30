@@ -1,61 +1,38 @@
-import React, { useState } from "react";
-import img1 from "../../../../../Assets/images/pharmacies/roshdy_pharmacy_logo.png";
-import img from "../../../../../Assets/images/pharmacies/gemy_pharmacies_logo.png";
-import axios from "axios";
-const Requests = () => {
+import React, { useState } from 'react';
+import AddNewProducts from './AddNewProducts';
+import img2 from "../../../../Assets/images/products/panadol.webp"
+import img4 from "../../../../Assets/images/products/alphintern.jpg";
+import img5 from "../../../../Assets/images/products/antinal.webp";
+import img6 from "../../../../Assets/images/products/apidone.jpg";
+import img8 from "../../../../Assets/images/products/flagyl.png";
+import img10 from "../../../../Assets/images/products/Strepsils.jpg";
+
+const AllProducts = () => {
+  const [editModal, setEditModal] = useState(false);
+  const [viewProduct, setViewProduct] = useState();
+
   const orders = [
-    {
-      id: "0",
-      photo: img1,
-      name: "Roshdy",
-      email: "rushdypharmacies@gmail.com",
-      address: "Ard El Golf Heliopolis, Cairo",
-      phone: "+2024141445",
-      date: "Apr 17, 2024",
-    },
+    
   ];
-  const p = localStorage.getItem("newPharmacy");
-  let newP = JSON.parse(p);
-  if (!newP.reqest) {
-    orders.push(newP);
-    console.log(p);
-  }
-
-  const handleAccept = () => {
-    // newP.reqest = true;
-    // localStorage.setItem(newP);
-    // orders.pop();
-
-    const payload = {
-      email: newP.email,
-      password: newP.password,
-      userName: newP.name,
-      phone: newP.phone,
-      role: "pharmacy",
-    };
-    axios
-      .post("http://localhost:4000/api/users/register", payload)
-      .then(function (response) {
-        if (response.status === 200) {
-          console.log("done", response);
-          // redirectToHome();
-          // props.showError(null)
-        } else {
-          console.log("error");
-          // props.showError("Some error ocurred");
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+ 
   return (
     <section>
       <div className="container mx-auto px-4 sm:px-8 max-w-full sm:max-w-5xl">
         <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
-          <h2 className="font-display text-teal-700 text-2xl leading-tight">
-            Pharmacies Data
-          </h2>
+          <div className="flex-start">
+            <button
+              className="flex-shrink-0 px-4 py-2 text-base font-medium tracking-wide text-white bg-teal-500 rounded-lg shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-teal-200"
+              onClick={() => setEditModal(true)}
+            >
+              Add a new Product
+            </button>
+            {/* <button
+              className="flex-shrink-0 px-4 py-2 text-base font-medium tracking-wide text-white bg-teal-500 rounded-lg shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-teal-200 ml-6"
+              type="submit"
+            >
+              Add Category
+            </button>{' '} */}
+          </div>
           <div className="text-end">
             <form className="flex flex-col md:flex-row w-3/4 md:w-full max-w-sm md:space-x-3 space-y-3 md:space-y-0 justify-center">
               <div className=" relative ">
@@ -63,7 +40,7 @@ const Requests = () => {
                   type="text"
                   id='"form-subscribe-filter'
                   className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent"
-                  placeholder="Pharmacy Name"
+                  placeholder="User Name"
                 />
               </div>
               <button
@@ -84,39 +61,33 @@ const Requests = () => {
                 <tr>
                   <th
                     scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
                   >
-                    User Info
+                    Product Info
                   </th>
                   <th
                     scope="col"
-                    className="px-12 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
                   >
-                    Email
+                    Category
                   </th>
                   <th
                     scope="col"
-                    className="px-12 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
                   >
-                    Address
+                    Stock
                   </th>
                   <th
                     scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
                   >
-                    Phone
+                    Suppliers
                   </th>
                   <th
                     scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
                   >
-                    Register Date
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
-                  >
-                    Message
+                    Price
                   </th>
                   <th
                     scope="col"
@@ -138,66 +109,78 @@ const Requests = () => {
                             <a href="/" className="block relative">
                               <img
                                 alt="User Avatar"
-                                src={order.photo ? order.photo : img}
+                                src={order.image}
                                 className="mx-auto object-cover rounded-full h-10 w-10"
                               />
                             </a>
                           </div>
                           <div className="ml-3">
                             <p className="text-gray-900 whitespace-no-wrap">
-                              {order.name.substr(0, 19)}
+                              {order.name.substr(0, 12)}
                             </p>
                           </div>
                         </div>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.email}
+                          {order.category}
                         </p>
                       </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-center text-sm">
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-left text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.address}
+                          {order.stock}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.phone}
+                          {order.brand}
                         </p>
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
-                          {order.date}
+                          {order.price}£
                         </p>
                       </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <button className="flex align-center justify-center font-sans font-medium text-teal-600 hover:text-teal-900">
-                          Message{"  "}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+                        <div className="flex align-center justify-center">
+                          <button
+                            className="flex align-center justify-center font-body font-semibold text-yellow-900 hover:text-orange-900"
+                            onClick={() => setEditModal(true)}
                           >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                            />
-                          </svg>
-                        </button>
-                      </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <button
-                          className="flex-shrink-0 px-4 py-2 text-base font-medium tracking-wide text-white bg-teal-500 rounded-lg shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-teal-200"
-                          onClick={() => {
-                            handleAccept();
-                          }}
-                        >
-                          Accept
-                        </button>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-6 w-6"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                              />
+                            </svg>{' '}
+                            Edit
+                          </button>
+                          <button className="flex align-center ml-5 justify-center font-body font-semibold text-red-600 hover:text-red-900">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-6 w-6"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                              />
+                            </svg>{' '}
+                            Delete
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   </tbody>
@@ -206,7 +189,7 @@ const Requests = () => {
             </table>
 
             {/* Pagination */}
-            <div className="px-5 bg-white py-5 flex flex-col xs:flex-row items-center xs:justify-between">
+            {/* <div className="px-5 bg-white py-5 flex flex-col xs:flex-row items-center xs:justify-between">
               <div className="flex items-center">
                 <button
                   type="button"
@@ -257,12 +240,17 @@ const Requests = () => {
                   </svg>
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
+
+      {/* Edit Modal Component */}
+      {editModal ? (
+        <AddNewProducts setEditModal={setEditModal} viewProduct={viewProduct} />
+      ) : null}
     </section>
   );
 };
 
-export default Requests;
+export default AllProducts;

@@ -1,102 +1,63 @@
-import React, { useState } from "react";
-import EditOrders from "./EditOrders";
+import React from "react";
 
-const AllOrders = () => {
-  const [editModal, setEditModal] = useState(false);
-  const [viewOrder, setViewOrder] = useState();
-  const [status, setStatus] = useState("Processing");
-  const u = localStorage.getItem("userBuy");
-  let user = JSON.parse(u);
-  const p = localStorage.getItem("orderProducts");
-  let pro = JSON.parse(p);
-  let total = 0;
-  pro.forEach((product) => {
-    total += product.tot;
-  });
-  let tot = 0;
-  pro.forEach((product) => {
-    tot += product.products.length;
-  });
-  let s = localStorage.getItem("status")
-  let r = JSON.parse(s)
-
-  function getFormattedDate() {
-    // Get today's date
-    const today = new Date();
-
-    // Extract year, month, and day
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
-    const day = String(today.getDate()).padStart(2, "0"); // Pad day with leading zeros if necessary
-
-    // Format date as YYYY-MM-DD
-    const formattedDate = `${year}-${month}-${day}`;
-
-    return formattedDate;
-  }
+const AllCustomers = () => {
   const orders = [
-    {
-      id: "0",
-      photo: "https://i.imgur.com/FHMKqK5.png",
-      name: user.userName,
-      email: user.email,
-      price: total,
-      status: r,
-      products: tot,
-      address: "El Hwatem, Faiyum",
-      date: getFormattedDate(),
-    },
-    {
-      id: "1",
-      photo: "https://i.imgur.com/UYCE7Rr.png",
-      name: "Mohammed Sabry",
-      address: "El Haram, Cairo",
-      email: "mSabry@gmail.com",
-      products: "19",
-      price: "340.16",
-      status: "Pending",
+    // {
+    //   id: "0",
+    //   photo: "https://i.imgur.com/1As0akH.png1",
+    //   name: "Ahmed Maher",
+    //   email: "ahmedMaher@gmail.com",
+    //   address: "El Hwatem, Faiyum",
+    //   phone: "+201036985253",
+    //   status: "Active",
+    //   date: "Apr 17, 2024",
+    // },
+    // {
+    //   id: "1",
+    //   photo: "https://i.imgur.com/UYCE7Rr.png",
+    //   name: "Mohammed Sabry",
+    //   address: "El Haram, Cairo",
+    //   email: "mSabry@gmail.com",
+    //   phone: "+201136985275",
+    //   status: "Active",
 
-      date: "Apr 17, 2024",
-    },
-    {
-      id: "2",
-      photo: "https://i.imgur.com/1As0akH.png1",
-      name: "Ahmed Maher",
-      address: "masla square, Faiyum",
-      email: "ahmedMaher@gmail.com",
-      products: "9",
-      price: "530.76",
-      status: "Cancelled",
-
-      date: "Mar 23, 2024",
-    },
-    {
-      id: "3",
-      photo: "https://i.imgur.com/hz6bZkb.png",
-      name: "Sayed Yasser",
-      email: "sayedY@gmail.com",
-      products: "14",
-      price: "280.57",
-      status: "Completed",
-      address: "Mohandessin, Giza",
-      date: "Mar 15, 2024",
-    },
-    {
-      id: "4",
-      photo: "https://i.imgur.com/udG6SOt.png",
-      name: "Heba Amr",
-      address: "El Rashidy, Alex",
-      email: "hebaamr@gmail.com",
-      products: "10",
-      price: "567.34",
-      status: "Confirmed",
-      date: "Mar 5, 2024",
-    },
+    //   date: "Apr 1, 2024",
+    // },
+    // {
+    //   id: "2",
+    //   photo: "https://i.imgur.com/FHMKqK5.png",
+    //   name: "Salma Ahmed",
+    //   address: "masla square, Faiyum",
+    //   email: "salmaAhmed@gmail.com",
+    //   phone: "+201036985214",
+    //   status: "Active",
+    //   date: "Mar 23, 2024",
+    // },
+    // {
+    //   id: "3",
+    //   photo: "https://i.imgur.com/hz6bZkb.png",
+    //   name: "Sayed Yasser",
+    //   email: "sayedY@gmail.com",
+    //   address: "Lutf Allah, Faiyum",
+    //   phone: "+201236985264",
+    //   status: "Active",
+    //   date: "Mar 15, 2024",
+    // },
+    // {
+    //   id: "4",
+    //   photo: "https://i.imgur.com/udG6SOt.png",
+    //   name: "Heba Amr",
+    //   address: "El Rashidy, Alex",
+    //   email: "hebaamr@gmail.com",
+    //   phone: "+201136984514",
+    //   status: "Deactive",
+    //   date: "Mar 5, 2024",
+    // },
   ];
 
   const options = {
     year: "numeric",
-    month: "long",
+    month: "short",
     day: "numeric",
   };
 
@@ -105,7 +66,7 @@ const AllOrders = () => {
       <div className="container mx-auto px-4 sm:px-8 max-w-full sm:max-w-5xl">
         <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
           <h2 className="font-display text-teal-700 text-2xl leading-tight">
-            All Orders
+            Customers Data
           </h2>
           <div className="text-end">
             <form className="flex flex-col md:flex-row w-3/4 md:w-full max-w-sm md:space-x-3 space-y-3 md:space-y-0 justify-center">
@@ -141,36 +102,34 @@ const AllOrders = () => {
                   </th>
                   <th
                     scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
+                    className="px-12 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
+                  >
+                    Email
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-12 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
                   >
                     Address
                   </th>
-
                   <th
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
                   >
-                    Order Date
+                    Phone
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                  >
+                    Register Date
                   </th>
                   {/* <th
                     scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
-                  >
-                    Price
-                  </th> */}
-                  <th
-                    scope="col"
-                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left pl-12 text-sm uppercase font-semibold"
-                  >
-                    Status
-                  </th>
-                  <th
-                    scope="col"
-                    colspan="2"
-                    className="px-20 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800 text-center text-sm uppercase font-semibold"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
                   >
                     Action
-                  </th>
+                  </th> */}
                 </tr>
               </thead>
 
@@ -199,56 +158,27 @@ const AllOrders = () => {
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
+                          {order.email}
+                        </p>
+                      </td>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-center text-sm">
+                        <p className="text-gray-900 whitespace-no-wrap">
                           {order.address}
                         </p>
                       </td>
-
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <p className="text-gray-900 whitespace-no-wrap">
+                          {order.phone}
+                        </p>
+                      </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
                           {order.date}
                         </p>
                       </td>
                       {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          {order.price}£
-                        </p>
-                      </td> */}
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
-                        <span
-                          className={`relative inline-block px-3 py-1 w-28 text-center font-semibold leading-tight ${
-                            order.status === "Pending"
-                              ? "text-yellow-900"
-                              : order.status === "Confirmed"
-                              ? "text-indigo-600"
-                              : order.status === "Completed"
-                              ? "text-green-800"
-                              : order.status === "Cancelled"
-                              ? "text-red-500"
-                              : "text-blue-800"
-                          }`}
-                        >
-                          <span
-                            aria-hidden="true"
-                            className={`absolute inset-0 opacity-50 rounded-full ${
-                              order.status === "Pending"
-                                ? "bg-yellow-600"
-                                : order.status === "Confirmed"
-                                ? "bg-indigo-200"
-                                : order.status === "Completed"
-                                ? "bg-green-200"
-                                : order.status === "Cancelled"
-                                ? "bg-red-200"
-                                : "bg-blue-300"
-                            }`}
-                          ></span>
-                          <span className="relative">{order.status}</span>
-                        </span>
-                      </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <button
-                          className="flex align-center justify-center font-body font-semibold text-teal-600 hover:text-teal-900"
-                          onClick={() => setEditModal(true)}
-                        >
+                        <button className="flex align-center justify-center font-sans font-medium text-teal-600 hover:text-teal-900">
+                          Message{"  "}
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6"
@@ -260,34 +190,11 @@ const AllOrders = () => {
                               strokeLinecap="round"
                               strokeLinejoin="round"
                               strokeWidth={2}
-                              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                            />
-                          </svg>{" "}
-                          Edit
-                        </button>
-                      </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      <a href="https://t.me/+201012540959" target="_blank">
-
-                        <button className="flex align-center justify-center font-sans font-medium text-teal-600 hover:text-teal-900">
-                          Message{"  "}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
                               d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                              />
+                            />
                           </svg>
                         </button>
-                              </a>
-                      </td>
+                      </td> */}
                     </tr>
                   </tbody>
                 );
@@ -295,7 +202,7 @@ const AllOrders = () => {
             </table>
 
             {/* Pagination */}
-            <div className="px-5 bg-white py-5 flex flex-col xs:flex-row items-center xs:justify-between">
+            {/* <div className="px-5 bg-white py-5 flex flex-col xs:flex-row items-center xs:justify-between">
               <div className="flex items-center">
                 <button
                   type="button"
@@ -346,21 +253,12 @@ const AllOrders = () => {
                   </svg>
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
-
-      {/* Edit Modal Component */}
-      {editModal ? (
-        <EditOrders
-          setEditModal={setEditModal}
-          viewOrder={viewOrder}
-          orders={orders}
-        />
-      ) : null}
     </section>
   );
 };
 
-export default AllOrders;
+export default AllCustomers;

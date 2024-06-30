@@ -24,7 +24,7 @@ const MapComponent = ({ onValueChange }) => {
 
   const addresses = [
     { name: "Elghbili", lat: 29.313409, lon: 30.85132 },
-    { name: "El Ezaby", lat: 29.317274, lon: 30.85058 },
+    { name: "El Ezaby", lat: 29.311442, lon: 30.840879 },
   ];
 
   // Haversine formula to calculate distance between two points

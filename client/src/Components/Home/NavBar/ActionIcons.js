@@ -52,7 +52,12 @@ const ActionIcons = () => {
     setUser(us);
 
     if(us.role == "pharmacy"){
-      setPath('/vendor/dashboard')
+      if(us.userName == "Pharmacy123"){
+        setPath('/vendor/dashboard')
+      }else{
+        setPath('/vendo/dashboard')
+      }
+      
     }else if(us.role == "admin"){
       setPath('/admin/dashboard')
     }else{
