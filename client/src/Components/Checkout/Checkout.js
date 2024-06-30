@@ -15,7 +15,7 @@ const Checkout = () => {
   let totalPrice = 0;
   cartProducts.forEach((product) => {
     console.log(product.name);
-    totalPrice += product.price;
+    totalPrice += product.price * product.quantity;
   });
 
   const [newS, setNew] = useState(totalPrice);
@@ -36,6 +36,7 @@ const Checkout = () => {
     setNew(s);
     setCopon(e.target.value);
     let t = s + 10;
+
     setTotal(t);
   };
   const updateProducts = (id, newData) => {
@@ -62,16 +63,25 @@ const Checkout = () => {
       console.error("Error parsing JSON from localStorage:", error);
       orderProducts = [];
     }
+    let pre = localStorage.getItem("prescription")
+    let pres = JSON.parse(pre)
 
-    const newEntry = { status: "In Process", products: cartProducts , tot:total};
+    const newEntry = {
+      status: "In Process",
+      prescription: pres,
+      products: cartProducts,
+      tot: total,
+    };
 
     orderProducts.push(newEntry);
     const updatedOrderProducts = JSON.stringify(orderProducts);
     localStorage.setItem("orderProducts", updatedOrderProducts);
 
+
     products.forEach((product) => {
       if (product.cart) {
         product.cart = !product.cart;
+        product.order = true;
       }
       updateProducts(product._id, product);
     });

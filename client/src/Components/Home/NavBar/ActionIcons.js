@@ -49,12 +49,19 @@ const ActionIcons = () => {
     let us = JSON.parse(u);
     setUser(us);
 
-    if (us.role == "pharmacy") {
-      setPath("/vendor/dashboard");
-    } else if (us.role == "admin") {
-      setPath("/admin/dashboard");
-    } else {
-      setPath("/userProfile/666044742eac70ecfd68ab73");
+
+    if(us.role == "pharmacy"){
+      if(us.userName == "Pharmacy123"){
+        setPath('/vendor/dashboard')
+      }else{
+        setPath('/vendo/dashboard')
+      }
+      
+    }else if(us.role == "admin"){
+      setPath('/admin/dashboard')
+    }else{
+      setPath('/userProfile/666044742eac70ecfd68ab73')
+
     }
   };
   // const array = localStorage.getItem('products');

@@ -228,7 +228,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
               </Link>
             </li>
             <li>
-              <Link
+              <a href='https://t.me/+201013290987'  target="_blank"
                 className={
                   panel === "messages" ? "sidebar-item-active" : "sidebar-item"
                 }
@@ -250,7 +250,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   />
                 </svg>
                 <span className="ml-4">Messages</span>
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>

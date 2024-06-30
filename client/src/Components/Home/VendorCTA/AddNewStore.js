@@ -33,47 +33,37 @@ const AddNewStore = ({ setEditModal }) => {
       [e.target.name]: e.target.value,
     }));
   };
+
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState('');
   const [h, seth] = useState(null);
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
+    if (!file) return; // Make sure file is not null or undefined
+
     setImage(file);
 
     // Preview the selected image
     const reader = new FileReader();
     reader.onloadend = () => {
       setPreview(reader.result);
+      handleImageUpload(reader.result);
     };
     reader.readAsDataURL(file);
-    handleImageUpload(e, image);
   };
 
-  const handleImageUpload = (e, setImage) => {
-
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const base64String = reader.result;
-        localStorage.setItem('uploadedImage', base64String);
-        seth(base64String)
-      };
-      reader.readAsDataURL(image);
-
+  const handleImageUpload = (base64String) => {
+    localStorage.setItem('uploadedImage', base64String);
+    seth(base64String);
   };
 
   function getFormattedDate() {
-    // Get today's date
     const today = new Date();
-
-    // Extract year, month, and day
     const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
-    const day = String(today.getDate()).padStart(2, "0"); // Pad day with leading zeros if necessary
-
-    // Format date as YYYY-MM-DD
-    const formattedDate = `${year}-${month}-${day}`;
-
-    return formattedDate;
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
   }
   const onSubmit = () => {
     const vendorData = {
@@ -84,7 +74,7 @@ const AddNewStore = ({ setEditModal }) => {
       request: false,
       // logo: logoImgURL,
       date:getFormattedDate(),
-      photo:h,
+      // photo:h,
       banner: bannerImgURL,
       address: formData.address + ", " + formData.city,
       password: formData.password,

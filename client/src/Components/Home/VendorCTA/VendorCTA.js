@@ -138,7 +138,7 @@ const VendorCTA = () => {
                         ></polygon>
                       </svg>
                     </span>
-                    Satoshi Nakamoto
+                    Support system
                   </li>
                 </ul>
               </div>

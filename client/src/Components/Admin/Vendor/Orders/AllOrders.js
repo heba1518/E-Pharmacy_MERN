@@ -17,6 +17,8 @@ const AllOrders = () => {
   pro.forEach((product) => {
     tot += product.products.length;
   });
+  let s = localStorage.getItem("status")
+  let r = JSON.parse(s)
 
   function getFormattedDate() {
     // Get today's date
@@ -35,11 +37,11 @@ const AllOrders = () => {
   const orders = [
     {
       id: "0",
-      photo: "https://i.imgur.com/1As0akH.png1",
+      photo: "https://i.imgur.com/FHMKqK5.png",
       name: user.userName,
       email: user.email,
       price: total,
-      status: status,
+      status: r,
       products: tot,
       address: "El Hwatem, Faiyum",
       date: getFormattedDate(),
@@ -58,10 +60,10 @@ const AllOrders = () => {
     },
     {
       id: "2",
-      photo: "https://i.imgur.com/FHMKqK5.png",
-      name: "Salma Ahmed",
+      photo: "https://i.imgur.com/1As0akH.png1",
+      name: "Ahmed Maher",
       address: "masla square, Faiyum",
-      email: "salmaAhmed@gmail.com",
+      email: "ahmedMaher@gmail.com",
       products: "9",
       price: "530.76",
       status: "Cancelled",
@@ -150,12 +152,12 @@ const AllOrders = () => {
                   >
                     Order Date
                   </th>
-                  <th
+                  {/* <th
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
                   >
                     Price
-                  </th>
+                  </th> */}
                   <th
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left pl-12 text-sm uppercase font-semibold"
@@ -206,11 +208,11 @@ const AllOrders = () => {
                           {order.date}
                         </p>
                       </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
                           {order.price}£
                         </p>
-                      </td>
+                      </td> */}
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
                         <span
                           className={`relative inline-block px-3 py-1 w-28 text-center font-semibold leading-tight ${

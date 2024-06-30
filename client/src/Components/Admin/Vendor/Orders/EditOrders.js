@@ -3,50 +3,42 @@ import img2 from "../../../../Assets/images/products/coloverin.jpg";
 import img1 from "../../../../Assets/images/products/minalax.jpg";
 import pImg from "../../../../Assets/images/test4.png";
 
-const EditOrders = ({ setEditModal}) => {
-  const orders = [
-    {
-      id: "0",
-      photo: "https://i.imgur.com/1As0akH.png1",
-      name: "Ahmed Maher",
-      address: "El Hwatem, Faiyum",
-      price: "890.66",
-      status: "In Progress",
-      email: "ahmedMaher@gmail.com",
-      number: "WU88191111",
-      date: "April 22, 2024",
-      datetime: "2024-01-22",
-      phone: "+201036985253",
-      invoiceHref: "#",
-      total: "654.00",
-      products: [
-        {
-          id: 1,
-          name: "Minalax",
-          quantity: "1",
-          price: "11.5£",
-          brand: "AMOUN",
-          category: "Laxative",
-          status: "Delivered April 22, 2024",
-          imageSrc: img1,
-          imageAlt: "Detail of mechanical pencil ",
-        },
-        {
-          id: 2,
-          name: "Coloverin D",
-          quantity: "1",
-          price: "69£",
-          brand: "Chemipharm",
-          category: "Antiflatulent",
-          status: "Delivered April 22, 2024",
-          imageSrc: img2,
-          imageAlt: "Detail of mechanical pencil ",
-        },
-      ],
-      PriscriptionImg: pImg,
-    },
-  ];
+import PreviousOrders from "../../User/PreviousOrders/PreviousOrders"
+const EditOrders = ({ setEditModal }) => {
+  const u = localStorage.getItem("userBuy");
+  let user = JSON.parse(u);
+  const p = localStorage.getItem("orderProducts");
+  let pro = JSON.parse(p);
+  let orders =pro
+  const numbers = ["WU88191111", "WU88191112", "WU88191113", "WU88191114", "WU88191115","WU88191116","WU88191117"];
 
+
+  
+ 
+  function getFormattedDate() {
+    // Get today's date
+    const today = new Date();
+
+    // Extract year, month, and day
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
+    const day = String(today.getDate()).padStart(2, "0"); // Pad day with leading zeros if necessary
+
+    // Format date as YYYY-MM-DD
+    const formattedDate = `${year}-${month}-${day}`;
+
+    return formattedDate;
+  }
+
+  let y = localStorage.getItem("status")
+ let s = JSON.parse(y)
+// const [status, setStatus] = useState("")
+  const handelChange =(e)=>{
+    localStorage.setItem("prev", JSON.stringify(orders))
+    localStorage.setItem("orderProducts", JSON.stringify([]));
+    localStorage.setItem("status", JSON.stringify(e.target.value))
+
+  }
   return (
     <section>
       <div className="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none backdrop-filter saturate-150 backdrop-blur-sm">
@@ -94,19 +86,19 @@ const EditOrders = ({ setEditModal}) => {
                   </svg>
                 </button>
               </div>
-
-              {/* Order Details */}
+{orders.length > 0 &&
+              
               <div className="bg-white">
                 <div className="max-w-7xl mx-auto  px-4 sm:px-6 pb-16 lg:px-8">
                   <div className="mt-1">
                     <h2 className="sr-only">Recent orders</h2>
 
                     <div className="space-y-20">
-                      {orders.map((order) => (
+                      {orders.map((order, index) => (
                         <div key={order.number}>
                           <h3 className="sr-only">
                             Order placed on{" "}
-                            <time dateTime={order.datetime}>{order.date}</time>
+                            <time dateTime={getFormattedDate}>{getFormattedDate}</time>
                           </h3>
 
                           <div className="bg-gray-50 rounded-lg py-6 px-4 sm:px-6 sm:flex sm:items-center sm:justify-between sm:space-x-6 lg:space-x-8">
@@ -116,7 +108,7 @@ const EditOrders = ({ setEditModal}) => {
                                 <a href="/" className="block relative">
                                   <img
                                     alt="User Avatar"
-                                    src={order.photo}
+                                    src="https://i.imgur.com/FHMKqK5.png"
                                     className=" object-cover rounded-full h-10 w-10"
                                   />
                                 </a>
@@ -126,22 +118,22 @@ const EditOrders = ({ setEditModal}) => {
                                   Customer Name
                                 </dt>
                                 <dd className="sm:mt-1">
-                                  <time dateTime={order.datetime}>
-                                    {order.name}
-                                  </time>
+                                 
+                                    {user.userName}
+                                  
                                 </dd>
                               </div>
                               <div className="flex justify-between pt-6 sm:block sm:pt-0">
                                 <dt className="font-medium text-gray-900">
                                   Email
                                 </dt>
-                                <dd className="sm:mt-1">{order.email}</dd>
+                                <dd className="sm:mt-1">{user.email}</dd>
                               </div>
                               <div className="flex justify-between pt-6 sm:block sm:pt-0">
                                 <dt className="font-medium text-gray-900">
                                   Phone Number
                                 </dt>
-                                <dd className="sm:mt-1">{order.phone}</dd>
+                                <dd className="sm:mt-1">{user.phone}</dd>
                               </div>
                             </dl>
 
@@ -157,8 +149,8 @@ const EditOrders = ({ setEditModal}) => {
                                   Date placed
                                 </dt>
                                 <dd className="sm:mt-1">
-                                  <time dateTime={order.datetime}>
-                                    {order.date}
+                                  <time dateTime={getFormattedDate()}>
+                                    {getFormattedDate()}
                                   </time>
                                 </dd>
                               </div>
@@ -166,11 +158,11 @@ const EditOrders = ({ setEditModal}) => {
                                 <dt className="font-medium text-gray-900">
                                   Order number
                                 </dt>
-                                <dd className="sm:mt-1">{order.number}</dd>
+                                <dd className="sm:mt-1">{numbers[index]}</dd>
                               </div>
                               <div className="flex justify-between pt-6 font-medium text-gray-900 sm:block sm:pt-0">
                                 <dt>Total amount</dt>
-                                <dd className="sm:mt-1">{order.total}£</dd>
+                                <dd className="sm:mt-1">{order.tot}£</dd>
                               </div>
                               <div className="flex justify-between pt-6 sm:block sm:pt-0">
                                 <dt className="font-medium text-gray-900">
@@ -193,7 +185,8 @@ const EditOrders = ({ setEditModal}) => {
                                   : "text-blue-600"
                               }`}
                               name="status"
-                              defaultValue={order.status}
+                              defaultValue={s}
+                              onChange={handelChange}
                             >
                               <option value="Pending">Pending</option>
                               <option value="Confirmed">Confirmed</option>
@@ -203,60 +196,59 @@ const EditOrders = ({ setEditModal}) => {
                             </select>
                           </div>
 
-                          <div className="flex">
-                            <table className="mt-4 w-full text-gray-500 sm:w-1/2 sm:mt-6">
-                              <caption className="sr-only">Products</caption>
-                              <thead className="sr-only text-sm text-gray-900 text-left sm:not-sr-only">
-                                <tr>
-                                  <th
-                                    scope="col"
-                                    className="sm:w-2/5 lg:w-1/3 pr-8 py-3 font-medium"
-                                  >
-                                    Product
-                                  </th>
-                                  <th
-                                    scope="col"
-                                    className="hidden w-1/6 pr-8 py-3 font-medium sm:table-cell"
-                                  >
-                                    Price
-                                  </th>
-                                  <th
-                                    scope="col"
-                                    className="hidden w-1/6 pr-8 py-3 font-medium sm:table-cell"
-                                  >
-                                    Quantity
-                                  </th>
-                                  <th
-                                    scope="col"
-                                    className="hidden w-1/5 pr-8 py-3 font-medium sm:table-cell"
-                                  >
-                                    Category
-                                  </th>
-                                  <th
-                                    scope="col"
-                                    className="hidden pr-8 py-3 font-medium sm:table-cell"
-                                  >
-                                    Brand
-                                  </th>
-                                </tr>
-                              </thead>
-                              <tbody className="border-b border-gray-200 divide-y text-gray-800 divide-gray-200 text-sm sm:border-t">
-                                {order.products.map((product) => (
-                                  <tr key={product.id}>
-                                    <td className="py-6 pr-8">
-                                      <div className="flex items-center">
-                                        <img
-                                          src={product.imageSrc}
-                                          alt={product.imageAlt}
-                                          className="w-16 h-16 object-center object-cover rounded mr-6"
-                                        />
-                                        <div>
-                                          <div className="font-medium text-gray-800">
-                                            {product.name}
-                                          </div>
-                                          <div className="mt-1 sm:hidden">
-                                            {product.price}
-                                          </div>
+                          <table className="mt-4 w-full text-gray-500 sm:mt-6">
+                            <caption className="sr-only">Products</caption>
+                            <thead className="sr-only text-sm text-gray-900 text-left sm:not-sr-only">
+                              <tr>
+                                <th
+                                  scope="col"
+                                  className="sm:w-2/5 lg:w-1/3 pr-8 py-3 font-medium"
+                                >
+                                  Product
+                                </th>
+                                <th
+                                  scope="col"
+                                  className="hidden w-1/6 pr-8 py-3 font-medium sm:table-cell"
+                                >
+                                  Price
+                                </th>
+                                <th
+                                  scope="col"
+                                  className="hidden w-1/6 pr-8 py-3 font-medium sm:table-cell"
+                                >
+                                  Quantity
+                                </th>
+                                <th
+                                  scope="col"
+                                  className="hidden w-1/5 pr-8 py-3 font-medium sm:table-cell"
+                                >
+                                  Category
+                                </th>
+                                <th
+                                  scope="col"
+                                  className="hidden pr-8 py-3 font-medium sm:table-cell"
+                                >
+                                  Brand
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody className="border-b border-gray-200 divide-y text-gray-800 divide-gray-200 text-sm sm:border-t">
+                              {order.products.map((product) => (
+                                <tr key={product.id}>
+                                  <td className="py-6 pr-8">
+                                    <div className="flex items-center">
+                                      <img
+                                        src={product.image}
+                                        alt={product.imageAlt}
+                                        className="w-16 h-16 object-center object-cover rounded mr-6"
+                                      />
+                                      <div>
+                                        <div className="font-medium text-gray-800">
+                                          {product.name}
+                                        </div>
+                                        <div className="mt-1 sm:hidden">
+                                          {product.price}
+
                                         </div>
                                       </div>
                                     </td>
@@ -290,6 +282,8 @@ const EditOrders = ({ setEditModal}) => {
                   </div>
                 </div>
               </div>
+            }
+              <PreviousOrders/>
             </div>
           </div>
         </div>

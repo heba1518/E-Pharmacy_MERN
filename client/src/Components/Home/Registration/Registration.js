@@ -64,6 +64,10 @@ const Registration = ({ setIsAccount }) => {
 
 
   const sendDetailsToServer = (e) => {
+    localStorage.setItem("orderProducts",JSON.stringify([]))
+    localStorage.setItem("prev",JSON.stringify([]))
+    localStorage.setItem("prescription",JSON.stringify(false))
+    localStorage.setItem("status",JSON.stringify("In Progress"))
     // e.preventDefault();
     check();
     if (state.email.length && state.password.length) {
