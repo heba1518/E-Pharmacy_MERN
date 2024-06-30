@@ -1,7 +1,7 @@
 import React from "react";
-import img7 from "../../../../Assets/images/products/COMTREX.jpg";
-import img9 from "../../../../Assets/images/products/limitless.jpg";
-import img10 from "../../../../Assets/images/products/Strepsils.jpg";
+import img2 from "../../../../Assets/images/products/coloverin.jpg";
+import img1 from "../../../../Assets/images/products/minalax.jpg";
+import pImg from "../../../../Assets/images/test4.png";
 
 import PreviousOrders from "../../User/PreviousOrders/PreviousOrders"
 const EditOrders = ({ setEditModal }) => {
@@ -11,6 +11,7 @@ const EditOrders = ({ setEditModal }) => {
   let pro = JSON.parse(p);
   let orders =pro
   const numbers = ["WU88191111", "WU88191112", "WU88191113", "WU88191114", "WU88191115","WU88191116","WU88191117"];
+
 
   
  
@@ -29,58 +30,6 @@ const EditOrders = ({ setEditModal }) => {
     return formattedDate;
   }
 
-  // const orders = [
-  //   {
-  //     id: "0",
-  //     photo: "https://i.imgur.com/1As0akH.png1",
-  //     name: user.userName,
-  //     address: "El Hwatem, Faiyum",
-  //     price: totalPrice,
-  //     status: "In Progress",
-  //     email: user.email,
-  //     number: "WU88191111",
-  //     date: getFormattedDate(),
-  //     datetime: "2024-01-22",
-  //     phone: user.phone,
-  //     invoiceHref: "#",
-  //     total: totalPrice,
-  //     products: cartProducts,
-  //     //   {
-  //     //     id: 1,
-  //     //     name: "Strepsils",
-  //     //     quantity: "1",
-  //     //     price: "165£",
-  //     //     brand: "Reckitt Benckiser",
-  //     //     category: "sore & itchy throat",
-  //     //     status: "Delivered April 22, 2024",
-  //     //     imageSrc: img10,
-  //     //     imageAlt: "Detail of mechanical pencil ",
-  //     //   },
-  //     //   {
-  //     //     id: 2,
-  //     //     name: "LIMITLESS OMEGA 3",
-  //     //     quantity: "3",
-  //     //     price: "145£",
-  //     //     brand: "EVA PHARMA",
-  //     //     category: "Vitamins & Supplements",
-  //     //     status: "Delivered April 22, 2024",
-  //     //     imageSrc: img9,
-  //     //     imageAlt: "Detail of mechanical pencil ",
-  //     //   },
-  //     //   {
-  //     //     id: 3,
-  //     //     name: "COMTREX",
-  //     //     quantity: "2",
-  //     //     brand: "GSK",
-  //     //     price: "30£",
-  //     //     category: "Soft Flooring and Base",
-  //     //     status: "Delivered April 22, 2024",
-  //     //     imageSrc: img7,
-  //     //     imageAlt: "Detail of mechanical pencil ",
-  //     //   },
-  //     // ],
-  //   },
-  // ];
   let y = localStorage.getItem("status")
  let s = JSON.parse(y)
 // const [status, setStatus] = useState("")
@@ -299,26 +248,34 @@ const EditOrders = ({ setEditModal }) => {
                                         </div>
                                         <div className="mt-1 sm:hidden">
                                           {product.price}
+
                                         </div>
                                       </div>
-                                    </div>
-                                  </td>
-                                  <td className="hidden py-6 pr-8 sm:table-cell">
-                                    {product.price}
-                                  </td>
-                                  <td className="hidden py-6 pr-8 sm:table-cell">
-                                    {product.quantity}
-                                  </td>
-                                  <td className="hidden py-6 pr-8 sm:table-cell">
-                                    {product.category}
-                                  </td>
-                                  <td className="hidden py-6 pr-8 sm:table-cell">
-                                    {product.brand}
-                                  </td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
+                                    </td>
+                                    <td className="hidden py-6 pr-8 sm:table-cell">
+                                      {product.price}
+                                    </td>
+                                    <td className="hidden py-6 pr-8 sm:table-cell">
+                                      {product.quantity}
+                                    </td>
+                                    <td className="hidden py-6 pr-8 sm:table-cell">
+                                      {product.category}
+                                    </td>
+                                    <td className="hidden py-6 pr-8 sm:table-cell">
+                                      {product.brand}
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                            <div className="w-1/2 flex justify-center items-center">
+                              <img
+                                src={order.PriscriptionImg}
+                                alt="Image description"
+                                className="w-1/2 object-center object-cover rounded"
+                              />
+                            </div>
+                          </div>
                         </div>
                       ))}
                     </div>

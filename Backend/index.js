@@ -4,7 +4,7 @@ const cors = require("cors");
 const userRouter = require("./routes/user_routes");
 const medicineRouter = require("./routes/medicine_routes");
 const cartRouter = require("./routes/cart_routes");
-const orderRouter = require('./routes/order_routes');
+const orderRouter = require("./routes/order_routes");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3000;

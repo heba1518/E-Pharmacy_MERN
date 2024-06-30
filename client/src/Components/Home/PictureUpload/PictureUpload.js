@@ -1,61 +1,93 @@
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import Dropzone from "react-dropzone";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const PictureUpload = () => {
-  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     gender: "",
     age: "",
     weight: "",
     phoneNumber: "",
-    picture: null,
   });
 
-  const [formCompleted, setFormCompleted] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [extractedText, setExtractedText] = useState("");
+  const [image, setImage] = useState('');
+  const [error, setError] = useState("");
 
-  // Function to handle form input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
     });
-    // Check if all form fields are filled
-    const isFormFilled =
-      formData.fullName !== "" &&
-      formData.gender !== "" &&
-      formData.age !== "" &&
-      formData.weight !== "" &&
-      formData.phoneNumber !== "" &&
-      selectedFile !== null;
-
-    // Update formCompleted state based on whether the form is filled or not
-    setFormCompleted(isFormFilled);
   };
-
-  // Function to handle file drop
-  const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileSelect = (files) => {
     setSelectedFile(files[0]);
   };
 
-  // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Send formData to backend
-    console.log(formData);
-    // Reset form data and selected file
-    handleResetForm();
-    // Close the modal
-    setShowModal(false);
+    try {
+      const formData = new FormData();
+      formData.append("image", selectedFile);
+      formData.append("fullName", formData.fullName);
+      formData.append("gender", formData.gender);
+      formData.append("age", formData.age);
+      formData.append("weight", formData.weight);
+      formData.append("phoneNumber", formData.phoneNumber);
+
+      const response = await axios.post(
+        "http://localhost:5000/detect_text",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      console.log("Response:", response.data);
+
+      if (response.data.extracted_words) {
+        setExtractedText(JSON.stringify(response.data.extracted_words));
+        setImage(`data:image/png;base64,${response.data.image}`);
+        setError("");
+      } else {
+        setError("No text extracted from the image");
+        setExtractedText("");
+        setImage("");
+      }
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      setError("An error occurred while processing the image");
+      setExtractedText("");
+      setImage("");
+    }
   };
 
-  // Function to reset the form
+  const handleText = () => {
+    if (extractedText) {
+      setError(""); 
+      navigate("/Prescription", { state: { extractedWords: extractedText } });
+    } else {
+      setError("No extracted text available");
+    }
+  };
+
+  useEffect(() => {
+    if (extractedText) {
+      navigate("/Prescription", { state: { extractedWords: extractedText } });
+    }
+  }, [extractedText, navigate]);
+
   const handleResetForm = () => {
     setFormData({
       fullName: "",
@@ -65,7 +97,7 @@ const PictureUpload = () => {
       phoneNumber: "",
       picture: null,
     });
-    setSelectedFile(null); // Reset selected file state
+    setSelectedFile(null); 
   };
 
   return (
@@ -201,7 +233,7 @@ const PictureUpload = () => {
                         <img
                           src={URL.createObjectURL(selectedFile)}
                           alt="Selected"
-                          className="selected-image"
+                          className="w-40 h-60"
                         />
                       ) : (
                         <div class="flex justify-center max-w-lg px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -236,16 +268,12 @@ const PictureUpload = () => {
 
               {/* Submit and Cancel buttons */}
               <div className="flex justify-between mt-2">
-                <Link to="/Prescription">
-                  <button
-                    className={`inline-block bg-teal-400 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition duration-200 ${
-                      !formCompleted && "opacity-50 cursor-not-allowed"
-                    }`}
-                    disabled={!formCompleted} // Disable button if form is not completed
-                  >
-                    Send
-                  </button>
-                </Link>
+                <button
+                  className={`inline-block bg-teal-400 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition duration-200`}
+                  onClick={handleText}
+                >
+                  Send
+                </button>
                 <button
                   type="reset"
                   onClick={() => {
