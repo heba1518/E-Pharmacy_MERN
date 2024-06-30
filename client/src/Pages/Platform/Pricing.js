@@ -7,7 +7,7 @@ const includedFeatures = [
   'Private forum access',
   'Member resources',
   'Entry to annual conference',
-  'Official member t-shirt',
+  'Official member',
 ]
 
 const Pricing = () => {
@@ -82,7 +82,7 @@ const Pricing = () => {
                       Monthly
                     </p>
                     <div className="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
-                      <span>$350</span>
+                      <span>75</span>
                       <span className="ml-3 text-xl font-medium text-gray-500">
                         EGP
                       </span>
@@ -119,7 +119,7 @@ const Pricing = () => {
                       Yearly
                     </p>
                     <div className="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
-                      <span>$2900</span>
+                      <span>290</span>
                       <span className="ml-3 text-xl font-medium text-gray-500">
                         EGP
                       </span>

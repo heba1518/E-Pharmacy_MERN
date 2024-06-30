@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 
 import img4 from "../../../../Assets/images/products/alphintern.jpg";
 import img8 from "../../../../Assets/images/products/flagyl.png";
-import img5 from "../../../../Assets/images/products/antinal.webp";
+import img5 from "../../../../Assets/images/products/panadol.webp";
 
 const orders = [
   {
@@ -15,12 +15,12 @@ const orders = [
     products: [
       {
         id: 1,
-        name: "Antinal",
+        name: "Panadol",
         quantity: "1",
         price: "36£",
-        brand: "Reckitt Benckiser",
-        category: "sore & itchy throat",
-        status: "Delivered April 22, 2024",
+        brand: "GSK",
+        category: "Cold & Flu Relief",
+        status: "Delivered June 30, 2024",
         imageSrc: img5,
         imageAlt: "Detail of mechanical pencil ",
       },

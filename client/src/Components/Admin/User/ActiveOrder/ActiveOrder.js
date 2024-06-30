@@ -46,6 +46,17 @@ const ActiveOrder = () => {
     });
     return totalPrice;
   }
+
+  function deleteOrder(orderId) {
+    // Filter out the order with the given orderId
+    const updatedOrders = orders.filter((order) => order.id !== orderId);
+
+    // Update state with the filtered orders
+    setOrders(updatedOrders);
+
+    // Update localStorage with the new orders list
+    localStorage.setItem("orderProducts", JSON.stringify(updatedOrders));
+  }
   return (
     <main className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:pb-24 lg:px-8">
       <div className="max-w-xl">
@@ -93,6 +104,9 @@ const ActiveOrder = () => {
                   View Invoice
                   <span className="sr-only">for order {numbers[index]}</span>
                 </a>
+                <button onClick={() => deleteOrder(order.id)}>
+                  Delete Order
+                </button>
               </div>
 
               <table className="mt-4 w-full text-gray-500 sm:mt-6">
@@ -143,7 +157,7 @@ const ActiveOrder = () => {
                         </div>
                       </td>
                       <td className="hidden py-6 pr-8 sm:table-cell">
-                        {product.price}
+                        {product.price}£
                       </td>
                       <td className="hidden py-6 pr-8 sm:table-cell">
                         {order.status}

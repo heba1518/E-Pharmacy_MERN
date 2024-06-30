@@ -7,18 +7,20 @@ const EditOrders = ({ setEditModal}) => {
   const orders = [
     {
       id: "0",
-      photo: "https://i.imgur.com/1As0akH.png1",
-      name: "Ahmed Maher",
+      photo: "https://i.imgur.com/FHMKqK5.png",
+      name: "Mariam_Mohammed",
       address: "El Hwatem, Faiyum",
-      price: "890.66",
+      price: "80.5",
       status: "In Progress",
-      email: "ahmedMaher@gmail.com",
+      email: "mariamabeltwab@gmail.com",
       number: "WU88191111",
-      date: "April 22, 2024",
+      date: "June 30, 2024",
       datetime: "2024-01-22",
-      phone: "+201036985253",
+      phone: "+201012540958",
+      age: "24",
+      weight: "65",
       invoiceHref: "#",
-      total: "654.00",
+      total: "80.05",
       products: [
         {
           id: 1,
@@ -110,7 +112,7 @@ const EditOrders = ({ setEditModal}) => {
                           </h3>
 
                           <div className="bg-gray-50 rounded-lg py-6 px-4 sm:px-6 sm:flex sm:items-center sm:justify-between sm:space-x-6 lg:space-x-8">
-                            <dl className="divide-y font-sans divide-gray-200 space-y-6 text-sm text-gray-600 flex-auto sm:divide-y-0 sm:space-y-0 sm:grid sm:grid-cols-4 sm:gap-x-6 lg:w-2/3 lg:flex-none lg:gap-x-8">
+                            <dl className="divide-y font-sans divide-gray-200 space-y-2 text-sm text-gray-600 flex-auto sm:divide-y-0 sm:space-y-0 sm:grid sm:grid-cols-4 sm:gap-x-6 lg:w-2/3 lg:flex-none lg:gap-x-8">
                               <div className="flex justify-between pt-6 sm:block sm:pt-0">
                                 <dt className="font-medium text-gray-900"></dt>
                                 <a href="/" className="block relative">
@@ -150,7 +152,28 @@ const EditOrders = ({ setEditModal}) => {
                             </p>
                           </div>
 
-                          <div className="bg-gray-50 rounded-lg py-6 px-4 sm:px-6 sm:flex sm:items-center sm:justify-between sm:space-x-6 lg:space-x-8">
+                          <div className="bg-gray-50 rounded-lg py-3 px-4 sm:px-6 sm:flex sm:items-center sm:justify-between sm:space-x-6 lg:space-x-8">
+                            <dl className="divide-y font-sans divide-gray-200 space-y-6 text-sm text-gray-600 flex-auto sm:divide-y-0 sm:space-y-0 sm:grid sm:grid-cols-4 sm:gap-x-6 lg:w-2/3 lg:flex-none lg:gap-x-8">
+                              <div className="flex justify-between pt-6 sm:block sm:pt-0">
+                                <dt className="font-medium text-gray-900"></dt>
+                                <dd className="sm:mt-1"></dd>
+                              </div>
+                              <div className="flex justify-between pt-6 sm:block sm:pt-0">
+                                <dt className="font-medium text-gray-900">
+                                  Age
+                                </dt>
+                                <dd className="sm:mt-1">{order.age}</dd>
+                              </div>
+                              <div className="flex justify-between pt-6 sm:block sm:pt-0">
+                                <dt className="font-medium text-gray-900">
+                                  Weight
+                                </dt>
+                                <dd className="sm:mt-1">{order.weight}</dd>
+                              </div>
+                            </dl>
+                          </div>
+
+                          <div className="bg-gray-50 rounded-lg py-3 px-4 sm:px-6 sm:flex sm:items-center sm:justify-between sm:space-x-6 lg:space-x-8">
                             <dl className="divide-y font-sans divide-gray-200 space-y-6 text-sm text-gray-600 flex-auto sm:divide-y-0 sm:space-y-0 sm:grid sm:grid-cols-4 sm:gap-x-6 lg:w-2/3 lg:flex-none lg:gap-x-8">
                               <div className="flex justify-between sm:block">
                                 <dt className="font-medium text-gray-900">

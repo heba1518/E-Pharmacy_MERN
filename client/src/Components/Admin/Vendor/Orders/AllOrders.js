@@ -35,10 +35,10 @@ const AllOrders = () => {
   const orders = [
     {
       id: "0",
-      photo: "https://i.imgur.com/1As0akH.png1",
+      photo: "https://i.imgur.com/FHMKqK5.png",
       name: user.userName,
       email: user.email,
-      price: total,
+      price: 80.5,
       status: status,
       products: tot,
       address: "El Hwatem, Faiyum",

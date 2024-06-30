@@ -27,7 +27,6 @@ app.use("/images", express.static(__dirname + "/images"));
 // app.use(express.json());
 // app.use(cors(corsOptions));
 
-
 //routes
 app.use("/api/users", userRouter);
 app.use("/api/medicines", medicineRouter);

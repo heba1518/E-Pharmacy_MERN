@@ -12,7 +12,7 @@ const PictureUpload = () => {
     gender: "",
     age: "",
     weight: "",
-    phoneNumber: "",
+    // phoneNumber: "",
   });
 
   const [selectedFile, setSelectedFile] = useState(null);
@@ -42,7 +42,7 @@ const PictureUpload = () => {
       formData.append("gender", formData.gender);
       formData.append("age", formData.age);
       formData.append("weight", formData.weight);
-      formData.append("phoneNumber", formData.phoneNumber);
+      // formData.append("phoneNumber", formData.phoneNumber);
 
       const response = await axios.post(
         "http://localhost:5000/detect_text",
@@ -94,7 +94,7 @@ const PictureUpload = () => {
       gender: "",
       age: "",
       weight: "",
-      phoneNumber: "",
+      // phoneNumber: "",
       picture: null,
     });
     setSelectedFile(null); 
@@ -202,7 +202,7 @@ const PictureUpload = () => {
                 />
               </div>
               {/* Phone Number */}
-              <div className="mt-2">
+              {/* <div className="mt-2">
                 <input
                   id="phoneNumber"
                   name="phoneNumber"
@@ -213,7 +213,7 @@ const PictureUpload = () => {
                   className="border border-gray-300 px-2 py-1"
                   required
                 />
-              </div>
+              </div> */}
               {/* Upload picture section */}
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5 sm:border-gray-200">
                 <label
