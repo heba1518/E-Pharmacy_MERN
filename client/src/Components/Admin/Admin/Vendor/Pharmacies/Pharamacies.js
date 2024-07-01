@@ -3,7 +3,7 @@ import img1 from '../../../../../Assets/images/pharmacies/elezaby_logo.png'
 import img2 from '../../../../../Assets/images/pharmacies/misr_pharmacy_logo.png';
 import img3 from '../../../../../Assets/images/pharmacies/elhakim_pharmacy_logo.png';
 import img4 from '../../../../../Assets/images/pharmacies/19011_logo.png';
-import img5 from '../../../../../Assets/images/pharmacies/roshdy_pharmacy_logo.png';
+import img5 from '../../../../../Assets/images/pharmacies/elghibili_logo.png';
 const Pharmacies = () => {
   const orders = [
     {
@@ -50,10 +50,10 @@ const Pharmacies = () => {
     {
       id: "4",
       photo: img5,
-      name: "Roshdy",
-      address: "El Rashidy, Alex",
+      name: "Elghbili",
+      address: "Gamal Abd El-Nasir, Faiyum",
       email: "rushdypharmacies@gmail.com",
-      phone: "01208070022",
+      phone: "+20842178313",
       status: "Deactive",
       date: "Mar 5, 2024",
     },
@@ -110,12 +110,7 @@ const Pharmacies = () => {
                   >
                     Email
                   </th>
-                  <th
-                    scope="col"
-                    className="px-12 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-semibold"
-                  >
-                    Address
-                  </th>
+                
                   <th
                     scope="col"
                     className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
@@ -128,7 +123,22 @@ const Pharmacies = () => {
                   >
                     Register Date
                   </th>
+
+                  <th
+                    scope="col"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                  >
+                    Action
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-5 pb-3 pt-4 bg-teal-100 border-b border-gray-200 text-gray-800  text-center text-sm uppercase font-semibold"
+                  >
+                    Message
+                  </th>
+
                 </tr>
+
               </thead>
 
               {/* all Orders data row */}
@@ -159,11 +169,7 @@ const Pharmacies = () => {
                           {order.email}
                         </p>
                       </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-center text-sm">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          {order.address}
-                        </p>
-                      </td>
+                      
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <p className="text-gray-900 whitespace-no-wrap">
                           {order.phone}
@@ -173,6 +179,50 @@ const Pharmacies = () => {
                         <p className="text-gray-900 whitespace-no-wrap">
                           {order.date}
                         </p>
+                      </td>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+                        <div className="flex align-center justify-center">
+                        
+                          <button className="flex align-center justify-center font-body font-semibold text-red-600 hover:text-red-900">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-6 w-6"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                              />
+                            </svg>{' '}
+                            Delete
+                          </button>
+                        </div>
+                      </td>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <a href="https://t.me/+201012540959" target="_blank">
+
+                        <button className="flex align-center justify-center font-sans font-medium text-teal-600 hover:text-teal-900">
+                          Message{"  "}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                              />
+                          </svg>
+                        </button>
+                              </a>
                       </td>
                       {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <button className="flex align-center justify-center font-sans font-medium text-teal-600 hover:text-teal-900">

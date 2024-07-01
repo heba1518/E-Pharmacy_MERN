@@ -58,7 +58,9 @@ const PictureUpload = () => {
 
       if (response.data.extracted_words) {
         setExtractedText(JSON.stringify(response.data.extracted_words));
-        setImage(`data:image/png;base64,${response.data.image}`);
+        const imageData = `data:image/png;base64,${response.data.image}`;
+        setImage(imageData);
+        localStorage.setItem("processedImage", imageData);
         setError("");
       } else {
         setError("No text extracted from the image");

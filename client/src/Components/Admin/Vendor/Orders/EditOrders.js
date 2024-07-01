@@ -1,54 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import img2 from "../../../../Assets/images/products/coloverin.jpg";
 import img1 from "../../../../Assets/images/products/minalax.jpg";
 import pImg from "../../../../Assets/images/test4.png";
 
-const EditOrders = ({ setEditModal}) => {
-  const orders = [
-    {
-      id: "0",
-      photo: "https://i.imgur.com/FHMKqK5.png",
-      name: "Mariam_Mohammed",
-      address: "El Hwatem, Faiyum",
-      price: "80.5",
-      status: "In Progress",
-      email: "mariamabeltwab@gmail.com",
-      number: "WU88191111",
-      date: "June 30, 2024",
-      datetime: "2024-01-22",
-      phone: "+201012540958",
-      age: "24",
-      weight: "65",
-      invoiceHref: "#",
-      total: "80.05",
-      products: [
-        {
-          id: 1,
-          name: "Minalax",
-          quantity: "1",
-          price: "11.5£",
-          brand: "AMOUN",
-          category: "Laxative",
-          status: "Delivered April 22, 2024",
-          imageSrc: img1,
-          imageAlt: "Detail of mechanical pencil ",
-        },
-        {
-          id: 2,
-          name: "Coloverin D",
-          quantity: "1",
-          price: "69£",
-          brand: "Chemipharm",
-          category: "Antiflatulent",
-          status: "Delivered April 22, 2024",
-          imageSrc: img2,
-          imageAlt: "Detail of mechanical pencil ",
-        },
-      ],
-      PriscriptionImg: pImg,
-    },
-  ];
+import PreviousOrders from "../../User/PreviousOrders/PreviousOrders"
+const EditOrders = ({ setEditModal }) => {
+  const u = localStorage.getItem("userBuy");
+  let user = JSON.parse(u);
+  const p = localStorage.getItem("orderProducts");
+  let pro = JSON.parse(p);
+  let orders = pro
+  const numbers = ["WU88191111", "WU88191112", "WU88191113", "WU88191114", "WU88191115", "WU88191116", "WU88191117"];
 
+  const [image, setImage] = useState("");
+
+  useEffect(() => {
+    const storedImage = localStorage.getItem("processedImage");
+    if (storedImage) {
+      setImage(storedImage);
+    }
+  }, []);
+
+
+  function getFormattedDate() {
+    // Get today's date
+    const today = new Date();
+
+    // Extract year, month, and day
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
+    const day = String(today.getDate()).padStart(2, "0"); // Pad day with leading zeros if necessary
+
+    // Format date as YYYY-MM-DD
+    const formattedDate = `${year}-${month}-${day}`;
+
+    return formattedDate;
+  }
+
+  let y = localStorage.getItem("status")
+  let s = JSON.parse(y)
+  // const [status, setStatus] = useState("")
+  const handelChange = (e) => {
+    localStorage.setItem("prev", JSON.stringify(orders))
+    localStorage.setItem("orderProducts", JSON.stringify([]));
+    localStorage.setItem("status", JSON.stringify(e.target.value))
+
+  }
   return (
     <section>
       <div className="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none backdrop-filter saturate-150 backdrop-blur-sm">
@@ -96,138 +93,114 @@ const EditOrders = ({ setEditModal}) => {
                   </svg>
                 </button>
               </div>
+              {orders.length > 0 && (
+                <div className="bg-white">
+                  <div className="max-w-7xl mx-auto  px-4 sm:px-6 pb-16 lg:px-8">
+                    <div className="mt-1">
+                      <h2 className="sr-only">Recent orders</h2>
 
-              {/* Order Details */}
-              <div className="bg-white">
-                <div className="max-w-7xl mx-auto  px-4 sm:px-6 pb-16 lg:px-8">
-                  <div className="mt-1">
-                    <h2 className="sr-only">Recent orders</h2>
+                      <div className="space-y-20">
+                        {orders.map((order, index) => (
+                          <div key={order.number}>
+                            <h3 className="sr-only">
+                              Order placed on{" "}
+                              <time dateTime={getFormattedDate}>
+                                {getFormattedDate}
+                              </time>
+                            </h3>
 
-                    <div className="space-y-20">
-                      {orders.map((order) => (
-                        <div key={order.number}>
-                          <h3 className="sr-only">
-                            Order placed on{" "}
-                            <time dateTime={order.datetime}>{order.date}</time>
-                          </h3>
+                            <div className="bg-gray-50 rounded-lg py-6 px-4 sm:px-6 sm:flex sm:items-center sm:justify-between sm:space-x-6 lg:space-x-8">
+                              <dl className="divide-y font-sans divide-gray-200 space-y-6 text-sm text-gray-600 flex-auto sm:divide-y-0 sm:space-y-0 sm:grid sm:grid-cols-4 sm:gap-x-6 lg:w-2/3 lg:flex-none lg:gap-x-8">
+                                <div className="flex justify-between pt-6 sm:block sm:pt-0">
+                                  <dt className="font-medium text-gray-900"></dt>
+                                  <a href="/" className="block relative">
+                                    <img
+                                      alt="User Avatar"
+                                      src="https://i.imgur.com/FHMKqK5.png"
+                                      className=" object-cover rounded-full h-10 w-10"
+                                    />
+                                  </a>
+                                </div>
+                                <div className="flex justify-between sm:block">
+                                  <dt className="font-medium text-gray-900">
+                                    Customer Name
+                                  </dt>
+                                  <dd className="sm:mt-1">{user.userName}</dd>
+                                </div>
+                                <div className="flex justify-between pt-6 sm:block sm:pt-0">
+                                  <dt className="font-medium text-gray-900">
+                                    Email
+                                  </dt>
+                                  <dd className="sm:mt-1">{user.email}</dd>
+                                </div>
+                                <div className="flex justify-between pt-6 sm:block sm:pt-0">
+                                  <dt className="font-medium text-gray-900">
+                                    Phone Number
+                                  </dt>
+                                  <dd className="sm:mt-1">{user.phone}</dd>
+                                </div>
+                              </dl>
 
-                          <div className="bg-gray-50 rounded-lg py-6 px-4 sm:px-6 sm:flex sm:items-center sm:justify-between sm:space-x-6 lg:space-x-8">
-                            <dl className="divide-y font-sans divide-gray-200 space-y-2 text-sm text-gray-600 flex-auto sm:divide-y-0 sm:space-y-0 sm:grid sm:grid-cols-4 sm:gap-x-6 lg:w-2/3 lg:flex-none lg:gap-x-8">
-                              <div className="flex justify-between pt-6 sm:block sm:pt-0">
-                                <dt className="font-medium text-gray-900"></dt>
-                                <a href="/" className="block relative">
-                                  <img
-                                    alt="User Avatar"
-                                    src={order.photo}
-                                    className=" object-cover rounded-full h-10 w-10"
-                                  />
-                                </a>
-                              </div>
-                              <div className="flex justify-between sm:block">
-                                <dt className="font-medium text-gray-900">
-                                  Customer Name
-                                </dt>
-                                <dd className="sm:mt-1">
-                                  <time dateTime={order.datetime}>
-                                    {order.name}
-                                  </time>
-                                </dd>
-                              </div>
-                              <div className="flex justify-between pt-6 sm:block sm:pt-0">
-                                <dt className="font-medium text-gray-900">
-                                  Email
-                                </dt>
-                                <dd className="sm:mt-1">{order.email}</dd>
-                              </div>
-                              <div className="flex justify-between pt-6 sm:block sm:pt-0">
-                                <dt className="font-medium text-gray-900">
-                                  Phone Number
-                                </dt>
-                                <dd className="sm:mt-1">{order.phone}</dd>
-                              </div>
-                            </dl>
+                              <p className="block w-52 font-semibold py-2 px-3 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+                                Order Status
+                              </p>
+                            </div>
 
-                            <p className="block w-52 font-semibold py-2 px-3 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500">
-                              Order Status
-                            </p>
-                          </div>
+                            <div className="bg-gray-50 rounded-lg py-6 px-4 sm:px-6 sm:flex sm:items-center sm:justify-between sm:space-x-6 lg:space-x-8">
+                              <dl className="divide-y font-sans divide-gray-200 space-y-6 text-sm text-gray-600 flex-auto sm:divide-y-0 sm:space-y-0 sm:grid sm:grid-cols-4 sm:gap-x-6 lg:w-2/3 lg:flex-none lg:gap-x-8">
+                                <div className="flex justify-between sm:block">
+                                  <dt className="font-medium text-gray-900">
+                                    Date placed
+                                  </dt>
+                                  <dd className="sm:mt-1">
+                                    <time dateTime={getFormattedDate()}>
+                                      {getFormattedDate()}
+                                    </time>
+                                  </dd>
+                                </div>
+                                <div className="flex justify-between pt-6 sm:block sm:pt-0">
+                                  <dt className="font-medium text-gray-900">
+                                    Order number
+                                  </dt>
+                                  <dd className="sm:mt-1">{numbers[index]}</dd>
+                                </div>
+                                <div className="flex justify-between pt-6 font-medium text-gray-900 sm:block sm:pt-0">
+                                  <dt>Total amount</dt>
+                                  <dd className="sm:mt-1">{order.tot}£</dd>
+                                </div>
+                                <div className="flex justify-between pt-6 sm:block sm:pt-0">
+                                  <dt className="font-medium text-gray-900">
+                                    Delivery Address
+                                  </dt>
+                                  <dd className="sm:mt-1">{order.address}</dd>
+                                </div>
+                              </dl>
 
-                          <div className="bg-gray-50 rounded-lg py-3 px-4 sm:px-6 sm:flex sm:items-center sm:justify-between sm:space-x-6 lg:space-x-8">
-                            <dl className="divide-y font-sans divide-gray-200 space-y-6 text-sm text-gray-600 flex-auto sm:divide-y-0 sm:space-y-0 sm:grid sm:grid-cols-4 sm:gap-x-6 lg:w-2/3 lg:flex-none lg:gap-x-8">
-                              <div className="flex justify-between pt-6 sm:block sm:pt-0">
-                                <dt className="font-medium text-gray-900"></dt>
-                                <dd className="sm:mt-1"></dd>
-                              </div>
-                              <div className="flex justify-between pt-6 sm:block sm:pt-0">
-                                <dt className="font-medium text-gray-900">
-                                  Age
-                                </dt>
-                                <dd className="sm:mt-1">{order.age}</dd>
-                              </div>
-                              <div className="flex justify-between pt-6 sm:block sm:pt-0">
-                                <dt className="font-medium text-gray-900">
-                                  Weight
-                                </dt>
-                                <dd className="sm:mt-1">{order.weight}</dd>
-                              </div>
-                            </dl>
-                          </div>
+                              <select
+                                className={`block w-52 font-semibold py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${
+                                  order.status === "Pending"
+                                    ? "text-yellow-900"
+                                    : order.status === "Confirmed"
+                                    ? "text-indigo-600"
+                                    : order.status === "Completed"
+                                    ? "text-green-600"
+                                    : order.status === "Cancelled"
+                                    ? "text-red-600"
+                                    : "text-blue-600"
+                                }`}
+                                name="status"
+                                defaultValue={s}
+                                onChange={handelChange}
+                              >
+                                <option value="Pending">Pending</option>
+                                <option value="Confirmed">Confirmed</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Cancelled">Cancelled</option>
+                              </select>
+                            </div>
 
-                          <div className="bg-gray-50 rounded-lg py-3 px-4 sm:px-6 sm:flex sm:items-center sm:justify-between sm:space-x-6 lg:space-x-8">
-                            <dl className="divide-y font-sans divide-gray-200 space-y-6 text-sm text-gray-600 flex-auto sm:divide-y-0 sm:space-y-0 sm:grid sm:grid-cols-4 sm:gap-x-6 lg:w-2/3 lg:flex-none lg:gap-x-8">
-                              <div className="flex justify-between sm:block">
-                                <dt className="font-medium text-gray-900">
-                                  Date placed
-                                </dt>
-                                <dd className="sm:mt-1">
-                                  <time dateTime={order.datetime}>
-                                    {order.date}
-                                  </time>
-                                </dd>
-                              </div>
-                              <div className="flex justify-between pt-6 sm:block sm:pt-0">
-                                <dt className="font-medium text-gray-900">
-                                  Order number
-                                </dt>
-                                <dd className="sm:mt-1">{order.number}</dd>
-                              </div>
-                              <div className="flex justify-between pt-6 font-medium text-gray-900 sm:block sm:pt-0">
-                                <dt>Total amount</dt>
-                                <dd className="sm:mt-1">{order.total}£</dd>
-                              </div>
-                              <div className="flex justify-between pt-6 sm:block sm:pt-0">
-                                <dt className="font-medium text-gray-900">
-                                  Delivery Address
-                                </dt>
-                                <dd className="sm:mt-1">{order.address}</dd>
-                              </div>
-                            </dl>
-
-                            <select
-                              className={`block w-52 font-semibold py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${
-                                order.status === "Pending"
-                                  ? "text-yellow-900"
-                                  : order.status === "Confirmed"
-                                  ? "text-indigo-600"
-                                  : order.status === "Completed"
-                                  ? "text-green-600"
-                                  : order.status === "Cancelled"
-                                  ? "text-red-600"
-                                  : "text-blue-600"
-                              }`}
-                              name="status"
-                              defaultValue={order.status}
-                            >
-                              <option value="Pending">Pending</option>
-                              <option value="Confirmed">Confirmed</option>
-                              <option value="In Progress">In Progress</option>
-                              <option value="Completed">Completed</option>
-                              <option value="Cancelled">Cancelled</option>
-                            </select>
-                          </div>
-
-                          <div className="flex">
-                            <table className="mt-4 w-full text-gray-500 sm:w-1/2 sm:mt-6">
+                            <table className="mt-4 w-full text-gray-500 sm:mt-6">
                               <caption className="sr-only">Products</caption>
                               <thead className="sr-only text-sm text-gray-900 text-left sm:not-sr-only">
                                 <tr>
@@ -269,7 +242,7 @@ const EditOrders = ({ setEditModal}) => {
                                     <td className="py-6 pr-8">
                                       <div className="flex items-center">
                                         <img
-                                          src={product.imageSrc}
+                                          src={product.image}
                                           alt={product.imageAlt}
                                           className="w-16 h-16 object-center object-cover rounded mr-6"
                                         />
@@ -299,7 +272,7 @@ const EditOrders = ({ setEditModal}) => {
                                 ))}
                               </tbody>
                             </table>
-                            <div className="w-1/2 flex justify-center items-center">
+                            {/* <div className="w-1/2 flex justify-center items-center">
                               <img
                                 src={order.PriscriptionImg}
                                 alt="Image description"
@@ -307,12 +280,15 @@ const EditOrders = ({ setEditModal}) => {
                               />
                             </div>
                           </div>
-                        </div>
-                      ))}
+                          // </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+            }
+              <PreviousOrders/>
             </div>
           </div>
         </div>

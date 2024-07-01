@@ -39,25 +39,7 @@ const Menu = () => {
                 Description
               </a>
             </li>
-            <li className="-mb-px  text-center">
-              <a
-                className={
-                  'text-md md:text-lg font-sans font-medium py-3 block leading-normal ' +
-                  (openTab === 2
-                    ? 'text-gray-900 border-b-2 border-cyan-500'
-                    : 'text-gray-600 ')
-                }
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpenTab(2);
-                }}
-                data-toggle="tab"
-                href="#link2"
-                role="tablist"
-              >
-                Reviews ({totalReview ? totalReview : 0})
-              </a>
-            </li>
+           
             <li className="-mb-px  text-center">
               <a
                 className={

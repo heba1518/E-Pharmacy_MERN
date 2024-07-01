@@ -82,7 +82,7 @@ const Pricing = () => {
                       Monthly
                     </p>
                     <div className="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
-                      <span>75</span>
+                      <span>590</span>
                       <span className="ml-3 text-xl font-medium text-gray-500">
                         EGP
                       </span>
@@ -119,7 +119,7 @@ const Pricing = () => {
                       Yearly
                     </p>
                     <div className="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
-                      <span>290</span>
+                      <span>2900</span>
                       <span className="ml-3 text-xl font-medium text-gray-500">
                         EGP
                       </span>

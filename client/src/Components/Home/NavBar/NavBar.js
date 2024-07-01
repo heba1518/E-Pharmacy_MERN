@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import ActionIcons from './ActionIcons';
-import CompanyLogo from './CompanyLogo';
-import NavLinks from './NavLinks';
-import './nav.css'
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import ActionIcons from "./ActionIcons";
+import CompanyLogo from "./CompanyLogo";
+import NavLinks from "./NavLinks";
+import "./nav.css";
+import Pharmacies from "./../../Admin/Admin/Vendor/Pharmacies/Pharamacies";
 
 const NavBar = () => {
   const location = useLocation();
@@ -12,28 +13,32 @@ const NavBar = () => {
   const [showFixedNav, setShowFixedNav] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
-        setShowFixedNav(true);
-      } else {
+        
+        if(window.scrollY > 1100 && window.scrollY < 1600){
+          setShowFixedNav(false);
+        }else{
+          setShowFixedNav(true);
+        }
+      }else{
         setShowFixedNav(false);
       }
 
       return () => {
-        window.removeEventListener('scroll');
+        window.removeEventListener("scroll");
       };
     });
   }, []);
 
   return (
     <nav
-      className={` ${location.pathname === '/' ? 'bg-gray-50' : 'bg-white'} 
-      ${showFixedNav && 'fixed-nav'}`}
+      className={` ${location.pathname === "/" ? "bg-gray-50" : "bg-white"} 
+      ${showFixedNav && "fixed-nav"}`}
     >
-
       <div
         className={`${
-          showFixedNav ? 'py-0' : 'py-0'
+          showFixedNav ? "py-0" : "py-0"
         } group-hover:px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8`}
       >
         <div className="relative flex items-center justify-between font-sans">
@@ -105,7 +110,7 @@ const NavBar = () => {
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-accent-700"
                         >
-                          Shop
+                          Pharmacies
                         </a>
                       </li>
                       <li>

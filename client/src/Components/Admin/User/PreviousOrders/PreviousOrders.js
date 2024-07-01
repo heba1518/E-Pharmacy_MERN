@@ -5,54 +5,46 @@ import img4 from "../../../../Assets/images/products/alphintern.jpg";
 import img8 from "../../../../Assets/images/products/flagyl.png";
 import img5 from "../../../../Assets/images/products/panadol.webp";
 
-const orders = [
-  {
-    number: "WU88191111",
-    date: "April 20, 2024",
-    datetime: "2021-01-22",
-    invoiceHref: "#",
-    total: "106.00£",
-    products: [
-      {
-        id: 1,
-        name: "Panadol",
-        quantity: "1",
-        price: "36£",
-        brand: "GSK",
-        category: "Cold & Flu Relief",
-        status: "Delivered June 30, 2024",
-        imageSrc: img5,
-        imageAlt: "Detail of mechanical pencil ",
-      },
-      {
-        id: 2,
-        name: "Flagyl",
-        quantity: "3",
-        price: "16£",
-        brand: "EVA PHARMA",
-        category: "Vitamins & Supplements",
-        status: "Delivered April 22, 2024",
-        imageSrc: img8,
-        imageAlt: "Detail of mechanical pencil ",
-      },
-      {
-        id: 3,
-        name: "Alphintern",
-        quantity: "2",
-        brand: "GSK",
-        price: "54£",
-        category: "Soft Flooring and Base",
-        status: "Delivered April 22, 2024",
-        imageSrc: img4,
-        imageAlt: "Detail of mechanical pencil ",
-      },
-      // More products...
-    ],
-  },
-  // More orders...
-];
-
 const PreviousOrders = () => {
+  function getFormattedDate() {
+    // Get today's date
+    const today = new Date();
+
+    // Extract year, month, and day
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
+    const day = String(today.getDate()).padStart(2, "0"); // Pad day with leading zeros if necessary
+  
+    // Format date as YYYY-MM-DD
+    const formattedDate = `${year}-${month}-${day}`;
+  
+    return formattedDate;
+  }
+
+  let p = localStorage.getItem("prev");
+  let orders = JSON.parse(p);
+  console.log(orders);
+  // const orders = [
+  //   {
+  //     number: "WU88191111",
+  //     date: getFormattedDate(),
+  //     datetime: getFormattedDate(),
+  //     invoiceHref: "#",
+  //     total: totalPrice,
+  //     products: cartProducts
+  //   },
+  //   // More orders...
+  // ];
+  const numbers = [
+    "WU88191118",
+    "WU88191119",
+    "WU88191120",
+    "WU88191121",
+    "WU88191115",
+    "WU88191116",
+    "WU88191117",
+  ];
+  
   return (
     <main className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:pb-24 lg:px-8">
       <div className="max-w-xl">
@@ -71,11 +63,11 @@ const PreviousOrders = () => {
         </h2>
 
         <div className="space-y-20">
-          {orders.map((order) => (
+          {orders.map((order, index) => (
             <div key={order.number}>
               <h3 className="sr-only">
                 Order placed on{" "}
-                <time dateTime={order.datetime}>{order.date}</time>
+                <time dateTime={getFormattedDate}>{getFormattedDate}</time>
               </h3>
 
               <div className="bg-gray-50 rounded-lg py-6 px-4 sm:px-6 sm:flex sm:items-center sm:justify-between sm:space-x-6 lg:space-x-8">
@@ -83,16 +75,18 @@ const PreviousOrders = () => {
                   <div className="flex justify-between sm:block">
                     <dt className="font-medium text-gray-900">Date placed</dt>
                     <dd className="sm:mt-1">
-                      <time dateTime={order.datetime}>{order.date}</time>
+                      <time dateTime={getFormattedDate}>
+                        {getFormattedDate}
+                      </time>
                     </dd>
                   </div>
                   <div className="flex justify-between pt-6 sm:block sm:pt-0">
                     <dt className="font-medium text-gray-900">Order number</dt>
-                    <dd className="sm:mt-1">{order.number}</dd>
+                    <dd className="sm:mt-1">{numbers[index]}</dd>
                   </div>
                   <div className="flex justify-between pt-6 font-medium text-gray-900 sm:block sm:pt-0">
                     <dt>Total amount</dt>
-                    <dd className="sm:mt-1">{order.total}</dd>
+                    <dd className="sm:mt-1">{order.tot}</dd>
                   </div>
                 </dl>
                 <a
@@ -100,7 +94,7 @@ const PreviousOrders = () => {
                   className="w-full flex items-center justify-center bg-white mt-6 py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:w-auto sm:mt-0"
                 >
                   View Invoice
-                  <span className="sr-only">for order {order.number}</span>
+                  <span className="sr-only">for order {numbers[index]}</span>
                 </a>
               </div>
 
@@ -137,7 +131,7 @@ const PreviousOrders = () => {
                       <td className="py-6 pr-8">
                         <div className="flex items-center">
                           <img
-                            src={product.imageSrc}
+                            src={product.image}
                             alt={product.imageAlt}
                             className="w-16 h-16 object-center object-cover rounded mr-6"
                           />

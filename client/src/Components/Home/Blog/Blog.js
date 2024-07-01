@@ -3,7 +3,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './blog.css'
-
+import img1 from '../../Blog/cf.jpg'
+import img2 from '../../Blog/2.jpg'
+import img3 from '../../Blog/3.jpg'
 const Blog = () => {
   return (
     <div id="blog">
@@ -15,7 +17,7 @@ const Blog = () => {
         <div class="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
           <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-3xl">
             <img
-              src="https://e1ea09.p3cdn2.secureserver.net/wp-content/uploads/2023/07/high-chol-1024x471.jpg"
+              src= {img1}
               class="object-cover w-full h-64"
               alt=""
             />
@@ -27,9 +29,9 @@ const Blog = () => {
                   aria-label="Category"
                   title="date"
                 >
-                  18 JUN 2024
+                  28 JUN 2024
                 </a>
-                <span class="px-4 text-gray-600">4 comments</span>
+                <span class="px-4 text-gray-600">Dr. Emma Hammett</span>
               </p>
               <a
                 href="/"
@@ -37,12 +39,10 @@ const Blog = () => {
                 title="Visit the East"
                 class="inline-block pt-3 mb-3 text-2xl font-medium leading-5 text-gray-700 transition-colors duration-200 font-display"
               >
-                Cholesterol 101: What is LP(a)?
+                How to save a knocked out tooth?
               </a>
               <p class="pb-4 mb-2 text-gray-700">
-                You’ve likely heard of “good”
-                cholesterol (HDL) and “bad” cholesterol (LDL), but what about
-                Lipoprotein(a)?
+              An injury to the tooth is very scary but can happen very easily whilst running or playing.
               </p>
               <Link to={`/Blog`}>
                 <a
@@ -71,7 +71,7 @@ const Blog = () => {
           </div>
           <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-3xl">
             <img
-              src="https://wpbingosite.com/wordpress/fuho/wp-content/uploads/2018/05/blog-4-720x484.jpg"
+              src={img2}
               class="object-cover w-full h-64"
               alt=""
             />
@@ -85,7 +85,7 @@ const Blog = () => {
                 >
                   28 FEB 2024
                 </a>
-                <span class="px-4 text-gray-600">1 comments</span>
+                <span class="px-4 text-gray-600">Dr Ahmed Saber</span>
               </p>
               <a
                 href="/"
@@ -93,11 +93,10 @@ const Blog = () => {
                 title="Visit the East"
                 class="inline-block pt-3 mb-3 text-2xl font-medium leading-5 text-gray-700 transition-colors duration-200 font-display"
               >
-                A Beautiful Sunday Morning
+                Support for Carers
               </a>
               <p class="pb-4 mb-2 text-gray-700">
-                There seems to be nature's healing medicine in fresh air. You
-                and your children will notice sweet aromas in the air.
+              Unpaid carers are a lifeline to those they look after and are of huge benefit to society as a whole. 
               </p>
               <Link to={`/Blog`}>
                 <a
@@ -126,7 +125,7 @@ const Blog = () => {
           </div>
           <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-3xl">
             <img
-              src="https://medik.wpengine.com/wp-content/uploads/2019/01/blog9-1024x648.jpg"
+              src={img3}
               class="object-cover w-full h-64"
               alt=""
             />
@@ -140,7 +139,7 @@ const Blog = () => {
                 >
                   5 SEP 2023
                 </a>
-                <span class="px-4 text-gray-600">2 comments</span>
+                <span class="px-4 text-gray-600">Dr Sara Ramsy</span>
               </p>
               <a
                 href="/"
@@ -148,12 +147,10 @@ const Blog = () => {
                 title="Visit the East"
                 class="inline-block pt-3 mb-3 text-2xl font-medium leading-5 text-gray-700 transition-colors duration-200 font-display"
               >
-                Blood Pressure Machine
+                Latest Advances in Asthma Treatment
               </a>
               <p class="pb-4 mb-2 text-gray-700">
-                To measure blood pressure, your doctor uses an instrument call a
-                sphygmomanometer, which is more often referred to as a blood
-                pressure cuff.
+              There have been recent updates in asthma treatments, including the MART treatment plan. 
               </p>
               <Link to={`/Blog`}>
                 <a

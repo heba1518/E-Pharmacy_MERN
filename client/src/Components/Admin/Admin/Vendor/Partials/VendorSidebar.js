@@ -126,38 +126,12 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
               </Link>
             </li>
 
+      
             <li>
               <Link
-                className={
-                  panel === "allOrders" ? "sidebar-item-active" : "sidebar-item"
-                }
-                to="/admin/allOrders"
-                onClick={() => setSidebarOpen(!sidebarOpen)}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-                <span className="ml-4">All Orders</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={
-                  panel === "Pharmacies"
-                    ? "sidebar-item-active"
-                    : "sidebar-item"
-                }
+               className={
+                panel === "pharmacies" ? "sidebar-item-active" : "sidebar-item"
+              }
                 to="/admin/pharmacies"
                 onClick={() => setSidebarOpen(!sidebarOpen)}
               >
@@ -229,7 +203,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
               </Link>
             </li>
             <li>
-              <Link
+              <a href='https://t.me/+201013290987'  target="_blank"
                 className={
                   panel === "messages" ? "sidebar-item-active" : "sidebar-item"
                 }
@@ -251,7 +225,7 @@ const VendorSidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   />
                 </svg>
                 <span className="ml-4">Messages</span>
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>
